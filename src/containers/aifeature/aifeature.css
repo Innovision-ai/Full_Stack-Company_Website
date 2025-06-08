@@ -1,0 +1,318 @@
+.cta-header {
+    min-height: 100vh;
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hwb(267 72% 7%) 100%);
+}
+
+.cta-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 0rem 8rem 3rem 8rem;
+    box-sizing: border-box;
+    margin-top: -90px;
+}
+
+.cta-visual {
+    position: relative;
+    width: 640px;
+    height: 640px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-center-shape {
+    filter: drop-shadow(0 6px 32px #42C6FF44);
+    border-radius: 50%;
+}
+
+.cta-center-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 5rem;
+    color: rgba(250, 165, 1, 0.78);
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 18px #3CAFC7;
+    pointer-events: none;
+}
+
+.cta-center-text img {
+    margin-top: 60px;
+    width: 180px;
+    height: 180px;
+    filter: drop-shadow(0 6px 32px #42C6FF44);
+    margin-left: 30px;
+}
+
+.cta-feature-icon {
+    position: absolute;
+    width: 50px;
+    height: 52px;
+    background: rgb(247, 247, 151);
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(66, 198, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.3s, background 0.3s, transform 0.3s ease;
+    animation: pulseGlow 2.5s infinite;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.cta-feature-icon:hover {
+    background: #FFA726;
+    box-shadow: 0 0 20px #42C6FF, 0 0 40px #42C6FF33;
+    transform: scale(1.1);
+}
+
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 8px rgba(66, 198, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 18px rgba(66, 198, 255, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 8px rgba(66, 198, 255, 0.3);
+    }
+}
+
+.cta-connector {
+    position: absolute;
+    pointer-events: none;
+    width: 520px;
+    height: 700px;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    overflow: visible;
+}
+
+.cta-moving-dot {
+    animation: move-dot 2.5s linear infinite;
+}
+
+@keyframes move-dot {
+    0% {
+        opacity: 0;
+    }
+    15% {
+        opacity: 1;
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.cta-feature-list {
+    border-radius: 22px;
+    box-shadow: 0 8px 32px 0 rgba(20, 30, 60, 0.08);
+    padding: 2.3rem 2.2rem;
+    min-width: 700px;
+    max-width: 700px;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    opacity: 1;
+}
+
+.cta-feature-list h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.01em;
+    text-align: left;
+}
+
+.cta-feature-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cta-feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+    padding: 1rem 0.5rem;
+    margin-bottom: 1rem;
+    background: rgba(67, 47, 47, 0);
+    border-radius: 12px;
+    font-size: 1.13rem;
+    font-weight: 600;
+    color: #fff;
+    transition: color 0.2s, background 0.2s;
+}
+
+.cta-feature-list li:last-child {
+    margin-bottom: 0;
+}
+
+.cta-list-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: none;
+}
+
+.cta-list-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #A4EFF2;
+    transition: color 0.2s;
+}
+
+.cta-feature-list li:hover .cta-list-title {
+    color: #FFA726;
+}
+
+@media (max-width: 900px) {
+    .cta-section {
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 2rem 2vw;
+    }
+    .cta-feature-list {
+        min-width: 0;
+        width: 100%;
+        max-width: 98vw;
+        padding: 1.5rem 1rem;
+    }
+    .cta-visual {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.ai-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.ai-banner .AI {
+    font-family: "Montserrat", sans-serif;
+    font-size: 200px;
+    font-weight: 800;
+    color: rgba(250, 165, 1, 0.78);
+    opacity: 1;
+    text-shadow: 0 1px 8px rgba(255, 255, 255, 0.5), 0 2px 16px rgba(255, 255, 255, 0.2), 0 1px 0 #fff;
+}
+
+.flip-text {
+    display: inline-block;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-text:hover {
+    transform: rotateY(180deg);
+}
+
+.ai-banner .our {
+    font-family: "Montserrat", sans-serif;
+    align-self: flex-start;
+    color: rgb(39, 38, 38);
+    font-weight: 600;
+    padding: 100px 0px;
+    font-size: 44px;
+}
+
+.ai-banner .features {
+    font-family: "Montserrat", sans-serif;
+    align-self: flex-end;
+    font-size: 44px;
+    color: rgb(39, 38, 38);
+    font-weight: 600;
+    padding: 95px 20px;
+}
+
+.inv__feature-header {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.cta-feature-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 700px;
+    width: 100%;
+    z-index: 2;
+}
+
+.cta-feature-box {
+    background: rgb(237, 233, 233);
+    box-shadow: 0 8px 32px rgba(20, 30, 60, 0.08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1.3rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    transition: transform 0.3s ease, background 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+    color: rgb(233, 228, 228);
+    border-radius: 5px;
+}
+
+.cta-feature-box:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 8px 2px rgb(190, 182, 182);
+}
+
+.cta-list-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-list-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #3d3d3d;
+}
+
+.inv__feature-header p {
+    text-align: center;
+}
+
+.inv__feature-header p {
+    padding-bottom: 60px;
+    font-family: "Roboto";
+    font-size: 22px;
+    margin-top: -5px;
+}

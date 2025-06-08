@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Roboto:wght@400;700&display=swap');
+.footer-section {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    min-height: 320px;
+    background: black;
+}
+
+.footer-glass {
+    background: rgba(16, 32, 56, 0.72);
+    box-shadow: 0 8px 32px 0 rgba(20, 30, 60, 0.19);
+    border-radius: 24px;
+    padding: 2.5rem 2.5rem 1.2rem 2.5rem;
+    max-width: 560px;
+    width: 100%;
+    margin: 2.5rem 1rem;
+    backdrop-filter: blur(13px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.footer-row {
+    display: flex;
+    gap: 2.4rem;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.footer-col {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.footer-contact h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.45rem;
+    color: #A4EFF2;
+    margin-bottom: 1.1em;
+    font-weight: 900;
+    letter-spacing: 0.03em;
+}
+
+.footer-accent {
+    background: linear-gradient(90deg, #A4EFF2, #3CAFC7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.footer-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1em;
+}
+
+.footer-info-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+    font-size: 1.05rem;
+    color: #e7faff;
+    font-family: "Roboto", sans-serif;
+}
+
+.footer-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(164, 239, 242, 0.11);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+}
+
+.footer-info-list a {
+    color: #A4EFF2;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 600;
+}
+
+.footer-info-list a:hover {
+    color: #FFA726;
+}
+
+.footer-form-col {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.footer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    width: 100%;
+}
+
+.footer-form-row {
+    display: flex;
+    gap: 0.8em;
+}
+
+.footer-input,
+.footer-textarea {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1.5px solid #3CAFC7;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+    padding: 10px 12px;
+    width: 100%;
+    transition: border 0.3s;
+}
+
+.footer-input:focus,
+.footer-textarea:focus {
+    border-color: #A4EFF2;
+    outline: none;
+}
+
+.footer-textarea {
+    min-height: 60px;
+    max-height: 140px;
+    resize: vertical;
+}
+
+.footer-btn {
+    background: linear-gradient(90deg, #3CAFC7 0%, #1F778F 100%);
+    color: #fff;
+    border: none;
+    padding: 11px 0;
+    border-radius: 7px;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: "Montserrat", sans-serif;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 0.2rem;
+}
+
+.footer-btn:hover {
+    background: linear-gradient(90deg, #157C97 0%, #A4EFF2 100%);
+}
+
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    margin-top: 2.2rem;
+    position: relative;
+}
+
+.footer-glow-line {
+    width: 80%;
+    height: 4px;
+    margin: 0 auto 1.1rem auto;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #A4EFF2 0%, #3CAFC7 100%);
+    box-shadow: 0 0 16px #A4EFF288;
+    opacity: 0.7;
+}
+
+.footer-bottom span {
+    color: #e7faff;
+    font-size: 0.97rem;
+    opacity: 0.83;
+    font-family: "Roboto", sans-serif;
+    letter-spacing: 0.04em;
+}
+
+@media (max-width: 700px) {
+    .footer-glass {
+        padding: 1.2rem 0.6rem 0.8rem 0.6rem;
+        min-width: 0;
+        max-width: 99vw;
+    }
+    .footer-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .footer-form-row {
+        flex-direction: column;
+        gap: 0.8em;
+    }
+    .footer-contact h2 {
+        font-size: 1.1rem;
+    }
+}

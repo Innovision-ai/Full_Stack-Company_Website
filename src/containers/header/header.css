@@ -1,0 +1,54 @@
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Roboto:wght@400;700&display=swap');
+    .inv__header {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        text-align: center;
+        padding: 190px 60px;
+        max-width: 1000px;
+        /* margin-bottom: 32px; */
+    }
+    
+    .inv__header h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 48px;
+        font-weight: 800;
+        line-height: 1.2;
+        background: linear-gradient(90deg, #FFFFFF 0%, #70D6E3 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+    }
+    
+    .inv__header p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 42px;
+        color: #FFFFFF;
+        margin-top: 25px;
+    }
+    
+    .inv__header button {
+        margin-top: 50px;
+        width: 267px;
+        height: 71px;
+        background: linear-gradient(90deg, #FFFFFF 0%, #70D6E3 100%);
+        color: black;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    
+    .inv__header button:hover {
+        background: #a4eff2;
+        color: #003348;
+        transform: translateY(-2px);
+    }
+    
+    .inv__header button img {
+        width: 62px;
+        margin-left: 10px;
+    }

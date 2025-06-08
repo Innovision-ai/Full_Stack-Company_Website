@@ -1,0 +1,146 @@
+.inv__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 2rem;
+    /* background-color: #0B0B1A; */
+    /* position: fixed */
+}
+
+.inv__navbar-links {
+    display: flex;
+    align-items: center;
+}
+
+.inv__navbar-links_logo {
+    margin-right: 1rem;
+    background-color: #0B0B1A;
+}
+
+.inv__navbar-links_logo img {
+    width: 100px;
+    height: 100px;
+    background-color: #0B0B1A;
+}
+
+.inv__navbar-contact {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.inv__navbar-contact p {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.inv__navbar-contact p:hover {
+    text-decoration: underline;
+}
+
+.inv__navbar-contact p a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.inv__navbar-contact_button button,
+.inv__navbar-menu_container-links-contact button {
+    background: linear-gradient(90deg, #ffffff 0%, #a4eff2 100%);
+    color: #0b1f38;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.inv__navbar-contact_button button:hover,
+.inv__navbar-menu_container-links-contact button:hover {
+    background: #a4eff2;
+    color: #003348;
+    transform: translateY(-2px);
+}
+
+.arrow {
+    font-size: 18px;
+    transition: transform 0.2s ease;
+}
+
+.inv__navbar-contact_button button:hover .arrow,
+.inv__navbar-menu_container-links-contact button:hover .arrow {
+    transform: translateX(5px);
+}
+
+.inv__navbar-menu {
+    display: none;
+    position: relative;
+    margin-left: 1rem;
+}
+
+.inv__navbar-menu svg {
+    cursor: pointer;
+}
+
+.inv__navbar-menu_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: end;
+    background: var(--color-footer);
+    padding: 2rem;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    margin-top: 1rem;
+    min-width: 210px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.inv__navbar-menu_container-links p {
+    margin: 1rem 0;
+}
+
+.inv__navbar-menu_container-links p a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+}
+
+.inv__navbar-menu_container-links-contact {
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 1050px) {
+    .inv__navbar-contact {
+        display: none;
+    }
+    .inv__navbar-menu {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .inv__navbar {
+        padding: 2rem 4rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .inv__navbar {
+        padding: 2rem;
+    }
+    .inv__navbar-menu_container {
+        top: 20px;
+    }
+}
