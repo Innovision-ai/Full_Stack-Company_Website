@@ -47,7 +47,7 @@ function App() {
         </section>
 
         {/* Impact with fade-left */}
-        <section data-aos="fade-left">
+        <section>
           <Impact />
         </section>
 
