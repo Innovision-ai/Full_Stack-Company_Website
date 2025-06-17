@@ -12,7 +12,7 @@ const Services = lazy(() => import('./containers/services/Services'));
 const Whoweare = lazy(() => import('./containers/whoweare/Whoweare'));
 const Impact = lazy(() => import('./containers/impact/Impact'));
 const Portfolio = lazy(() => import('./containers/portfolio/Portfolio'));
-const Testimonials = lazy(() => import('./containers/testimonials/Testimonials'));
+const Testimonials = lazy(() => import('./containers/Testimonials/Testimonials'));
 const Footer = lazy(() => import('./containers/footer/Footer'));
 const Header = lazy(() => import('./containers/header/Header'));
 const ScrollToTopLinkedIn1 = lazy(() => import('./containers/ScrollToTopLinkedIn1'));
