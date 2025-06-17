@@ -11,7 +11,7 @@
     overflow: hidden;
     min-height: 100vh;
     z-index: 1;
-    background-image: url('./backg.svg');
+    background-image: url('/backg.svg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
