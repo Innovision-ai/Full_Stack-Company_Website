@@ -47,11 +47,11 @@ function Footer() {
             <ul className="footer-contact-list">
               <li>
                 <FaEnvelope className="footer-icon" />
-                <a href="mailto:hello@example.com">Innovision@example.com</a>
+                <a href="mailto:hello@example.com">innovisiontech.ai@gmail.com</a>
               </li>
               <li>
                 <FaPhoneAlt className="footer-icon" />
-                <a href="tel:9292929292">9292929292</a>
+                <a href="tel:9292929292">+91 78690 68581</a>
               </li>
               <li>
                 <FaMapMarkerAlt className="footer-icon" />
