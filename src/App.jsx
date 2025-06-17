@@ -1,19 +1,32 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, Suspense, lazy } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import { Footer, Blog, Aifeature, Header, Services, Whoweare, Impact, Portfolio, Testimonials, ScrollProgress } from './containers';
-import { Navbar } from './components';
-import {GlowingDots} from './components';
-import ScrollToTopLinkedIn1 from "./containers/ScrollToTopLinkedIn1";
+import Navbar from './components/navbar/Navbar';
+import GlowingDots from './components/GlowingDots/GlowingDots';
+import ScrollProgress from './containers/ScrollProgress/ScrollProgress';
 import './App.css';
 
+const Blog = lazy(() => import('./containers/blog/Blog'));
+const Services = lazy(() => import('./containers/services/Services'));
+const Whoweare = lazy(() => import('./containers/whoweare/Whoweare'));
+const Impact = lazy(() => import('./containers/impact/Impact'));
+const Portfolio = lazy(() => import('./containers/portfolio/Portfolio'));
+const Testimonials = lazy(() => import('./containers/testimonials/Testimonials'));
+const Footer = lazy(() => import('./containers/footer/Footer'));
+const Header = lazy(() => import('./containers/header/Header'));
+const ScrollToTopLinkedIn1 = lazy(() => import('./containers/ScrollToTopLinkedIn1'));
+
 function App() {
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
+    if (window.innerWidth < 768) setIsMobile(true);
     AOS.init({
-      duration: 800,
+      duration: 600,
       once: true,
       easing: 'ease-in-out',
+      disable: 'mobile',
     });
   }, []);
 
@@ -21,58 +34,51 @@ function App() {
     <div className="App gradient__bg1">
       <ScrollProgress />
 
-     <div className="gradient__bg">
-  <Navbar />
-  
-    <Header />
+      <div className="gradient__bg">
+        <Navbar />
+        <Suspense fallback={<div></div>}>
+          <Header />
+        </Suspense>
 
-  <GlowingDots />
-</div>
-
+        {!isMobile && (
+          <Suspense fallback={<div></div>}>
+            <GlowingDots />
+          </Suspense>
+        )}
+      </div>
 
       <div className="gradient__bg2">
-        {/* WhoWeAre with fade-up */}
-        <section id="Whoweare" data-aos="fade-up">
-          <Whoweare />
-        </section>
+        <Suspense fallback={<div></div>}>
+          <section id="Whoweare" data-aos="fade-up">
+            <Whoweare />
+          </section>
 
-        {/* Aifeature (commented out) */}
-        {/* <section data-aos="zoom-in">
-          <Aifeature />
-        </section> */}
+          <section id="service" data-aos="zoom-in">
+            <Services />
+          </section>
 
-        {/* Services with zoom-in */}
-        <section id="service" data-aos="zoom-in">
-          <Services />
-        </section>
+          <section data-aos="fade-left">
+            <Impact />
+          </section>
 
-        {/* Impact with fade-left */}
-        <section data-aos="fade-left">
-          <Impact />
-        </section>
+          <section id="portfolio" data-aos="fade-up">
+            <Portfolio />
+          </section>
 
-        {/* Portfolio with flip-left */}
-        <section id="portfolio" data-aos="fade-up">
-          <Portfolio />
-        </section>
+          <section data-aos="fade-up">
+            <Testimonials />
+          </section>
 
-        {/* Testimonials with fade-up */}
-        <section data-aos="fade-up">
-          <Testimonials />
-        </section>
+          <section id="blog" data-aos="fade-up">
+            <Blog />
+          </section>
 
-        {/* Blog with fade-up */}
-        <section id="blog" data-aos="fade-up">
-          <Blog />
-        </section>
-
-        <ScrollToTopLinkedIn1 />
-
-        {/* Footer with fade-up */}
-        
+          <ScrollToTopLinkedIn1 />
           <Footer />
+        </Suspense>
       </div>
     </div>
   );
 }
+
 export default App;

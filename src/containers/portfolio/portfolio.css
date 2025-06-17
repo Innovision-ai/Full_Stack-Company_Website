@@ -34,15 +34,35 @@
     transition: transform 0.3s ease;
 }
 
-.video {
+.video-wrapper:hover {
+    transform: scale(1.02);
+}
+
+.video-thumbnail-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.video-thumbnail {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    border-radius: 16px;
 }
 
-.video-wrapper:hover {
-    transform: scale(1.02);
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 12px 18px;
 }
 
 .arrows {
@@ -147,7 +167,6 @@
     background: white;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: none;
 }
 
 .our h3 {
@@ -158,13 +177,9 @@
     background: white;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: none;
     font-family: "Roboto";
     font-weight: 100;
 }
-
-
-/* 3. Small Screens - Tablets and Large Phones */
 
 
 /* 👇 Mobile First - For screens less than 480px wide */
@@ -192,10 +207,12 @@
     }
     .video-wrapper {
         width: 100%;
-        aspect-ratio: 16 / 9;
         max-width: 100%;
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    .video-thumbnail {
+        border-radius: 12px;
     }
     .video-info {
         width: 100%;
@@ -235,5 +252,9 @@
     .arrows svg {
         width: 20px;
         height: 20px;
+    }
+    .play-button {
+        font-size: 36px;
+        padding: 8px 12px;
     }
 }

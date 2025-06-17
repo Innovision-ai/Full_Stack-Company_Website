@@ -28,8 +28,6 @@ const Portfolio = () => {
 
   const { title, desc, youtubeId, tech, demo } = projects[current];
 
-  const embedURL = `https://www.youtube.com/embed/${youtubeId}?modestbranding=1&rel=0&showinfo=0&controls=1`;
-
   return (
     <div className="portfolio" id="portfolio">
       <div className="our">
@@ -58,15 +56,17 @@ const Portfolio = () => {
         </div>
 
         <div className="video-wrapper">
-          <iframe
-            className="video"
-            src={embedURL}
-            title={title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            loading="lazy"
-            frameBorder="0"
-          ></iframe>
+          <div
+            className="video-thumbnail-container"
+            onClick={() => window.open(`https://youtu.be/${youtubeId}`, "_blank")}
+          >
+            <img
+              src={`https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`}
+              alt={title}
+              className="video-thumbnail"
+            />
+            <div className="play-button">&#9658;</div>
+          </div>
 
           <div className="arrows">
             <button onClick={prevVideo}><ChevronLeft size={24} /></button>
