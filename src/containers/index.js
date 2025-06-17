@@ -18,5 +18,3 @@ export { default as Testimonials }
 from './Testimonials/Testimonials';
 export { default as ScrollProgress }
 from './ScrollProgress/ScrollProgress';
-export { default as Practice }
-from './practice/Practice';

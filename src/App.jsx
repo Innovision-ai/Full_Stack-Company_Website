@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import { Footer, Blog, Aifeature, Header, Services, Whoweare, Impact, Portfolio, Testimonials, ScrollProgress,Practice } from './containers';
+import { Footer, Blog, Aifeature, Header, Services, Whoweare, Impact, Portfolio, Testimonials, ScrollProgress} from './containers';
 import { Navbar } from './components';
 import {GlowingDots} from './components';
 import ScrollToTopLinkedIn1 from "./containers/ScrollToTopLinkedIn1";
@@ -71,7 +71,7 @@ function App() {
         {/* Footer with fade-up */}
         
           <Footer />
-       <Practice/>
+     
       </div>
     </div>
   );
