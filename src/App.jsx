@@ -21,14 +21,14 @@ function App() {
     <div className="App gradient__bg1">
       <ScrollProgress />
 
-      <div className="gradient__bg">
-        <GlowingDots />
-        <Navbar />
-        {/* Header with fade-down */}
-        <section data-aos="fade-down">
-          <Header />
-        </section>
-      </div>
+   <div className="gradient__bg">
+  <Navbar />
+  <section data-aos="fade-down">
+    <Header />
+  </section>
+  <GlowingDots />
+</div>
+
 
       <div className="gradient__bg2">
         {/* WhoWeAre with fade-up */}
