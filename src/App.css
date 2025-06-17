@@ -1,41 +1,101 @@
+/* Reset & global styles */
+
 * {
     box-sizing: border-box;
-    padding: 0;
     margin: 0;
+    padding: 0;
     scroll-behavior: smooth;
 }
 
 body {
-    /* background-color: black; */
+    width: 100%;
+    max-width: 100vw;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    color-scheme: light only;
+    forced-color-adjust: none;
+    -webkit-appearance: none;
+    background-color: #000;
+    font-family: 'Roboto', sans-serif;
 }
+
+
+/* Gradient backgrounds */
 
 .gradient__bg {
     background: linear-gradient( 180deg, #0B0B1A 0%, #0B0B1A 10%, #0f5769 50%, #3CAFC7 80%, #1F778F 100%);
 }
 
 .gradient__bg2 {
-    background: linear-gradient(180deg, #FFFFFF 0%, #40B6C4 100%);
+    background: linear-gradient( 180deg, #FFFFFF 0%, #40B6C4 100%);
 }
 
 
-/* Disable forced dark mode styles on Samsung/Android browsers */
+/* Scroll progress bar (optional) */
 
-html {
-    color-scheme: light only;
-    forced-color-adjust: none;
-    -webkit-appearance: none;
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background-color: #70D6E3;
+    width: 0%;
+    z-index: 1000;
 }
 
 
-/* Ensure consistent background and text behavior */
+/* Glowing dots or background visual component */
 
-body {
-    background-color: #000;
-    /* or your preferred color */
-    /* color: #fff; */
-    /* match your design */
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%;
-    text-rendering: optimizeLegibility;
+.glowing-dots,
+.dots-bg,
+.glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
 }
+
+
+/* Hide GlowingDots for mobile devices */
+
+@media (max-width: 768px) {
+    .glowing-dots,
+    .dots-bg,
+    .glow {
+        display: none !important;
+    }
+}
+
+
+/* General responsive spacing */
+
+.section-padding {
+    padding: 80px 60px;
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 60px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-padding {
+        padding: 40px 20px;
+    }
+}
+
+
+/* Optional debug for overflow issues */
+
+
+/*
+* {
+  outline: 1px solid rgba(255, 0, 0, 0.1);
+}
+*/
