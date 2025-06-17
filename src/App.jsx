@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-import { Footer, Blog, Aifeature, Header, Services, Whoweare, Impact, Portfolio, Testimonials, ScrollProgress} from './containers';
+import { Footer, Blog, Aifeature, Header, Services, Whoweare, Impact, Portfolio, Testimonials, ScrollProgress } from './containers';
 import { Navbar } from './components';
 import {GlowingDots} from './components';
 import ScrollToTopLinkedIn1 from "./containers/ScrollToTopLinkedIn1";
@@ -21,11 +21,11 @@ function App() {
     <div className="App gradient__bg1">
       <ScrollProgress />
 
-   <div className="gradient__bg">
+     <div className="gradient__bg">
   <Navbar />
-  <section data-aos="fade-down">
+  
     <Header />
-  </section>
+
   <GlowingDots />
 </div>
 
@@ -71,7 +71,6 @@ function App() {
         {/* Footer with fade-up */}
         
           <Footer />
-     
       </div>
     </div>
   );

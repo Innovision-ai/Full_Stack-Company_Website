@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './whoweare.css';
-import AnimatedSection from '../AnimatedSection';
 
 const values = [
   {
