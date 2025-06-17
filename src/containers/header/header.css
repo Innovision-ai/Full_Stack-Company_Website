@@ -37,18 +37,66 @@
         width: 267px;
         height: 71px;
         background: linear-gradient(90deg, #FFFFFF 0%, #70D6E3 100%);
-        color: black;
+        /* color: black; */
         font-size: 22px;
         cursor: pointer;
     }
     
     .inv__header button:hover {
         background: #a4eff2;
-        color: #003348;
+        /* color: #003348; */
         transform: translateY(-2px);
     }
     
     .inv__header button img {
         width: 62px;
         margin-left: 10px;
+    }
+    
+    @media (max-width: 900px) {
+        .inv__header {
+            padding: 120px 30px;
+            max-width: 95vw;
+        }
+        .inv__header h1 {
+            font-size: 36px;
+        }
+        .inv__header p {
+            font-size: 20px;
+            line-height: 32px;
+        }
+        .inv__header button {
+            width: 200px;
+            height: 56px;
+            font-size: 18px;
+        }
+        .inv__header button img {
+            width: 28px;
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .inv__header {
+            padding: 72px 10px 40px 10px;
+            max-width: 100vw;
+        }
+        .inv__header h1 {
+            font-size: 24px;
+        }
+        .inv__header p {
+            font-size: 15px;
+            line-height: 22px;
+            margin-top: 16px;
+        }
+        .inv__header button {
+            width: 140px;
+            height: 40px;
+            font-size: 13px;
+            margin-top: 28px;
+            gap: 6px;
+        }
+        .inv__header button img {
+            width: 18px;
+            margin-left: 6px;
+        }
     }

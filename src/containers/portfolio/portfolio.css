@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Roboto:wght@400;700&display=swap');
+.portfolio {
+    padding: 4rem 2rem;
+    background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+}
+
+.portfolio-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.portfolio-content {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.video-wrapper {
+    position: relative;
+    flex: 1;
+    max-width: 640px;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.video-wrapper:hover {
+    transform: scale(1.02);
+}
+
+.arrows {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 1rem;
+    pointer-events: none;
+}
+
+.arrows button {
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.5rem;
+    pointer-events: all;
+    transition: background 0.2s ease;
+}
+
+.arrows button:hover {
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
+}
+
+.video-info {
+    flex: 1;
+    max-width: 500px;
+    padding: 1rem 0;
+}
+
+.video-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.video-desc {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #cfd8dc;
+    margin-bottom: 1rem;
+}
+
+.tech-tags {
+    margin: 1rem 0;
+}
+
+.tech-tag {
+    display: inline-block;
+    background: #00acc1;
+    color: #fff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    margin: 0 0.4rem 0.5rem 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.video-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.6rem 1.2rem;
+    background-color: #00e676;
+    color: #000;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #00c853;
+}
+
+.btn.outline {
+    background: transparent;
+    border: 2px solid #00e676;
+    color: #00e676;
+}
+
+.btn.outline:hover {
+    background-color: #00e676;
+    color: #000;
+}
+
+.our h2 {
+    text-align: center;
+    margin-top: -10px;
+    font-family: "Montserrat";
+    font-size: 48px;
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: none;
+}
+
+.our h3 {
+    text-align: center;
+    margin-top: -30px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: none;
+    font-family: "Roboto";
+    font-weight: 100;
+}
+
+
+/* 3. Small Screens - Tablets and Large Phones */
+
+
+/* 👇 Mobile First - For screens less than 480px wide */
+
+@media (max-width: 480px) {
+    .portfolio {
+        padding: 2rem 1rem;
+    }
+    .portfolio-title {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+    .our h2 {
+        font-size: 28px;
+    }
+    .our h3 {
+        font-size: 16px;
+        margin-top: -10px;
+        margin-bottom: 20px;
+    }
+    .portfolio-content {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 2rem;
+    }
+    .video-wrapper {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        max-width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    .video-info {
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+    .video-title {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+    .video-desc {
+        font-size: 0.95rem;
+        padding: 0 0.5rem;
+        line-height: 1.5;
+        color: #cfd8dc;
+    }
+    .tech-tag {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.6rem;
+        margin: 0.2rem;
+    }
+    .video-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+        margin-top: 1rem;
+    }
+    .btn {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
+    .arrows button {
+        padding: 0.3rem;
+        width: 32px;
+        height: 32px;
+    }
+    .arrows svg {
+        width: 20px;
+        height: 20px;
+    }
+}

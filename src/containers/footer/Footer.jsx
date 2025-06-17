@@ -1,54 +1,69 @@
 import React from "react";
 import "./footer.css";
+import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaChevronRight } from "react-icons/fa";
 
-export default function Footer() {
+function Footer() {
   return (
-    <footer className="footer-section">
-      <div className="footer-glass">
-        <div className="footer-row">
-          <div className="footer-col footer-contact">
-            <h2>
-              <span className="footer-accent">Get in Touch</span>
-            </h2>
-            <ul className="footer-info-list">
-              <li>
-                <span className="footer-info-icon">
-                  <svg width="20" height="20" fill="none"><path d="M2 4a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V4z" stroke="#A4EFF2" strokeWidth="2"/><path d="M2 4l8 7 8-7" stroke="#A4EFF2" strokeWidth="2"/></svg>
-                </span>
-                <a href="mailto:hello@example.com">hello@example.com</a>
-              </li>
-              <li>
-                <span className="footer-info-icon">
-                  <svg width="20" height="20" fill="none"><circle cx="10" cy="10" r="8" stroke="#A4EFF2" strokeWidth="2"/><path d="M10 6v4l2 2" stroke="#A4EFF2" strokeWidth="2"/></svg>
-                </span>
-                <a href="tel:+1234567890">9292929292</a>
-              </li>
-              <li>
-                <span className="footer-info-icon">
-                  <svg width="20" height="20" fill="none"><path d="M10 2a6 6 0 016 6c0 4-6 10-6 10S4 12 4 8a6 6 0 016-6z" stroke="#A4EFF2" strokeWidth="2"/><circle cx="10" cy="8" r="2" fill="#A4EFF2"/></svg>
-                </span>
-                <span>Jaipur,Rajasthan</span>
-              </li>
+    <section id="footer">
+    <footer className="footer">
+      <div className="footer-main">
+        {/* Contact Section */}
+        <div className="footer-contact">
+          <h3 className="footer-title">Get in Touch</h3>
+          <ul className="footer-contact-list">
+            <li>
+              <FaEnvelope className="footer-icon" />
+              <a href="mailto:hello@example.com">hello@example.com</a>
+            </li>
+            <li>
+              <FaPhoneAlt className="footer-icon" />
+              <a href="tel:9292929292">9292929292</a>
+            </li>
+            <li>
+              <FaMapMarkerAlt className="footer-icon" />
+              <span>Jaipur, Rajasthan</span>
+            </li>
+          </ul>
+          <form className="footer-form">
+            <div className="footer-form-row">
+              <input type="text" placeholder="Name" />
+              <input type="email" placeholder="Email" />
+            </div>
+            <textarea placeholder="Message"></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+        {/* Links Section */}
+        <div className="footer-links">
+          <div>
+            <h4>Useful Links</h4>
+            <ul>
+              <li><FaChevronRight className="footer-link-icon" /><a href="#home">Home</a></li>
+              <li><FaChevronRight className="footer-link-icon" /><a href="#Whoweare">About us</a></li>
+              <li><FaChevronRight className="footer-link-icon" /><a href="#service">Services</a></li>
             </ul>
           </div>
-          <div className="footer-col footer-form-col">
-            <form className="footer-form" onSubmit={e => e.preventDefault()}>
-              <div className="footer-form-row">
-                <input className="footer-input" type="text" placeholder="Name" required />
-                <input className="footer-input" type="email" placeholder="Email" required />
-              </div>
-              <textarea className="footer-textarea" placeholder="Message" required />
-              <button className="footer-btn" type="submit">Send Message</button>
-            </form>
+          <div>
+            <h4>Our Services</h4>
+            <ul>
+              <li><FaChevronRight className="footer-link-icon" /><a href="#">AI-Powered Data Solutions</a></li>
+              <li><FaChevronRight className="footer-link-icon" /><a href="#">Machine Learning & Model Development</a></li>
+              <li><FaChevronRight className="footer-link-icon" /><a href="#">AI-Driven Automation & Optimization</a></li>
+              <li><FaChevronRight className="footer-link-icon" /><a href="#">Generative AI & Large Language Models (LLMs)</a></li>
+              <li><FaChevronRight className="footer-link-icon" /><a href="#">Advanced Prompt Engineering</a></li>
+              <li><FaChevronRight className="footer-link-icon" /><a href="#">AI-Powered Business Process Optimization</a></li>
+            </ul>
           </div>
         </div>
-        <div className="footer-bottom">
-          <div className="footer-glow-line"></div>
-          <span>
-            &copy; {new Date().getFullYear()} InnoVision.AI &mdash; All rights reserved.
-          </span>
-        </div>
+      </div>
+      {/* Copyright */}
+      <div className="footer-bottom">
+        <hr />
+        <p>© 2025 InnoVision.AI — All rights reserved.</p>
       </div>
     </footer>
+    </section>
   );
 }
+
+export default Footer;

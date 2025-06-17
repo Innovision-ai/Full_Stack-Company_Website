@@ -12,5 +12,11 @@ export { default as Impact }
 from './impact/Impact';
 export { default as Aifeature }
 from './aifeature/Aifeature';
-export { default as HorizontalShowcase }
-from './HorizontalShowcase/HorizontalShowcase';
+export { default as Portfolio }
+from './portfolio/Portfolio';
+export { default as Testimonials }
+from './Testimonials/Testimonials';
+export { default as ScrollProgress }
+from './ScrollProgress/ScrollProgress';
+export { default as Practice }
+from './practice/Practice';

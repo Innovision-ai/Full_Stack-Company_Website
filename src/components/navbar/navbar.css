@@ -3,8 +3,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 4px 2rem;
-    /* background-color: #0B0B1A; */
-    /* position: fixed */
+    /* position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    /* ensure it's above everything */
+    /* background-color: #000; */
+    /* or your navbar's background color */
+    /* padding: 1rem 2rem; */
 }
 
 .inv__navbar-links {
@@ -18,9 +24,9 @@
 }
 
 .inv__navbar-links_logo img {
-    width: 100px;
-    height: 100px;
-    background-color: #0B0B1A;
+    width: 84px;
+    height: 84px;
+    /* background-color: #0B0B1A; */
 }
 
 .inv__navbar-contact {
@@ -104,6 +110,7 @@
     min-width: 210px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
 }
 
 .inv__navbar-menu_container-links p {
@@ -111,7 +118,7 @@
 }
 
 .inv__navbar-menu_container-links p a {
-    color: #fff;
+    color: black;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
     font-size: 18px;
@@ -128,11 +135,19 @@
     .inv__navbar-menu {
         display: flex;
     }
+    .inv__navbar-links_logo img {
+        height: 70px;
+        width: 70px;
+    }
 }
 
 @media screen and (max-width: 700px) {
     .inv__navbar {
         padding: 2rem 4rem;
+    }
+    .inv__navbar-links_logo img {
+        height: 60px;
+        width: 60px;
     }
 }
 
@@ -143,4 +158,85 @@
     .inv__navbar-menu_container {
         top: 20px;
     }
+    .inv__navbar-links_logo img {
+        height: 60px;
+        width: 60px;
+    }
+}
+
+
+/* Center the button inside mobile dropdown menu */
+
+@media screen and (max-width: 1050px) {
+    .inv__navbar-contact {
+        display: none;
+    }
+    .inv__navbar-menu {
+        display: flex;
+    }
+    .inv__navbar-menu_container-links-contact button {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .inv__navbar-links_logo img {
+        height: 80px;
+        width: 80px;
+    }
+}
+
+
+/* Adjust padding for tablets */
+
+@media screen and (max-width: 700px) {
+    .inv__navbar {
+        padding: 1.5rem 2rem;
+    }
+    .inv__navbar-menu_container {
+        padding: 1.5rem;
+    }
+    .inv__navbar-menu_container-links p a {
+        font-size: 16px;
+    }
+    .inv__navbar-menu_container-links-contact button {
+        width: 160px;
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+    .inv__navbar-links_logo img {
+        height: 70px;
+        width: 70px;
+    }
+}
+
+
+/* Optimize for very small devices */
+
+@media screen and (max-width: 550px) {
+    .inv__navbar {
+        padding: 1rem;
+    }
+    .inv__navbar-menu_container {
+        top: 15px;
+        min-width: 180px;
+        padding: 1rem;
+    }
+    .inv__navbar-menu_container-links p {
+        margin: 0.8rem 0;
+    }
+    .inv__navbar-menu_container-links-contact button {
+        font-size: 13px;
+        padding: 8px 18px;
+        width: 140px;
+        margin: 0 auto;
+    }
+    .inv__navbar-links_logo img {
+        height: 60px;
+        width: 60px;
+    }
+}
+
+.inv__navbar-menu_container {
+    background-color: #a4eff2;
 }

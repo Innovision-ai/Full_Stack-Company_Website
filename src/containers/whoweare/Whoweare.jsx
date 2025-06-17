@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './whoweare.css';
+import AnimatedSection from '../AnimatedSection';
 
 const values = [
   {
@@ -24,6 +25,24 @@ const values = [
 
 const Whoweare = () => {
   const [expanded, setExpanded] = useState(0);
+  const [paraText, setParaText] = useState(
+    "Building Intelligent Solutions for a Smarter Future"
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.matchMedia('(max-width: 600px)').matches) {
+        setParaText("We provide cutting-edge AI solutions to revolutionize businesses through intelligent automation and data-driven insights. Our expert team crafts custom models that boost efficiency and improve decision-making.");
+      } else {
+        setParaText("  We are a cutting-edge AI solutions provider dedicated to revolutionizing businesses with intelligent automation, data-driven insights, and innovative machine learning models. Our team of AI experts, data scientists, and engineers work tirelessly to develop custom solutions that optimize efficiency, enhance decision-making, and drive digital transformation. Whether you're a startup or an enterprise, we empower you with AI-driven strategies that deliver real-world impact.");
+      }
+    };
+
+    handleResize(); // Initialize on mount
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <section id="Whoweare">
@@ -33,7 +52,7 @@ const Whoweare = () => {
           <p>Building Intelligent Solutions for a Smarter Future</p>
           <div className="inv__who-about-text">
             <p>
-              We are a cutting-edge AI solutions provider dedicated to revolutionizing businesses with intelligent automation, data-driven insights, and innovative machine learning models. Our team of AI experts, data scientists, and engineers work tirelessly to develop custom solutions that optimize efficiency, enhance decision-making, and drive digital transformation. Whether you're a startup or an enterprise, we empower you with AI-driven strategies that deliver real-world impact.
+             {paraText}
             </p>
           </div>
         </div>

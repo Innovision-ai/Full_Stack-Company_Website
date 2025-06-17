@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap');
+:root {
+    --primary: #056470;
+    --accent: #3CAFC7;
+    --bg: #f7fafd;
+    --card-bg: #fff;
+    --shadow: 0 8px 32px rgba(44, 62, 80, 0.08);
+    --radius: 22px;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background: var(--bg);
+}
+
+.testimonials-section {
+    padding: 60px 20px 80px 20px;
+    background: linear-gradient(135deg, #f7fafd 60%, #e3f3f8 100%);
+    min-height: 100vh;
+}
+
+.testimonials-header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 48px;
+    gap: 20px;
+}
+
+.testimonials-badge {
+    font-family: "Montserrat";
+    font-size: 32px;
+    color: var(--primary);
+}
+
+.testimonials-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: black;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.testimonials-list {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
+    /* ✅ This ensures all cards match height */
+}
+
+.testimonial-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    max-width: 480px;
+    min-width: 320px;
+    padding: 38px 32px 32px 32px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* ✅ Pushes info to bottom */
+    margin: 0 8px 32px 8px;
+    transition: box-shadow 0.2s;
+    height: 100%;
+    /* Let it grow to fill parent */
+}
+
+.testimonial-card:hover {
+    box-shadow: 0 12px 32px rgba(44, 62, 80, 0.16);
+}
+
+.testimonial-quote-mark {
+    font-size: 4rem;
+    color: var(--accent);
+    /* position: absolute; */
+    left: 28px;
+    top: 12px;
+    opacity: 0.18;
+    font-family: 'Montserrat', sans-serif;
+    pointer-events: none;
+    user-select: none;
+}
+
+
+/* .testimonial-quote-mark.left {
+    left: 28px;
+    top: -20px;
+} */
+
+.testimonial-quote-mark.right {
+    right: 28px;
+    bottom: 12px;
+    left: auto;
+    top: auto;
+    transform: rotate(180deg);
+    /* optional */
+}
+
+.testimonial-text {
+    font-size: 1.13rem;
+    color: #222;
+    font-family: 'Roboto', sans-serif;
+    margin: 24px 0 32px 0;
+    line-height: 1.7;
+    position: relative;
+    z-index: 2;
+}
+
+.testimonial-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.testimonial-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.1rem;
+    display: block;
+}
+
+.testimonial-role {
+    font-size: 0.98rem;
+    color: #888;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 2px;
+    display: block;
+}
+
+.testimonial-stars {
+    color: #f4b400;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    margin-left: 6px;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 900px) {
+    .testimonials-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+    }
+    .testimonial-card {
+        max-width: 98vw;
+        min-width: unset;
+    }
+    .testimonials-title {
+        font-size: 2rem;
+    }
+}

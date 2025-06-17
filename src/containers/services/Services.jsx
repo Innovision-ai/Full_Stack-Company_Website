@@ -1,95 +1,303 @@
-import React from 'react';
+// import React, { useRef } from 'react';
+// import { motion, useScroll, useTransform } from 'framer-motion';
+// import { InView } from 'react-intersection-observer';
+
+// import './services.css';
+
+// import dashboard from '../../assets/dashboard.webp';
+
+// import modell from '../../assets/modell.webp';
+
+// import bot from '../../assets/bot.webp';
+
+// import prompt from '../../assets/prompt.webp';
+
+// import dashboard1 from '../../assets/dashboard1.webp';
+
+// import generative from '../../assets/generative.webp';
+
+
+// const services = [
+//   {
+//     title: "AI-Powered Data Solutions",
+//     desc: "We provide high-quality data annotation and custom dataset creation (text, image, video) to train accurate AI models. Our data analysis services help extract valuable insights from structured and unstructured data, enabling better decision-making.",
+//     icon: (
+//       <picture className="icon-images">
+//         <source srcSet={dashboard} type="image/webp" />
+//         <img src={dashboard} alt="Dashboard" className="Dashboard" loading="lazy" />
+//       </picture>
+//     ),
+//   },
+//   {
+//     title: "Machine Learning & Model Development",
+//     desc: "We provide custom machine learning and deep learning models tailored to your needs, including AI solutions for image recognition, object detection, video analysis, and NLP applications such as text comprehension, chatbots, and sentiment analysis.",
+//     icon: (
+//       <picture className="icon-images">
+//         <source srcSet={bot} type="image/webp" />
+//         <img src={bot} alt="Bot" className="Dashboard" loading="lazy" />
+//       </picture>
+//     ),
+//   },
+//   {
+//     title: "AI-Driven Automation & Optimization",
+//     desc: "We streamline workflows with AI-powered automation tools and create interactive dashboards using Streamlit and Plotly for real-time data visualization.",
+//     icon: (
+//       <picture className="icon-images">
+//         <source srcSet={dashboard1} type="image/webp" />
+//         <img src={dashboard1} alt="Dashboard 1" className="Dashboard" loading="lazy" />
+//       </picture>
+//     ),
+//   },
+//   {
+//     title: "Generative AI & Large Language Models (LLMs)",
+//     desc: "We specialize in custom model training and fine-tuning, developing domain-specific AI solutions for personalized applications. Our generative AI expertise enables the creation of high-quality text, images, and videos tailored to diverse needs.",
+//     icon: (
+//       <picture className="icon-images">
+//         <source srcSet={modell} type="image/webp" />
+//         <img src={modell} alt="Model" className="Dashboard" loading="lazy" />
+//       </picture>
+//     ),
+//   },
+//   {
+//     title: "Advanced Prompt Engineering",
+//     desc: "We specialize in crafting optimized prompts for LLMs to enhance accuracy and relevance, refining them for various applications like content generation, chatbots, and AI automation workflows.",
+//     icon: (
+//       <picture className="icon-images">
+//         <source srcSet={prompt} type="image/webp" />
+//         <img src={prompt} alt="Prompt" className="Dashboard" loading="lazy" />
+//       </picture>
+//     ),
+//   },
+//   {
+//     title: "AI-Powered Business Process Optimization",
+//     desc: "We leverage AI-driven automation to streamline business operations, reduce manual effort, and enhance efficiency across departments. Our intelligent solutions optimize workflows, utilize advanced analytics, and provide data-driven insights to support better decision-making.",
+//     icon: (
+//       <picture className="icon-images">
+//         <source srcSet={generative} type="image/webp" />
+//         <img src={generative} alt="Generative AI" className="Dashboard" loading="lazy" />
+//       </picture>
+//     ),
+//   },
+// ];
+
+
+// const CARD_WIDTH = typeof window !== "undefined" ? window.innerWidth : 1920; // fallback for SSR
+
+// const Services = () => {
+//   const sectionRef = useRef(null);
+
+//   // Framer Motion scroll progress for the section
+//   const { scrollYProgress } = useScroll({
+//     target: sectionRef,
+//     offset: ["start start", "end end"],
+//   });
+
+//   // Calculate total scrollable width
+//   const totalCards = services.length;
+//   const totalWidth = CARD_WIDTH * totalCards;
+
+//   // Map vertical scroll progress [0,1] to horizontal translation [0, -(totalWidth - CARD_WIDTH)]
+//   const x = useTransform(
+//     scrollYProgress,
+//     [0, 1],
+//     [0, -(totalWidth - CARD_WIDTH)]
+//   );
+
+//   return (
+//     <section
+//       className="services-bg"
+//       ref={sectionRef}
+//       style={{ position: "relative", height: `${totalCards * 100}vh` }} // makes enough vertical scroll
+//       id='service'
+//     >
+//       <div
+//         className="horizontal-section"
+//         style={{
+//           position: "sticky",
+//           top: 0,
+//           left: 0,
+//           width: "100vw",
+//           height: "100vh",
+//           overflow: "hidden",
+//         }}
+//       >
+//         <div className="offer-static">
+//           <h1>Our Services</h1>
+//           <p>Empowering Innovation with Advanced AI Services</p>
+//         </div>
+//       <motion.div
+//   className="horizontal-wrapper"
+//   style={{ x, width: totalWidth, height: "100vh" }}
+// >
+//   {services.map(({ title, desc, icon }, i) => (
+//     <InView key={i} threshold={0.5} triggerOnce={false}>
+//       {({ inView, ref }) => (
+//         <div className="hcard" ref={ref}>
+//           <div className="card-image">{icon}</div>
+//           <div className="card-content">
+//             <div className="section-number">{String(i + 1).padStart(2, "0")}</div>
+//             <h2>{title}</h2>
+//             <p>{desc}</p>
+//             {/* Example: Animate or style based on inView */}
+//             {/* {inView && <motion.div animate={{ opacity: 1 }} />} */}
+//           </div>
+//         </div>
+//       )}
+//     </InView>
+//   ))}
+// </motion.div>
+        
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Services;
+
+
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { InView } from 'react-intersection-observer';
+
 import './services.css';
+
+import dashboard from '../../assets/dashboard.webp';
+import modell from '../../assets/modell.webp';
+import bot from '../../assets/bot.webp';
+import prompt from '../../assets/prompt.webp';
+import dashboard1 from '../../assets/dashboard1.webp';
+import generative from '../../assets/generative.webp';
 
 const services = [
   {
     title: "AI-Powered Data Solutions",
     desc: "We provide high-quality data annotation and custom dataset creation (text, image, video) to train accurate AI models. Our data analysis services help extract valuable insights from structured and unstructured data, enabling better decision-making.",
-    icon: (
-      <svg width="38" height="38" viewBox="0 0 48 48" fill="none">
-        <rect x="10" y="30" width="6" height="8" rx="2" fill="#42C6FF" />
-        <rect x="21" y="22" width="6" height="16" rx="2" fill="#42C6FF" />
-        <rect x="32" y="14" width="6" height="24" rx="2" fill="#42C6FF" />
-      </svg>
-    ),
-    background: "linear-gradient(135deg, #42C6FF 0%, pink 100%)",
+    iconSrc: dashboard,
   },
   {
     title: "Machine Learning & Model Development",
     desc: "We provide custom machine learning and deep learning models tailored to your needs, including AI solutions for image recognition, object detection, video analysis, and NLP applications such as text comprehension, chatbots, and sentiment analysis.",
-    icon: (
-      <svg width="38" height="38" viewBox="0 0 48 48" fill="none">
-        <circle cx="24" cy="24" r="20" stroke="#FFA726" strokeWidth="4" fill="none" />
-        <path d="M24 14v10l7 7" stroke="#FFA726" strokeWidth="4" strokeLinecap="round" />
-      </svg>
-    ),
-     background: "linear-gradient(135deg, #42C6FF 0%, #A4EFF2 100%)",
+    iconSrc: bot,
   },
   {
     title: "AI-Driven Automation & Optimization",
     desc: "We streamline workflows with AI-powered automation tools and create interactive dashboards using Streamlit and Plotly for real-time data visualization.",
-    icon: (
-      <svg width="38" height="38" viewBox="0 0 48 48" fill="none">
-        <rect x="8" y="8" width="32" height="32" rx="8" stroke="#00E1B4" strokeWidth="4" fill="none" />
-        <circle cx="24" cy="24" r="6" fill="#00E1B4" />
-      </svg>
-    ),
-     background: "linear-gradient(135deg, #42C6FF 0%, #A4EFF2 100%)",
+    iconSrc: dashboard1,
   },
   {
     title: "Generative AI & Large Language Models (LLMs)",
     desc: "We specialize in custom model training and fine-tuning, developing domain-specific AI solutions for personalized applications. Our generative AI expertise enables the creation of high-quality text, images, and videos tailored to diverse needs.",
-    icon: (
-      <svg width="38" height="38" viewBox="0 0 48 48" fill="none">
-        <path d="M10 24C10 15.1634 17.1634 8 26 8s16 7.1634 16 16-7.1634 16-16 16-16-7.1634-16-16z" fill="#42C6FF" />
-        <path d="M26 16v16M18 24h16" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
-      </svg>
-    ),
-     background: "linear-gradient(135deg, #42C6FF 0%, #A4EFF2 100%)",
+    iconSrc: modell,
   },
   {
     title: "Advanced Prompt Engineering",
     desc: "We specialize in crafting optimized prompts for LLMs to enhance accuracy and relevance, refining them for various applications like content generation, chatbots, and AI automation workflows.",
-    icon: (
-      <svg width="38" height="38" viewBox="0 0 48 48" fill="none">
-        <path d="M8 12h32v24H8z" fill="#FFA726" />
-        <path d="M12 16h24v2H12zM12 22h24v2H12zM12 28h16v2H12z" fill="#fff" />
-      </svg>
-    ),
-     background: "linear-gradient(135deg, #42C6FF 0%, #A4EFF2 100%)",
+    iconSrc: prompt,
   },
   {
     title: "AI-Powered Business Process Optimization",
     desc: "We leverage AI-driven automation to streamline business operations, reduce manual effort, and enhance efficiency across departments. Our intelligent solutions optimize workflows, utilize advanced analytics, and provide data-driven insights to support better decision-making.",
-    icon: (
-      <svg width="38" height="38" viewBox="0 0 48 48" fill="none">
-        <circle cx="24" cy="24" r="20" fill="#00E1B4" />
-        <path d="M16 24h16M24 16v16" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" />
-      </svg>
-    ),
-     background: "linear-gradient(135deg, #42C6FF 0%, #A4EFF2 100%)",
+    iconSrc: generative,
   },
 ];
 
-export default function Services() {
+const Services = () => {
+  const sectionRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const [cardWidth, setCardWidth] = useState(
+    typeof window !== 'undefined' ? window.innerWidth : 0
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+      setCardWidth(window.innerWidth);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // for desktop scroll:
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start start', 'end end'],
+  });
+  const totalCards = services.length;
+  const totalWidth = cardWidth * totalCards;
+  const x = useTransform(scrollYProgress, [0, 1], [0, -(totalWidth - cardWidth)]);
+
   return (
-    <section className="poss-section">
-      <h2 className="poss-title">
-          <span className="poss-headline">Our Services</span>
-        <span className="two-span">Empowering Innovation with Advanced AI Services</span>
-      
-      </h2>
-      <div className="poss-cards-network">
-        <div className="poss-cards-row">
-          {services.map((service, i) => (
-            <div className="poss-card" key={i} >
-              <div className="poss-card-icon" >{service.icon}</div>
-              <h3>{service.title}</h3>
-              <p>{service.desc}</p>
-            </div>
-          ))}
+    <section
+      className="services-bg"
+      ref={sectionRef}
+      id="service"
+      style={{
+        position: 'relative',
+        height: isMobile ? 'auto' : `${totalCards * 100}vh`,
+        paddingBottom: isMobile ? '2rem' : 0,
+      }}
+    >
+      <div
+        className="horizontal-section"
+        style={{
+          position: isMobile ? 'relative' : 'sticky',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: isMobile ? 'auto' : '100vh',
+          overflow: isMobile ? 'visible' : 'hidden',
+        }}
+      >
+        <div className="offer-static">
+          <h1>Our Services</h1>
+          <p>Empowering Innovation with Advanced AI Services</p>
         </div>
+
+        {isMobile ? (
+          <div className="mobile-services">
+            {services.map(({ title, desc }, i) => (
+              <div className="mobile-card" key={i}>
+                <div className="section-number">{String(i + 1).padStart(2, '0')}</div>
+                <h2>{title}</h2>
+                <p>{desc}</p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <motion.div
+            className="horizontal-wrapper"
+            style={{ x, width: totalWidth, height: '100vh' }}
+          >
+            {services.map(({ title, desc, iconSrc }, i) => (
+              <InView key={i} threshold={0.5} triggerOnce={false}>
+                {({ inView, ref }) => (
+                  <div className="hcard" ref={ref}>
+                    <div className="card-image">
+                      <picture className="icon-images">
+                        <source srcSet={iconSrc} type="image/webp" />
+                        <img
+                          src={iconSrc}
+                          alt={title}
+                          className="Dashboard"
+                          loading="lazy"
+                        />
+                      </picture>
+                    </div>
+                    <div className="card-content">
+                      <div className="section-number">{String(i + 1).padStart(2, '0')}</div>
+                      <h2>{title}</h2>
+                      <p>{desc}</p>
+                    </div>
+                  </div>
+                )}
+              </InView>
+            ))}
+          </motion.div>
+        )}
       </div>
     </section>
   );
-}
+};
+
+export default Services;

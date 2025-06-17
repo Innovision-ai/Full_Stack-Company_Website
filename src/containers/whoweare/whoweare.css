@@ -12,6 +12,7 @@
 .inv__who-about {
     text-align: center;
     margin-bottom: 48px;
+    margin-top: 20px;
 }
 
 .inv__who-about h1 {
@@ -56,7 +57,7 @@
 .inv__who-ourvalues {
     margin-top: 50px;
     width: 100%;
-    text-align: start;
+    text-align: center;
     position: relative;
     background: transparent;
 }
@@ -185,60 +186,63 @@
     transform: translateY(0);
 }
 
-@media (max-width: 1200px) {
-    .inv__who-about h1 {
-        font-size: 48px;
-    }
-    .inv__who-ourvalues h1 {
-        font-size: 72px;
-    }
-}
-
-@media (max-width: 900px) {
-    .inv__who-ourvalues-container {
-        flex-direction: column;
-        gap: 18px;
-        align-items: center;
-    }
-    .value-card,
-    .value-card.expanded {
-        max-width: 90vw;
-        width: 100%;
+@media screen and (max-width: 768px) {
+    .inv__who {
+        padding: 1rem;
     }
     .inv__who-about h1 {
         font-size: 36px;
-        margin-top: 60px;
-    }
-    .inv__who-ourvalues h1 {
-        font-size: 48px;
     }
     .inv__who-about p {
-        font-size: 28px;
+        font-size: 20px;
+    }
+    .inv__who-about-text {
+        max-height: none;
+        max-width: 100%;
+        padding: 0 1rem;
     }
     .inv__who-about-text p {
-        font-size: 18px;
+        font-size: 16px;
+        padding: 16px;
     }
-}
-
-.value-card {
-    position: relative;
-    overflow: hidden;
-    color: white;
-}
-
-.value-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background: inherit;
-    background-size: cover;
-    background-position: center;
-    filter: blur(2px);
-    transform: scale(1.1);
-}
-
-.value-card>* {
-    position: relative;
-    z-index: 1;
+    .inv__who-ourvalues h3 {
+        font-size: 28px;
+    }
+    .inv__who-ourvalues-border {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    .inv__who-ourvalues-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .value-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: unset;
+        height: auto;
+        padding: 24px 16px;
+    }
+    .value-card.expanded {
+        flex: unset;
+        max-width: 100%;
+        min-height: unset;
+    }
+    .value-card-header.center,
+    .value-card-header.top {
+        font-size: 1.5rem;
+        padding: 0 16px;
+        text-align: center;
+        justify-content: center;
+    }
+    .expand-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+        margin-left: 6px;
+    }
+    .value-card-content {
+        font-size: 16px;
+        margin-top: 40px;
+    }
 }

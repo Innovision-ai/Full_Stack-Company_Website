@@ -123,7 +123,7 @@ const features = [
                   <circle
                     className="cta-moving-dot"
                     r="4"
-                    fill="lightyellow"
+                    fill="yellow"
                   >
                     <animateMotion
                       dur="3s"

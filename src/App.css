@@ -5,12 +5,13 @@
     scroll-behavior: smooth;
 }
 
-.body {
-    background-color: black;
+body {
+    /* background-color: black; */
+    overflow-x: hidden;
 }
 
 .gradient__bg {
-    background: linear-gradient( 180deg, #0B0B1A 0%, #092229 20%, #157C97 50%, #3CAFC7 80%, #1F778F 100%);
+    background: linear-gradient( 180deg, #0B0B1A 0%, #0B0B1A 10%, #0f5769 50%, #3CAFC7 80%, #1F778F 100%);
 }
 
 .gradient__bg2 {
