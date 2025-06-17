@@ -3,7 +3,7 @@
 /* Scroll section */
 
 .services-bg {
-    position: fixed;
+    position: relative;
 }
 
 .horizontal-section {
