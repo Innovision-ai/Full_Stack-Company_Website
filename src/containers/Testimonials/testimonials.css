@@ -52,21 +52,20 @@ body {
 }
 
 .testimonial-card {
-    background: var(--card-bg);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    max-width: 480px;
-    min-width: 320px;
-    padding: 38px 32px 32px 32px;
-    position: relative;
+    flex: 1 1 500px;
+    /* 👈 Adjusts width flexibility */
+    max-width: 500px;
+    /* ✅ allows cards to grow equally */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* ✅ Pushes info to bottom */
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 38px 32px 32px 32px;
     margin: 0 8px 32px 8px;
     transition: box-shadow 0.2s;
-    height: 100%;
-    /* Let it grow to fill parent */
+    height: auto;
 }
 
 .testimonial-card:hover {
