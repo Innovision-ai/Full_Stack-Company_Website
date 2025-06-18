@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
-import logo1 from '../../assets/logo1.webp';
+import logo1 from '../../assets/logo1.png';
 import './navbar.css';
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
-    <div className="inv__navbar">
+    <div className="inv__navbar" id='home'>
       <div className="inv__navbar-links">
         <div className="inv__navbar-links_logo">
           <img src={logo1} alt="logo" />

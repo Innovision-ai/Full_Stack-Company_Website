@@ -11,7 +11,7 @@ body {
 }
 
 .gradient__bg {
-    background: linear-gradient( 180deg, #0B0B1A 0%, #0B0B1A 10%, #0f5769 50%, #3CAFC7 80%, #1F778F 100%);
+    background: linear-gradient( 180deg, #0b0b1a 0%, #0e0e20 15%, #14242d 35%, #1a3d4a 55%, #246170 75%, #2c8494 100%);
 }
 
 .gradient__bg2 {

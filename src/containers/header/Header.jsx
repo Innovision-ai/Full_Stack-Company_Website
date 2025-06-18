@@ -6,7 +6,7 @@ import Arrow3 from '../../assets/Arrow3.png';
 const Header = () => {
  
   return (
-    <div className='inv__header'>
+    <div className='inv__header' >
       <div>
       <h1>
         We Offer Modern Solutions For Growing Your Business.
