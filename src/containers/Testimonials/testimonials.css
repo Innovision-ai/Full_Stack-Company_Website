@@ -155,3 +155,12 @@ body {
         font-size: 2rem;
     }
 }
+
+@media (max-width: 768px) {
+    .testimonial-card:hover {
+        box-shadow: var(--shadow);
+    }
+    .testimonial-card {
+        padding: 24px 20px;
+    }
+}

@@ -264,3 +264,16 @@
         position: fixed;
     }
 }
+
+
+/* === Mobile Performance Patch for Portfolio Section === */
+
+@media (max-width: 768px) {
+    .video-wrapper {
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+    .btn {
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+}

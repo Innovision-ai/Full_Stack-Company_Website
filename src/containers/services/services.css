@@ -343,3 +343,16 @@
         font-family: 'Roboto', sans-serif;
     }
 }
+
+@media (max-width: 480px) {
+    .mobile-card:hover {
+        transform: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+    .horizontal-section {
+        background-image: none !important;
+    }
+    .icon-images img {
+        display: none !important;
+    }
+}
