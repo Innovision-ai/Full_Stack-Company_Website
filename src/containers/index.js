@@ -10,8 +10,6 @@ export { default as Whoweare }
 from './whoweare/Whoweare';
 export { default as Impact }
 from './impact/Impact';
-export { default as Aifeature }
-from './aifeature/Aifeature';
 export { default as Portfolio }
 from './portfolio/Portfolio';
 export { default as Testimonials }

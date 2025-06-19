@@ -1,241 +1,227 @@
-.inv__navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 4px 2rem;
-    /* position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    /* ensure it's above everything */
-    /* background-color: #000; */
-    /* or your navbar's background color */
-    /* padding: 1rem 2rem; */
-}
-
-.inv__navbar-links {
-    display: flex;
-    align-items: center;
-}
-
-.inv__navbar-links_logo {
-    margin-right: 1rem;
-}
-
-.inv__navbar-links_logo img {
-    width: 84px;
-    height: 84px;
-    /* background-color: #0B0B1A; */
-}
-
-.inv__navbar-contact {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.inv__navbar-contact p {
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-.inv__navbar-contact p:hover {
-    text-decoration: underline;
-}
-
-.inv__navbar-contact p a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.inv__navbar-contact_button button,
-.inv__navbar-menu_container-links-contact button {
-    background: linear-gradient(90deg, #ffffff 0%, #a4eff2 100%);
-    color: #0b1f38;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
-    border-radius: 8px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-}
-
-.inv__navbar-contact_button button:hover,
-.inv__navbar-menu_container-links-contact button:hover {
-    background: #a4eff2;
-    color: #003348;
-    transform: translateY(-2px);
-}
-
-.arrow {
-    font-size: 18px;
-    transition: transform 0.2s ease;
-}
-
-.inv__navbar-contact_button button:hover .arrow,
-.inv__navbar-menu_container-links-contact button:hover .arrow {
-    transform: translateX(5px);
-}
-
-.inv__navbar-menu {
-    display: none;
-    position: relative;
-    margin-left: 1rem;
-}
-
-.inv__navbar-menu svg {
-    cursor: pointer;
-}
-
-.inv__navbar-menu_container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    text-align: end;
-    background: var(--color-footer);
-    padding: 2rem;
-    position: absolute;
-    right: 0;
-    top: 40px;
-    margin-top: 1rem;
-    min-width: 210px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-    z-index: 9999;
-}
-
-.inv__navbar-menu_container-links p {
-    margin: 1rem 0;
-}
-
-.inv__navbar-menu_container-links p a {
-    color: black;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-}
-
-.inv__navbar-menu_container-links-contact {
-    margin-top: 1rem;
-}
-
-@media screen and (max-width: 1050px) {
-    .inv__navbar-contact {
-        display: none;
-    }
-    .inv__navbar-menu {
-        display: flex;
-    }
-    .inv__navbar-links_logo img {
-        height: 70px;
-        width: 70px;
-    }
-}
-
-@media screen and (max-width: 700px) {
     .inv__navbar {
-        padding: 2rem 4rem;
-    }
-    .inv__navbar-links_logo img {
-        height: 60px;
-        width: 60px;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .inv__navbar {
-        padding: 2rem;
-    }
-    .inv__navbar-menu_container {
-        top: 20px;
-    }
-    .inv__navbar-links_logo img {
-        height: 60px;
-        width: 60px;
-    }
-}
-
-
-/* Center the button inside mobile dropdown menu */
-
-@media screen and (max-width: 1050px) {
-    .inv__navbar-contact {
-        display: none;
-    }
-    .inv__navbar-menu {
         display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2px 2rem;
     }
-    .inv__navbar-menu_container-links-contact button {
-        margin: 0 auto;
+    
+    .inv__navbar-links {
         display: flex;
-        justify-content: center;
         align-items: center;
     }
+    
+    .inv__navbar-links_logo {
+        margin-right: 1rem;
+    }
+    
     .inv__navbar-links_logo img {
-        height: 80px;
-        width: 80px;
+        width: 84px;
+        height: 84px;
+        /* background-color: #0B0B1A; */
     }
-}
-
-
-/* Adjust padding for tablets */
-
-@media screen and (max-width: 700px) {
-    .inv__navbar {
-        padding: 1.5rem 2rem;
+    
+    .inv__navbar-contact {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
     }
-    .inv__navbar-menu_container {
-        padding: 1.5rem;
+    
+    .inv__navbar-contact p {
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
     }
-    .inv__navbar-menu_container-links p a {
+    
+    .inv__navbar-contact p:hover {
+        text-decoration: underline;
+    }
+    
+    .inv__navbar-contact p a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+    .inv__navbar-contact_button button,
+    .inv__navbar-menu_container-links-contact button {
+        background: linear-gradient(90deg, #ffffff 0%, #a4eff2 100%);
+        color: #0b1f38;
+        border: none;
+        padding: 12px 24px;
         font-size: 16px;
+        font-weight: 600;
+        font-family: 'Montserrat', sans-serif;
+        border-radius: 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
     }
-    .inv__navbar-menu_container-links-contact button {
-        width: 160px;
-        font-size: 14px;
-        padding: 10px 20px;
+    
+    .inv__navbar-contact_button button:hover,
+    .inv__navbar-menu_container-links-contact button:hover {
+        background: #a4eff2;
+        color: #003348;
+        transform: translateY(-2px);
     }
-    .inv__navbar-links_logo img {
-        height: 70px;
-        width: 70px;
+    
+    .arrow {
+        font-size: 18px;
+        transition: transform 0.2s ease;
     }
-}
-
-
-/* Optimize for very small devices */
-
-@media screen and (max-width: 550px) {
-    .inv__navbar {
-        padding: 1rem;
+    
+    .inv__navbar-contact_button button:hover .arrow,
+    .inv__navbar-menu_container-links-contact button:hover .arrow {
+        transform: translateX(5px);
     }
+    
+    .inv__navbar-menu {
+        display: none;
+        position: relative;
+        margin-left: 1rem;
+    }
+    
+    .inv__navbar-menu svg {
+        cursor: pointer;
+    }
+    
     .inv__navbar-menu_container {
-        top: 15px;
-        min-width: 180px;
-        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: end;
+        background: var(--color-footer);
+        padding: 2rem;
+        position: absolute;
+        right: 0;
+        top: 40px;
+        margin-top: 1rem;
+        min-width: 210px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        z-index: 9999;
     }
+    
     .inv__navbar-menu_container-links p {
-        margin: 0.8rem 0;
+        margin: 1rem 0;
     }
-    .inv__navbar-menu_container-links-contact button {
-        font-size: 13px;
-        padding: 8px 18px;
-        width: 140px;
-        margin: 0 auto;
+    
+    .inv__navbar-menu_container-links p a {
+        color: white;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
     }
-    .inv__navbar-links_logo img {
-        height: 60px;
-        width: 60px;
+    
+    .inv__navbar-menu_container-links-contact {
+        margin-top: 1rem;
     }
-}
-
-.inv__navbar-menu_container {
-    background-color: #a4eff2;
-}
+    
+    @media screen and (max-width: 1050px) {
+        .inv__navbar-contact {
+            display: none;
+        }
+        .inv__navbar-menu {
+            display: flex;
+        }
+        .inv__navbar-links_logo img {
+            height: 70px;
+            width: 70px;
+        }
+    }
+    
+    @media screen and (max-width: 700px) {
+        .inv__navbar {
+            padding: 2rem 4rem;
+        }
+        .inv__navbar-links_logo img {
+            height: 60px;
+            width: 60px;
+        }
+    }
+    
+    @media screen and (max-width: 550px) {
+        .inv__navbar {
+            padding: 2rem;
+        }
+        .inv__navbar-menu_container {
+            top: 20px;
+        }
+        .inv__navbar-links_logo img {
+            height: 60px;
+            width: 60px;
+        }
+    }
+    /* Center the button inside mobile dropdown menu */
+    
+    @media screen and (max-width: 1050px) {
+        .inv__navbar-contact {
+            display: none;
+        }
+        .inv__navbar-menu {
+            display: flex;
+        }
+        .inv__navbar-menu_container-links-contact button {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .inv__navbar-links_logo img {
+            height: 80px;
+            width: 80px;
+        }
+    }
+    /* Adjust padding for tablets */
+    
+    @media screen and (max-width: 700px) {
+        .inv__navbar {
+            padding: 1.5rem 2rem;
+        }
+        .inv__navbar-menu_container {
+            padding: 1.5rem;
+        }
+        .inv__navbar-menu_container-links p a {
+            font-size: 16px;
+        }
+        .inv__navbar-menu_container-links-contact button {
+            width: 160px;
+            font-size: 14px;
+            padding: 10px 20px;
+        }
+        .inv__navbar-links_logo img {
+            height: 70px;
+            width: 70px;
+        }
+    }
+    /* Optimize for very small devices */
+    
+    @media screen and (max-width: 550px) {
+        .inv__navbar {
+            padding: 1rem;
+        }
+        .inv__navbar-menu_container {
+            top: 15px;
+            min-width: 180px;
+            padding: 1rem;
+        }
+        .inv__navbar-menu_container-links p {
+            margin: 0.8rem 0;
+        }
+        .inv__navbar-menu_container-links-contact button {
+            font-size: 13px;
+            padding: 8px 18px;
+            width: 140px;
+            margin: 0 auto;
+        }
+        .inv__navbar-links_logo img {
+            height: 60px;
+            width: 60px;
+        }
+    }
+    
+    .inv__navbar-menu_container {
+        background-color: #1a3d4a;
+    }
