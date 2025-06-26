@@ -1,14 +1,53 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, lazy, Suspense } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import { Footer, Blog,  Header, Services, Whoweare, Impact, Portfolio, Testimonials, ScrollProgress } from './containers';
-import { Navbar } from './components';
-import {GlowingDots} from './components';
+
+import {
+  Footer,
+  Blog,
+  Header,
+  Services,
+  Whoweare,
+  Impact,
+  Portfolio,
+  Testimonials,
+  ScrollProgress
+} from './containers';
+
+import { Navbar, GlowingDots } from './components';
 import ScrollToTopLinkedIn1 from "./containers/ScrollToTopLinkedIn1";
-import './App.css';
 
-function App() {
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation
+} from 'react-router-dom';
+
+import UserContext from './UserContext';
+import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
+
+const JustMyPictures = lazy(() => import('./containers/pages/JustMyPictures/JustMyPictures'));
+const Login = lazy(() => import('./containers/pages/Login/Login'));
+const Signup = lazy(() => import('./containers/pages/Signup/Signup'));
+const Notfound = lazy(() => import('./containers/Notfound'));
+
+function AppContent() {
+  const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000,
+      cacheTime: 10 * 60 * 1000,
+      retry: 1
+    }
+  }
+});
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+  const [user, setUser] = useState(null);
+
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -18,61 +57,65 @@ function App() {
   }, []);
 
   return (
-    <div className="App gradient__bg1">
-      <ScrollProgress />
+    <UserContext.Provider value={{ user, setUser }}>
+      <div className="App gradient__bg1">
+        <ScrollProgress />
 
-     <div className="gradient__bg">
-  <Navbar />
-  
-    <Header />
+        {/* ✅ Navbar always visible */}
+        <div className="gradient__bg">
+          <Navbar />
+          {isHomePage && <GlowingDots />}
+          {isHomePage && (
+            <div className="gradient_bg">
+              <Header />
+            </div>
+          )}
+        </div>
+        <Routes>
+          <Route path="/" element={
+            <>
+              <div className="gradient__bg2">
+                <section id="Whoweare" data-aos="fade-up">
+                  <Whoweare />
+                </section>
+                <section id="service" data-aos="zoom-in">
+                  <Services />
+                </section>
+                <section>
+                  <Impact />
+                </section>
+                <section id="portfolio" data-aos="fade-up">
+                  <Portfolio />
+                </section>
+                <section data-aos="fade-up">
+                  <Testimonials />
+                </section>
+                <section id="blog" data-aos="fade-up">
+                  <Blog />
+                </section>
+                <ScrollToTopLinkedIn1 />
+                <Footer />
+              </div>
+            </>
+          } />
 
-  <GlowingDots />
-</div>
-
-
-      <div className="gradient__bg2">
-        {/* WhoWeAre with fade-up */}
-        <section id="Whoweare" data-aos="fade-up">
-          <Whoweare />
-        </section>
-
-        {/* Aifeature (commented out) */}
-        {/* <section data-aos="zoom-in">
-          <Aifeature />
-        </section> */}
-
-        {/* Services with zoom-in */}
-        <section id="service" data-aos="zoom-in">
-          <Services />
-        </section>
-
-        {/* Impact with fade-left */}
-        <section>
-          <Impact />
-        </section>
-
-        {/* Portfolio with flip-left */}
-        <section id="portfolio" data-aos="fade-up">
-          <Portfolio />
-        </section>
-
-        {/* Testimonials with fade-up */}
-        <section data-aos="fade-up">
-          <Testimonials />
-        </section>
-
-        {/* Blog with fade-up */}
-        <section id="blog" data-aos="fade-up">
-          <Blog />
-        </section>
-
-        <ScrollToTopLinkedIn1 />
-
-        {/* Footer with fade-up */}
-        
-          <Footer />
+          <Route path="/justmypictures" element={<JustMyPictures />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path ="*" element ={<Notfound/>}  />
+        </Routes>
       </div>
-    </div>
+    </UserContext.Provider>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <Suspense fallback={<LoadingSpinner />}>
+        <AppContent />
+      </Suspense>
+    </Router>
   );
 }
 

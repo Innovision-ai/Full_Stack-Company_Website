@@ -6,7 +6,7 @@ import { InView } from 'react-intersection-observer';
 import './services.css';
 
 import dashboard from '../../assets/dashboard.webp';
-import modell from '../../assets/modell.webp';
+import llm from '../../assets/llm.jpg';
 import bot from '../../assets/bot.webp';
 import prompt from '../../assets/prompt.webp';
 import dashboard1 from '../../assets/dashboard1.webp';
@@ -31,7 +31,7 @@ const services = [
   {
     title: "Generative AI & Large Language Models (LLMs)",
     desc: "We specialize in custom model training and fine-tuning, developing domain-specific AI solutions for personalized applications. Our generative AI expertise enables the creation of high-quality text, images, and videos tailored to diverse needs.",
-    iconSrc: modell,
+    iconSrc: llm,
   },
   {
     title: "Advanced Prompt Engineering",
