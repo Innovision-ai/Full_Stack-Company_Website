@@ -1,5 +1,5 @@
 // frontend/components/Navbar.jsx
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useCallback } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import axios from 'axios';
@@ -69,16 +69,25 @@ const handleLogout = () => {
     );
   };
 
-  const handleNavigation = (e, section) => {
+  const handleNavigation = useCallback((e, section) => {
     e.preventDefault();
-    if (isOnPicturePage) {
-      // Navigate to home page with section hash
-      window.location.href = `/#${section}`;
-    } else {
-      // Smooth scroll to section on current page
-      document.querySelector(`#${section}`)?.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+    setToggleMenu(false); // Close menu immediately
+
+    // Debounce navigation
+    setTimeout(() => {
+      if (isOnPicturePage) {
+        window.location.href = `/#${section}`;
+      } else {
+        const element = document.querySelector(`#${section}`);
+        if (element) {
+          element.scrollIntoView({ behavior: 'auto' }); // Change from smooth to auto on mobile
+        }
+      }
+    }, 100);
+  }, [isOnPicturePage]);
+
+  // Add this utility function
+  const isMobile = () => window.innerWidth <= 768;
 
   return (
     <>
@@ -110,9 +119,32 @@ const handleLogout = () => {
           }
           {toggleMenu && (
             <div className="inv__navbar-menu_container scale-up-center">
-              <p><a href="#home" onClick={(e) => { handleNavigation(e, 'home'); setToggleMenu(false); }}>HOME</a></p>
-              <p><a href="#Whoweare" onClick={(e) => { handleNavigation(e, 'Whoweare'); setToggleMenu(false); }}>ABOUT</a></p>
-              <p><a href="#service" onClick={(e) => { handleNavigation(e, 'service'); setToggleMenu(false); }}>SERVICE</a></p>
+              <p>
+                <a href="#home" onClick={(e) => {
+                  handleNavigation(e, 'home');
+                  if (isMobile()) {
+                    setToggleMenu(false);
+                  }
+                }}>
+                  HOME
+                </a>
+              </p>
+              <p>
+                <a href="#Whoweare" onClick={(e) => {
+                  handleNavigation(e, 'Whoweare');
+                  setToggleMenu(false);
+                }}>
+                  ABOUT
+                </a>
+              </p>
+              <p>
+                <a href="#service" onClick={(e) => {
+                  handleNavigation(e, 'service');
+                  setToggleMenu(false);
+                }}>
+                  SERVICE
+                </a>
+              </p>
               {!isOnPicturePage && (
                 <>
                   <p><a href="#portfolio" onClick={() => setToggleMenu(false)}>PORTFOLIO</a></p>

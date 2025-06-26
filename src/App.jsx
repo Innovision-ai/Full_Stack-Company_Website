@@ -110,6 +110,19 @@ function AppContent() {
 }
 
 function App() {
+  useEffect(() => {
+    // Preload routes on mobile
+    if (window.innerWidth <= 768) {
+      const routes = ['/', '/justmypictures'];
+      routes.forEach(route => {
+        const link = document.createElement('link');
+        link.rel = 'prefetch';
+        link.href = route;
+        document.head.appendChild(link);
+      });
+    }
+  }, []);
+
   return (
     <Router>
       <Suspense fallback={<LoadingSpinner />}>

@@ -236,3 +236,20 @@
 .inv__navbar-menu_container {
     background-color: #1a3d4a;
 }
+
+@media screen and (max-width: 768px) {
+    .inv__navbar-menu_container {
+        will-change: transform;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000px;
+    }
+    /* Reduce animation duration on mobile */
+    .scale-up-center {
+        animation-duration: 0.2s;
+    }
+    /* Optimize transitions */
+    * {
+        transition-duration: 0.2s !important;
+    }
+}

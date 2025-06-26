@@ -45,3 +45,17 @@ video {
         scroll-behavior: auto !important;
     }
 }
+
+@media (max-width: 768px) {
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    .scale-up-center {
+        animation-duration: 0.2s;
+    }
+    * {
+        transition-duration: 0.2s !important;
+    }
+}
