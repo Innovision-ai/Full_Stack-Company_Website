@@ -53,7 +53,7 @@ const handleLogout = () => {
     if (user) {
       return (
         <>
-          <p style={{ color: 'white', marginRight: '10px' }}>Hi, {user.username || user.displayName}</p>
+         
           <button onClick={handleLogout}>LOGOUT</button>
         </>
       );
@@ -62,7 +62,7 @@ const handleLogout = () => {
     return (
       <>
       <div className='signup-login-buttons'>
-        <button onClick={() => setShowSignup(true)}>SIGNUP</button>
+        {/* <button onClick={() => setShowSignup(true)}>SIGNUP</button> */}
         <button onClick={() => setShowLogin(true)} style={{ marginLeft: '8px' }}>LOGIN</button>
         </div>
       </>
@@ -99,7 +99,7 @@ const handleLogout = () => {
         <div className="inv__navbar-contact">
           <p><a href="#home" onClick={(e) => handleNavigation(e, 'home')}>HOME</a></p>
           <p><a href="#Whoweare" onClick={(e) => handleNavigation(e, 'Whoweare')}>ABOUT</a></p>
-          <p><a href="#service" onClick={(e) => handleNavigation(e, 'service')}>SERVICE</a></p>
+          <p><a href="#service" onClick={(e) => handleNavigation(e, 'service')}>SERVICES</a></p>
           {!isOnPicturePage && (
             <>
               <p><a href="#portfolio">PORTFOLIO</a></p>
@@ -142,7 +142,7 @@ const handleLogout = () => {
                   handleNavigation(e, 'service');
                   setToggleMenu(false);
                 }}>
-                  SERVICE
+                  SERVICES
                 </a>
               </p>
               {!isOnPicturePage && (

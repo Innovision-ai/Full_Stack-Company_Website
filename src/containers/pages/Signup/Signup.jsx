@@ -18,22 +18,8 @@ const Signup = ({ onClose }) => {
   const [username, setusername] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const validateForm = useMemo(() => ({
-    email: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
-    password: (value) => value.length >= 8,
-    username: (value) => value.length >= 3
-  }), []);
+  
 
-  const onSubmit = useCallback(async (data) => {
-    try {
-      setLoading(true);
-      // ...existing code...
-    } catch (err) {
-      setMessage(err.message);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
 
   const handleSendOtp = async () => {
     if (!email.includes('@')) {

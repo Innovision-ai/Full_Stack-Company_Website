@@ -6,9 +6,13 @@ import UserContext from '../../../UserContext';
 import justmy1 from '../../../assets/justmy1.png';
 import justmy2 from '../../../assets/justmy2.png';
 import justmy3 from '../../../assets/justmy3.png';
+import Arrowimg from '../../../assets/Arrowimg.png';
+import Star from '../../../assets/Star.png';
+import collage from '../../../assets/collage.png';
 import Login from '../Login/Login';
-
-const ML_BASE_URL = "https://cv-tremendous-coral-cause.trycloudflare.com";
+import Vector from '../../../assets/Vector.png';
+import Footer from '../../../containers/footer/Footer';
+const ML_BASE_URL = "https://tel-pending-leo-status.trycloudflare.com";
 
 export default function JustMyPictures() {
   const { user, setUser } = useContext(UserContext);
@@ -60,6 +64,10 @@ export default function JustMyPictures() {
     }
     if (user && !zipFile) {
       setError("Please select a ZIP file to upload.");
+      // Clear error after 2 seconds
+     setTimeout(()=>{
+setError("");
+     },2000) 
       return;
     }
 
@@ -124,11 +132,12 @@ export default function JustMyPictures() {
   }
 
   return (
+    <>
     <div className="justmypictures">
       <header className="header-banner">
         <h1><span>Just</span> My <b>Pictures</b></h1>
         <p className="subtitle">Sorting Pictures With <span className="ai-highlight">AI</span></p>
-        <p className="sub-subtitle">Upload Your Files Here</p>
+       
       </header>
 
       {/* Remove the welcome message and only show when logged in */}
@@ -139,7 +148,7 @@ export default function JustMyPictures() {
       )}
 
       {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
-
+ <p className="sub-subtitle">Upload Your Files Here</p>
       {step === 1 && (
         <div className="upload-area">
           <input
@@ -148,7 +157,9 @@ export default function JustMyPictures() {
             accept=".zip"
             onChange={e => setZipFile(e.target.files[0])}
           />
+          <br/>
           <p>or drag and drop</p>
+          <br/>
           <button
             onClick={() => {
               if (!user) {
@@ -172,6 +183,7 @@ export default function JustMyPictures() {
             accept="image/*"
             onChange={e => setRefImage(e.target.files[0])}
           />
+        <br/><br/><br/>
           <button
             onClick={() => {
               if (!user) {
@@ -210,16 +222,45 @@ export default function JustMyPictures() {
             <img src={justmy1} alt="justmy1" />
             <p>Picture File</p>
           </div>
-          <div className="arrow">➡️</div>
+        <div className="arrow-container">
+          <img src={Arrowimg} alt="Arrow" className="arrow" />
+        </div>
           <div>
             <img src={justmy2} alt="Reference" />
             <p>Reference Picture</p>
           </div>
+             <div className="arrow-container">
+          <img src={Arrowimg} alt="Arrow" className="arrow" />
+        </div>
         </div>
         <div className='sorted'>
+          <img src={Star} alt="sorted" />
           <img src={justmy3} alt="sorted" />
         </div>
       </div>
+      <div className="gradient-strip"></div>
+      <div className='How-works'>
+      <div className='howitworks'>
+        <h1>Just My Pictures</h1>
+        <p1>Just My Pictures is a smart, privacy-first web app that helps you find all the photos of a specific person from a large album — in seconds. Perfect for weddings, trips, or events, it uses face recognition to extract only the pictures you care about without storing your data.</p1>
+      </div>
+      <div className='collage'>
+        <img src={collage} alt="Collage" />
+        <div className='collage-text'>
+          <h1>How It Works?</h1>
+        <p>To get started, simply upload a ZIP folder containing your photos along with 1–2 reference images of the person you want to find. Our AI scans the album, detects faces, and matches them with the reference images. Within seconds, you’ll get a preview of all the photos that contain the selected person. You can then download just those matched images — and all data is automatically deleted after processing to ensure privacy.</p>
+        </div>
     </div>
+    <div className='vector'>
+        <img src={Vector} alt="Vector" />
+    </div>
+    </div>
+    
+    </div>
+    <div className='margin'>
+                <span> .</span>
+                </div>
+    <Footer />
+    </>
   );
 }

@@ -1,5 +1,5 @@
 // frontend/containers/pages/JustMyPictures/Login/Login.jsx
-import React, { useState, useContext, memo, useCallback, useMemo } from "react";
+import React, { useState, useContext, memo } from "react";
 import axios from "axios";
 import UserContext from "../../../UserContext";
 import { useNavigate } from "react-router-dom";
@@ -58,15 +58,6 @@ export default memo(function Login({ onClose }) {
   }
 
   if (showForgot) return <ForgotPassword onClose={onClose} />;
-
-  const handleSubmit = useCallback(async (e) => {
-    e.preventDefault();
-    // ...existing code...
-  }, [email, password]);
-
-  const validateForm = useMemo(() => {
-    return email && password.length >= 8;
-  }, [email, password]);
 
   return (
     <div className="modal-backdrop">
