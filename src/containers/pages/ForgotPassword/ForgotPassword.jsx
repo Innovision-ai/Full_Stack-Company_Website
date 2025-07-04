@@ -15,7 +15,7 @@ export default function ForgotPassword({ onClose }) {
       return;
     }
     try {
-      await axios.post("http://localhost:3333/api/auth/forgot-password/send-otp", {
+      await axios.post("https://innovisionai-backend-1.onrender.com/api/auth/forgot-password/send-otp", {
         email,
       });
       setStep(2);

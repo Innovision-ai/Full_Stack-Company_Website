@@ -26,7 +26,7 @@ export default memo(function Login({ onClose }) {
 
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:3333/api/auth/login", {
+      const res = await axios.post("https://innovisionai-backend-1.onrender.com/api/auth/login", {
         email,
         password,
       });
@@ -49,7 +49,7 @@ export default memo(function Login({ onClose }) {
   };
 
   const loginWithGoogle = () => {
-    window.open("http://localhost:3333/api/auth/google", "_self");
+    window.open("https://innovisionai-backend-1.onrender.com/api/auth/google", "_self");
   };
 
   // ✅ If user clicks "Signup", switch modal

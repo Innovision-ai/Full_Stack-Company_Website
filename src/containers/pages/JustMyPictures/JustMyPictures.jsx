@@ -30,7 +30,7 @@ export default function JustMyPictures() {
     const checkAuth = () => {
       const token = localStorage.getItem("token");
 
-      axios.get("http://localhost:3333/api/auth/me", {
+      axios.get("https://innovisionai-backend-1.onrender.com/api/auth/me", {
         headers: token ? { Authorization: `Bearer ${token}` } : {},
         withCredentials: true,
       })
@@ -77,7 +77,7 @@ setError("");
       const formData = new FormData();
       formData.append('file', zipFile);
 
-      const res = await axios.post('http://localhost:3333/api/upload-photos', formData, {
+      const res = await axios.post('https://innovisionai-backend-1.onrender.com/api/upload-photos', formData, {
         withCredentials: true,
       });
 
@@ -105,7 +105,7 @@ setError("");
       formData.append('folder_name', folderName || 'fallback');
 
       const res = await axios.post(
-        'http://localhost:3333/api/upload-target-image',
+        'https://innovisionai-backend-1.onrender.com/api/upload-target-image',
         formData,
         { withCredentials: true }
       );

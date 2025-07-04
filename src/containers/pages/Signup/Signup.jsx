@@ -37,7 +37,7 @@ const Signup = ({ onClose }) => {
 
     setLoading(true);
     try {
-      await axios.post("http://localhost:3333/api/auth/send-otp", {
+      await axios.post("https://innovisionai-backend-1.onrender.com/api/auth/send-otp", {
         username,
         email,
         password,
@@ -59,7 +59,7 @@ const Signup = ({ onClose }) => {
 
     setLoading(true);
     try {
-      await axios.post("http://localhost:3333/api/auth/verify-otp", {
+      await axios.post("https://innovisionai-backend-1.onrender.com/api/auth/verify-otp", {
         email,
         otp,
       });
@@ -75,7 +75,7 @@ const Signup = ({ onClose }) => {
     }
   };
   const loginWithGoogle = () => {
-    window.open("http://localhost:3333/api/auth/google", "_self");
+    window.open("https://innovisionai-backend-1.onrender.com/api/auth/google", "_self");
   };
 
 
