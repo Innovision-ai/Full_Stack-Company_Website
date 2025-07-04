@@ -1,248 +1,361 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Roboto:wght@400;700&display=swap');
-.inv__who {
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+.about-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem 3.5rem;
-    color: #fff;
-    margin: 0 auto;
-    background: linear-gradient(180deg, #FFFFFF 0%, #40B6C4 100%);
+    background: radial-gradient(97.75% 97.75% at 50% 2.25%, #116466 0%, #D1E8E2 38.99%, rgba(17, 100, 102, 0.08) 100%);
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    color: #1d2e33;
+    overflow: hidden;
 }
 
-.inv__who-about {
-    text-align: center;
-    margin-bottom: 48px;
-    margin-top: 20px;
-}
-
-.inv__who-about h1 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 64px;
-    font-weight: 600;
-    background: black;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-}
-
-.inv__who-about p {
-    font-family: "Roboto", sans-serif;
-    font-size: 36px;
-    color: black;
-    margin-top: 20px;
-    margin-bottom: 16px;
-}
-
-.inv__who-about-text {
-    max-width: 1500px;
-    max-height: 300px;
-    background: rgba(204, 204, 204, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.32);
-    border-radius: 16px;
-}
-
-.inv__who-about-text p {
-    font-family: "Roboto", sans-serif;
-    font-size: 24px;
-    font-weight: 400;
-    color: black;
-    padding: 18px 40px;
-    margin: 0 auto;
-    line-height: 1.3;
-}
-
-.inv__who-ourvalues {
-    margin-top: 50px;
-    width: 100%;
-    text-align: center;
-    position: relative;
-    background: transparent;
-}
-
-.inv__who-ourvalues h3 {
-    font-family: "Montserrat", sans-serif;
-    font-size: 40px;
-    font-weight: 500;
-    padding: 4px 3px;
-    background: black;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    color: transparent;
-    margin-left: 2px;
-}
-
-.inv__who-ourvalues-border {
-    max-width: 290px;
-    border-left: 4px solid black;
-    border-right: 4px solid black;
-    margin-left: 10px;
-}
-
-.inv__who-ourvalues-container {
+.danda {
     display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: stretch;
-    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 2.5rem;
     margin-top: 2rem;
 }
 
-.value-card {
-    border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(34, 41, 47, 0.10);
-    flex: 1 1 280px;
-    min-width: 280px;
-    max-width: 280px;
-    height: 400px;
-    padding: 32px 20px;
+.danda img {
+    width: 4px
+}
+
+.about-left {
+    flex-shrink: 0;
+    padding: 20px;
+    background: #FFFFFF30;
+    width: 501px;
+    height: 700px;
+    margin-left: 2rem;
+    margin-top: 20px;
+}
+
+.about-left h2 {
+    font-family: "Raleway", sans-serif;
+    font-size: 40px;
+    color: #2C3531;
+    padding-top: 20px;
+}
+
+.about-left p {
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #116466;
+    font-family: "Open Sans", sans-serif;
+    font-size: 24px;
+    margin-top: 40px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding-right: 20px;
+}
+
+.contact-btn {
+    padding: 10px 20px;
+    border: none;
+    background: #D1E8E2;
+    color: #005c66;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background 0.3s;
+    width: 300px;
+    height: 50px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+}
+
+.about-right {
+    flex: 1;
+    padding: 20px;
+    margin-left: 40px;
+    position: relative;
     display: flex;
     flex-direction: column;
-    position: relative;
+}
+
+.about-right h3 {
+    font-size: 35px;
+    margin-bottom: 50px;
+    color: #116466;
+    margin-left: 250px;
+    font-family: "Raleway", sans-serif;
+}
+
+
+/* .about-right .highlight {
+    color: #4aa6a7;
+} */
+
+.card-area {
+    display: flex;
+    align-items: flex-end;
+    gap: 40px;
+    /* min-height: 650px; */
+}
+
+.card {
+    background-size: cover;
+    background-position: center;
     overflow: hidden;
-    background-blend-mode: overlay;
-    color: #fff;
-    background: linear-gradient(180deg, rgba(64, 182, 196, 0.8) 0%, rgba(64, 182, 196, 0.6) 100%);
-    transition: flex 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), max-width 0.4s cubic-bezier(0.4, 0.0, 0.2, 1), padding 0.4s ease, transform 0.3s ease, background 0.3s ease;
+    transition: all 0.4s ease;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
-.value-card.expanded {
-    flex: 2.5 1 500px;
-    max-width: 900px;
-    min-height: 400px;
-}
-
-.value-card-header.center,
-.value-card-header.top {
-    font-size: 2rem;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    transition: all 0.5s ease;
+.card.expanded {
+    width: 450px;
+    height: 500px;
     z-index: 2;
-    padding: 0 24px;
 }
 
-.value-card-header.center {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+.card.preview {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.value-card-header.top {
-    position: relative;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-top: 0;
-    padding-bottom: 0;
-    width: 100%;
-}
-
-.expand-btn {
-    background: #40b6c4;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 80px;
-    height: 40px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: background 0.2s;
-    margin-left: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.expand-btn:hover {
-    background: #1f778f;
-}
-
-.value-card-content {
-    margin-top: 100px;
-    font-size: 20px;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    color: #e0f7fa;
-    min-height: 28px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    width: 400px;
+    height: 391px;
     z-index: 1;
+    cursor: pointer;
+    filter: brightness(0.8);
+    text-align: start;
 }
 
-.value-card.expanded .value-card-content {
-    opacity: 1;
-    transform: translateY(0);
+.card-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px
 }
 
-@media screen and (max-width: 768px) {
-    .inv__who {
-        padding: 1rem;
+.card-overlay h4 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-family: "Raleway", sans-serif;
+}
+
+.card-overlay p {
+    font-size: 20px;
+    line-height: 1.6;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-family: "Open Sans", sans-serif;
+}
+
+.carousel-controls {
+    margin-top: 20px;
+    font-size: 30px;
+    color: #333;
+    user-select: none;
+}
+
+.carousel-controls .arrow {
+    margin: 0 10px;
+    cursor: pointer;
+    width: 30px;
+    height: 100px;
+}
+
+@media (max-width: 1200px) {
+    .about-container {
+        /* flex-direction: column; */
+        align-items: center;
+        padding: 30px 20px;
     }
-    .inv__who-about h1 {
-        font-size: 36px;
+    .about-left,
+    .about-right {
+        width: 100%;
+        margin-left: 0;
+        height: auto;
     }
-    .inv__who-about p {
+    .about-left {
+        max-width: 500px;
+    }
+    .about-right {
+        margin-top: 40px;
+    }
+    .about-right h3 {
+        margin-left: 1rem;
+        /* text-align: center; */
+    }
+    .card-area {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .card.preview,
+    .card.expanded {
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+    }
+    .card.preview {
+        height: 100px;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 950px) {
+    .about-container {
+        /* flex-direction: column; */
+        align-items: center;
+        padding: 20px 15px;
+    }
+    .about-left,
+    .about-right {
+        width: 100%;
+        margin-left: 0;
+        height: auto;
+    }
+    .about-left {
+        max-width: 400px;
+        padding: 15px;
+    }
+    .about-left h2 {
+        font-size: 30px;
+        padding-top: 10px;
+    }
+    .about-left p {
+        font-size: 18px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .about-right {
+        margin-top: 30px;
+        padding: 10px;
+    }
+    .about-right h3 {
+        font-size: 26px;
+        margin-left: 1rem;
+    }
+    .card-area {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .card.preview,
+    .card.expanded {
+        width: 85%;
+        max-width: 360px;
+        height: auto;
+    }
+    .card.preview {
+        height: 90px;
+    }
+    .card-overlay h4 {
         font-size: 20px;
     }
-    .inv__who-about-text {
-        max-height: none;
-        max-width: 100%;
+    .card-overlay p {
+        font-size: 14px;
         padding: 0 1rem;
     }
-    .inv__who-about-text p {
-        font-size: 16px;
-        padding: 16px;
+    .contact-btn {
+        width: 80%;
+        max-width: 260px;
+        height: 44px;
+        font-size: 15px;
     }
-    .inv__who-ourvalues h3 {
-        font-size: 28px;
-    }
-    .inv__who-ourvalues-border {
-        max-width: 90%;
-        margin: 0 auto;
-    }
-    .inv__who-ourvalues-container {
+}
+
+@media (max-width: 550px) {
+    .about-container {
         flex-direction: column;
         align-items: center;
+        padding: 20px 10px;
+        background: white;
     }
-    .value-card {
+    .about-left {
         width: 100%;
-        max-width: 100%;
-        min-width: unset;
+        margin: 0;
+        padding: 10px;
         height: auto;
-        padding: 24px 16px;
+        background-color: white;
     }
-    .value-card.expanded {
-        flex: unset;
-        max-width: 100%;
-        min-height: unset;
-    }
-    .value-card-header.center,
-    .value-card-header.top {
-        font-size: 1.5rem;
-        padding: 0 16px;
+    .about-left h2 {
+        font-size: 26px;
         text-align: center;
+        padding-top: 10px;
+    }
+    .about-left p {
+        font-size: 16px;
+        padding: 0 1rem;
+        text-align: justify;
+        margin-top: 20px;
+        padding-left: 0px;
+    }
+    .about-left img {
+        height: 4rem;
+    }
+    .contact {
+        display: none;
+    }
+    .about-right {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .about-right h3 {
+        font-size: 22px;
+        text-align: center;
+        margin: 30px 0 20px;
+    }
+    .card-area {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding: 10px 0;
         justify-content: center;
     }
-    .expand-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-        margin-left: 6px;
+    .card {
+        flex-shrink: 0;
+        scroll-snap-align: start;
     }
-    .value-card-content {
-        font-size: 16px;
-        margin-top: 40px;
+    .card.expanded {
+        flex: 1;
+        min-width: 200px;
+        height: 300px;
+    }
+    .card.preview {
+        display: none;
+    }
+    .card-overlay {
+        padding: 10px;
+        gap: 20px;
+    }
+    .card-overlay h4 {
+        font-size: 18px;
+        text-align: center;
+    }
+    .card-overlay p {
+        font-size: 14px;
+        padding: 0 0.5rem;
+        text-align: justify;
+    }
+    .carousel-controls {
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+    }
+    .carousel-controls .arrow {
+        width: 40px;
+        height: 60px;
+    }
+    .danda {
+        gap: 0.8rem;
     }
 }

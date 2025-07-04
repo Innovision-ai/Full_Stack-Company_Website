@@ -11,7 +11,7 @@ import bot from '../../assets/bot.webp';
 import prompt from '../../assets/prompt.webp';
 import dashboard1 from '../../assets/dashboard1.webp';
 import generative from '../../assets/generative.webp';
-
+import Danda from '../../assets/Danda.png';
 const services = [
   {
     title: "AI-Powered Data Solutions",
@@ -93,10 +93,30 @@ const Services = () => {
           overflow: isMobile ? 'visible' : 'hidden',
         }}
       >
-        <div className="offer-static">
-          <h1>Our Services</h1>
-          <p>Empowering Innovation with Advanced AI Services</p>
-        </div>
+      {isMobile ? (
+  <div className="offer-static mobile-offer">
+    <img src={Danda} alt="Danda" className="danda-image" />
+    <div className="text-block">
+      <h1>Our Services</h1>
+      <p>Empowering Innovation with Advanced AI Services</p>
+      
+    </div>
+  </div>
+) : (
+  <div className="offer-static desktop-offer">
+    <div className="offer-left">
+      <p>Empowering Innovation with Advanced AI Services</p>
+    </div>
+    <div className="offer-line">
+      <img src={Danda} alt="Danda" />
+    </div>
+    <div className="offer-right">
+      <h1>Our Services</h1>
+    </div>
+  </div>
+)}
+
+
 
         {isMobile ? (
           <div className="mobile-services">

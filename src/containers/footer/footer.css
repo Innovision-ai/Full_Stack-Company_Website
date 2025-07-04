@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap');
 .footer {
     background: linear-gradient( 180deg, #0B0B1A 0%, #0B0B1A 20%, #157C97 50%, #3CAFC7 80%, #1F778F 100%);
     color: #eaf6fb;
@@ -114,6 +114,8 @@
 
 /* Links Section */
 
+
+/* 
 .footer-links {
     flex: 2 1 480px;
     display: flex;
@@ -161,7 +163,7 @@
 }
 
 
-/* Copyright & Divider */
+
 
 .footer-bottom {
     padding: 0 32px 18px 32px;
@@ -182,7 +184,7 @@
 }
 
 
-/* Responsive Design */
+
 
 @media (max-width: 900px) {
     .footer-main {
@@ -201,5 +203,189 @@
     }
     .footer-bottom {
         padding: 0 10px 12px 10px;
+    }
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap');
+.footer {
+    font-family: 'Raleway', sans-serif;
+    background: radial-gradient(64.91% 74.87% at 50% 8.46%, #000000 9.62%, #2B706D 52.4%, #10393A 96.15%);
+    color: #fff;
+    padding: 40px 60px;
+    padding-top: 4rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.footer-column {
+    min-width: 220px;
+}
+
+.footer-column h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-family: "Raleway", sans-serif;
+}
+
+.footer-column p,
+.footer-column li {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #e2e2e2;
+    font-family: "Raleway", sans-serif;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.center-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+}
+
+.center-form input,
+.center-form textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #1a3c41;
+    color: white;
+    width: 100%;
+}
+
+.center-form input::placeholder,
+.center-form textarea::placeholder {
+    color: #aaa;
+}
+
+.center-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+.center-form button {
+    background: none;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    align-self: flex-start;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.center-form button:hover {
+    background-color: #fff;
+    color: #1a3c41;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+.footer-bar {
+    height: 2px;
+    background-color: #ccc;
+    margin-bottom: 10px;
+    opacity: 0.4;
+}
+
+.footer-column li {
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+
+/* Mobile Devices (320px to 480px) */
+
+@media screen and (max-width: 480px) {
+    .footer {
+        padding: 2rem 1rem;
+    }
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    .footer-column {
+        min-width: 100%;
+        text-align: left;
+        /* Changed from center to left */
+    }
+    .footer-column h3 {
+        font-size: 1.2rem;
+        text-align: left;
+        /* Ensure headers are left-aligned */
+    }
+    .footer-column p,
+    .footer-column li {
+        justify-content: flex-start;
+        /* Changed from center to flex-start */
+        font-size: 0.9rem;
+    }
+    .center-form form {
+        gap: 8px;
+        align-items: flex-start;
+        /* Align form elements to left */
+    }
+    .input-row {
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+    }
+    .center-form button {
+        align-self: flex-start;
+        /* Changed from center to flex-start */
+        width: auto;
+        /* Changed from 100% to auto */
+        min-width: 120px;
+    }
+    .footer-bottom {
+        margin-top: 3rem;
+        text-align: left;
+        /* Changed from center to left */
+    }
+}
+
+
+/* Small Tablets (481px to 768px) */
+
+@media screen and (max-width: 768px) {
+    .footer {
+        padding: 3rem 1.5rem;
+    }
+    .footer-content {
+        gap: 2.5rem;
+    }
+    .footer-column {
+        min-width: 45%;
+    }
+    .center-form {
+        min-width: 100%;
+    }
+    .footer-bottom {
+        margin-top: 4rem;
     }
 }

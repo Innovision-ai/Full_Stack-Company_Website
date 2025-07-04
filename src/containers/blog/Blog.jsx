@@ -3,7 +3,7 @@ import './blog.css';
 import yoga4 from '../../assets/yoga4.png';
 import yoga5 from '../../assets/yoga5.jpg';
 import RAG1 from '../../assets/RAG1.jpg';
-
+import Danda from '../../assets/Danda.png'; // Importing Danda if needed
 const blogs = [
   {
     image: yoga4, // Corrected: using the imported variable directly
@@ -27,7 +27,10 @@ function Blog() {
      <section id="blog">
     <div className="blog-section">
       <div className="blog-header">
-        <h2>Our Blogs/Research Paper</h2>
+<img src={Danda} alt="Danda" className="blog-icon" />
+        <h2>Our Blogs</h2>
+        <span>/</span>
+        <h2>Research Paper</h2>
       </div>
       <div className="blog-list">
         {blogs.map((blog, index) => (

@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 .portfolio {
     padding: 4rem 2rem;
-    background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+    background-color: white;
     color: #ffffff;
     font-family: 'Inter', sans-serif;
 }
@@ -9,7 +10,6 @@
 .portfolio-title {
     font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 3rem;
     font-weight: 700;
     color: #ffffff;
 }
@@ -17,9 +17,9 @@
 .portfolio-content {
     display: flex;
     flex-direction: row-reverse;
-    justify-content: center;
+    justify-content: space-around;
     align-items: flex-start;
-    gap: 3rem;
+    /* gap: 5rem; */
     flex-wrap: wrap;
 }
 
@@ -94,37 +94,61 @@
 
 .video-info {
     flex: 1;
-    max-width: 500px;
+    max-width: 400px;
     padding: 1rem 0;
+    background: #D1E8E291;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-top: -9rem;
+    z-index: 0;
+}
+
+.video-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem;
+    z-index: 1;
+    background-color: white;
+}
+
+.video-box {
+    margin-bottom: 5rem;
 }
 
 .video-title {
     font-size: 2rem;
     font-weight: 600;
-    margin-bottom: 1rem;
-    color: #ffffff;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    margin-left: 14rem;
+    background-color: white;
+    padding: 10px;
+    font-family: "open sans", sans-serif;
 }
 
 .video-desc {
     font-size: 1.1rem;
     line-height: 1.7;
-    color: #cfd8dc;
-    margin-bottom: 1rem;
-}
-
-.tech-tags {
-    margin: 1rem 0;
+    color: #116466;
+    margin-top: 9rem;
+    margin-bottom: 2rem;
+    font-family: "open sans", sans-serif;
 }
 
 .tech-tag {
-    display: inline-block;
-    background: #00acc1;
-    color: #fff;
+    display: flex;
+    flex-direction: column;
+    color: #116466;
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
     margin: 0 0.4rem 0.5rem 0;
     font-size: 0.9rem;
     font-weight: 500;
+    font-family: "Open Sans", sans-serif;
 }
 
 .video-buttons {
@@ -159,121 +183,255 @@
     color: #000;
 }
 
+.our {
+    display: flex;
+    margin-left: 90px;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
 .our h2 {
     text-align: center;
-    margin-top: -10px;
-    font-family: "Montserrat";
-    font-size: 48px;
-    background: white;
+    margin-top: 6px;
+    font-family: "Raleway", sans-serif;
+    font-size: 40px;
+    background: black;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+
+.our img {
+    margin-top: -20px;
+    width: 5px;
+    height: 100px;
 }
 
 .our h3 {
     text-align: center;
-    margin-top: -30px;
-    margin-bottom: 30px;
-    font-size: 24px;
-    background: white;
+    /* margin-top: -30px; */
+    /* margin-bottom: 30px; */
+    font-size: 40px;
+    background: #116466;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-family: "Roboto";
-    font-weight: 100;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+}
+
+@media (max-width: 950px) {
+    .portfolio {
+        padding: 3rem 1.5rem;
+    }
+    .portfolio-title {
+        font-size: 2rem;
+    }
+    .portfolio-content {
+        flex-direction: row-reverse;
+        justify-content: space-around;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .video-wrapper {
+        flex: 1;
+        max-width: 520px;
+        aspect-ratio: 16 / 9;
+        border-radius: 12px;
+    }
+    .video-thumbnail {
+        border-radius: 12px;
+    }
+    .play-button {
+        font-size: 40px;
+        padding: 10px 16px;
+    }
+    .arrows button {
+        padding: 0.4rem;
+    }
+    .video-info {
+        flex: 1;
+        max-width: 340px;
+        padding: 0.8rem 1.5rem;
+        margin-top: -6rem;
+    }
+    .video-box {
+        margin-bottom: 4rem;
+    }
+    .video-header {
+        margin-bottom: 2.5rem;
+    }
+    .video-title {
+        font-size: 1.7rem;
+        margin-left: 8rem;
+        padding: 8px;
+    }
+    .video-desc {
+        font-size: 1rem;
+        margin-top: 6rem;
+        margin-bottom: 1.5rem;
+    }
+    .tech-tag {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+        margin: 0 0.3rem 0.4rem 0;
+    }
+    .video-buttons {
+        margin-top: 1.2rem;
+        gap: 0.8rem;
+    }
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        border-radius: 6px;
+    }
+    .our {
+        margin-left: 60px;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    .our h2 {
+        font-size: 32px;
+        margin-top: 4px;
+    }
+    .our img {
+        width: 4px;
+        height: 80px;
+        margin-top: -16px;
+    }
+    .our h3 {
+        font-size: 32px;
+    }
 }
 
 
 /* 👇 Mobile First - For screens less than 480px wide */
 
-@media (max-width: 480px) {
+@media screen and (max-width: 550px) {
     .portfolio {
         padding: 2rem 1rem;
     }
     .portfolio-title {
-        font-size: 1.6rem;
-        margin-bottom: 2rem;
-    }
-    .our h2 {
-        font-size: 28px;
-    }
-    .our h3 {
-        font-size: 16px;
-        margin-top: -10px;
-        margin-bottom: 20px;
+        font-size: 1.8rem;
     }
     .portfolio-content {
         flex-direction: column-reverse;
         align-items: center;
-        gap: 2rem;
+        gap: 1.5rem;
     }
     .video-wrapper {
         width: 100%;
         max-width: 100%;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-    .video-thumbnail {
-        border-radius: 12px;
     }
     .video-info {
-        width: 100%;
-        text-align: center;
-        padding: 0;
+        max-width: 100%;
+        padding: 1rem;
+        margin-top: 5px;
+        background: rgba(209, 232, 226, 0.8);
+        margin-bottom: 0;
     }
     .video-title {
-        font-size: 1.4rem;
-        margin-bottom: 0.5rem;
+        font-size: 1.5rem;
+        margin-left: 0;
+        text-align: center;
+        padding: 0.5rem;
     }
     .video-desc {
         font-size: 0.95rem;
-        padding: 0 0.5rem;
         line-height: 1.5;
-        color: #cfd8dc;
+        margin-top: 5px;
     }
     .tech-tag {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
         padding: 0.3rem 0.6rem;
-        margin: 0.2rem;
     }
     .video-buttons {
         flex-direction: column;
+        gap: 0.8rem;
         align-items: center;
-        gap: 0.6rem;
-        margin-top: 1rem;
     }
     .btn {
-        font-size: 0.85rem;
-        padding: 0.5rem 1rem;
+        width: 100%;
+        max-width: 250px;
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
     }
-    .arrows button {
-        padding: 0.3rem;
-        width: 32px;
-        height: 32px;
+    .our-desktop {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 3rem;
     }
-    .arrows svg {
-        width: 20px;
-        height: 20px;
+    .our-left h3 {
+        font-size: 28px;
+        font-family: 'Raleway', sans-serif;
+        color: #116466;
+        margin: 0;
+    }
+    .our-line img {
+        width: 4px;
+        height: 60px;
+    }
+    .our-right h2.portfolio-title {
+        font-size: 36px;
+        font-family: 'Raleway', sans-serif;
+        color: #2C3531;
+        margin: 0;
     }
     .play-button {
         font-size: 36px;
         padding: 8px 12px;
     }
-}
-
-@media (min-width: 769px) {
-    .services-bg {
-        position: fixed;
+    .arrows button {
+        padding: 0.3rem;
+        font-size: 1rem;
     }
 }
 
 
-/* === Mobile Performance Patch for Portfolio Section === */
+/* Tablets and small desktops: 481px to 768px */
 
-@media (max-width: 768px) {
-    .video-wrapper {
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease;
+
+/* Medium desktops: 769px to 1024px */
+
+@media (max-width: 550px) {
+    .our-mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1rem;
+        /* padding: 1rem; */
+        margin-top: 2rem;
+        margin-left: -0.1rem;
     }
-    .btn {
-        transition: background-color 0.3s ease, transform 0.2s ease;
+    .our-line img {
+        padding-top: 10px;
+        width: 4px;
+        height: 5rem;
+    }
+    .our-text-column {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .our-text-column h3 {
+        font-size: 20px;
+        font-family: 'Raleway', sans-serif;
+        color: #116466;
+        margin: 0;
+        line-height: 1.4;
+    }
+    .our-text-column h2 {
+        font-size: 30px;
+        display: flex;
+        flex: 1;
+        margin: 0;
+    }
+    .our-text-column .portfolio-title {
+        font-size: 18px;
+        font-family: 'Raleway', sans-serif;
+        color: #2C3531;
+        margin: 0;
     }
 }

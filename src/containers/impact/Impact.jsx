@@ -1,6 +1,6 @@
 import React from 'react';
 import './impact.css';
-
+import Danda from '../../assets/Danda.png';
 const Impact = () => {
     const impactData = [
         {
@@ -25,9 +25,11 @@ const Impact = () => {
         <div className='padding'>
         <div className='inv__impact'>
             <div className='inv__impact-header'>
+                <img src={Danda} alt="Impact Icon" className='inv__impact-icon' />
                 <h1>Delivering Impact Through Intelligent Solutions</h1>
 
             </div>
+            <div className='inv__impact-main'>
             <div className='inv__impact-box'>
                 <div className='inv__impact-content'>
                     {impactData.map((item, index) => (
@@ -38,12 +40,10 @@ const Impact = () => {
                     ))}
                 </div>
             </div>
-           
+           </div>
             </div>
         
-         <div className='margin'>
-                <span> .</span>
-                </div>
+        
         </div>
     );
 };

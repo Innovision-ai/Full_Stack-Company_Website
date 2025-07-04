@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 /* Scroll section */
 
@@ -11,7 +12,7 @@
     overflow: hidden;
     min-height: 100vh;
     z-index: 1;
-    background-image: url('/backg.svg');
+    background-image: url('/AI-bg.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -82,28 +83,40 @@
 }
 
 .offer-static {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     position: absolute;
+    top: 4%;
     left: 50%;
-    top: 20%;
-    /* adjust vertical position */
-    transform: translate(-50%, -80%);
+    transform: translateX(-50%);
     z-index: 0;
-    /* behind card content */
     pointer-events: none;
     user-select: none;
+    gap: 2rem;
 }
 
-.offer-static h1 {
-    text-align: center;
-    font-size: 64px;
-    font-family: "Montserrat";
+.offer-left p {
+    font-size: 40px;
+    font-family: 'Raleway', sans-serif;
+    color: #116466;
+    font-weight: 600;
+    margin: 0;
+    white-space: nowrap;
 }
 
-.offer-static p {
-    font-size: 30px;
-    margin-top: 20px;
-    font-family: 'Roboto';
-    align-items: center;
+.offer-line img {
+    width: 4px;
+    height: 100px;
+}
+
+.offer-right h1 {
+    font-size: 40px;
+    font-family: 'Raleway', sans-serif;
+    color: #2C3531;
+    margin: 0;
+    white-space: nowrap;
 }
 
 .icon-images {
@@ -148,11 +161,38 @@
         height: 18rem;
         padding-top: 20px;
     }
-    .offer-static h1 {
-        font-size: 40px;
+    .offer-static {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 4%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 0;
+        pointer-events: none;
+        user-select: none;
+        gap: 2rem;
     }
-    .offer-static p {
-        font-size: 20px;
+    .offer-left p {
+        font-size: 28px;
+        font-family: 'Raleway', sans-serif;
+        color: #116466;
+        font-weight: 600;
+        margin: 0;
+        white-space: nowrap;
+    }
+    .offer-line img {
+        width: 4px;
+        height: 100px;
+    }
+    .offer-right h1 {
+        font-size: 28px;
+        font-family: 'Raleway', sans-serif;
+        color: #2C3531;
+        margin: 0;
+        white-space: nowrap;
     }
     .section-number {
         font-size: 32px;
@@ -296,14 +336,18 @@
         padding: 0 1rem;
     }
     .offer-static h1 {
-        font-size: 2rem !important;
+        font-size: 1.4rem !important;
         color: #056470;
         font-family: 'Montserrat', sans-serif;
     }
     .offer-static p {
-        font-size: 1rem !important;
+        font-size: 1rem;
         color: #555;
         font-family: 'Roboto', sans-serif;
+    }
+    .offer-static img {
+        width: 3px;
+        margin-left: 0.5rem;
     }
     /* Mobile card container */
     .mobile-services {
@@ -314,7 +358,7 @@
     }
     /* Card style */
     .mobile-card {
-        background: #ffffff;
+        background: #D1E8E2;
         border-radius: 12px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         padding: 1.5rem;
@@ -344,7 +388,16 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+    .text-block {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        flex: 1;
+    }
+    .mobile-card {
+        background: #D1E8E2;
+    }
     .mobile-card:hover {
         transform: none;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -355,4 +408,66 @@
     .icon-images img {
         display: none !important;
     }
+}
+
+@media (max-width: 950px) {
+    .horizontal-section {
+        min-height: 80vh;
+    }
+    .hcard {
+        gap: 40px;
+        padding-left: 40px;
+        padding-top: 90px;
+    }
+    .card-content h2 {
+        font-size: 36px;
+    }
+    .card-content p {
+        font-size: 18px;
+        max-width: 420px;
+    }
+    .icon-images {
+        padding-left: 30px;
+    }
+    .icon-images img {
+        width: 350px;
+        height: 18rem;
+        padding-top: 20px;
+    }
+    .offer-static {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        top: 4%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 0;
+        pointer-events: none;
+        user-select: none;
+        gap: 1rem;
+    }
+    .offer-left p {
+        font-size: 22px;
+        font-family: 'Raleway', sans-serif;
+        color: #116466;
+        font-weight: 600;
+        margin: 0;
+        white-space: nowrap;
+    }
+    .offer-line img {
+        width: 3px;
+        height: 80px;
+    }
+    .offer-right h1 {
+        font-size: 22px;
+        font-family: 'Raleway', sans-serif;
+        color: #2C3531;
+        margin: 0;
+        white-space: nowrap;
+    }
+}
+
+.section-number {
+    font-size: 32px;
 }

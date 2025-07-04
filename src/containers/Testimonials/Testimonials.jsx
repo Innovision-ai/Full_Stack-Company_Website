@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './testimonials.css';
+import Danda from '../../assets/Danda.png';
 
 const testimonials = [
   {
@@ -16,6 +17,18 @@ const testimonials = [
   },
 ];
 
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 550);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 550);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return isMobile;
+}
+
 function StarRating({ count }) {
   return (
     <div className="testimonial-stars">
@@ -27,35 +40,96 @@ function StarRating({ count }) {
 }
 
 function Testimonials() {
+  const isMobile = useIsMobile();
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextTestimonial = () => {
+    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
   return (
     <section className="testimonials-section">
-      <div className="testimonials-header">
-        <h1 className="testimonials-badge">Testimonials</h1>
-        <h2 className="testimonials-title">What Our Clients Think About Us</h2>
-      </div>
-      <div className="testimonials-list">
-        {testimonials.map((t, i) => (
-          <div className="testimonial-card" key={i}>
-
-<div className="testimonial-container" style={{ position: 'relative' }}>
-  <div className="testimonial-quote-mark left">“</div>
-  <p className="testimonial-text">{t.text}</p>
-  <div className="testimonial-quote-mark right">”</div>
-</div>
-
-
-            <div className="testimonial-info">
-              <div>
-                <span className="testimonial-name">{t.name}</span>
-                <span className="testimonial-role">{t.role}</span>
-              </div>
-              <StarRating count={t.rating} />
-            </div>
+      {isMobile ? (
+        <div className="testimonials-header testimonials-header-mobile">
+          <div className="testimonials-icon-wrap">
+            <img src={Danda} alt="Danda" className="testimonials-icon" />
           </div>
-        ))}
+          <div className="testimonials-text-column">
+            <h1 className="testimonials-badge">Testimonials</h1>
+            <h2 className="testimonials-title">What Our Clients Think About Us</h2>
+          </div>
+        </div>
+      ) : (
+        <div className="testimonials-header testimonials-header-desktop">
+          <div className="testimonials-left">
+            <h1 className="testimonials-badge">Testimonials</h1>
+          </div>
+          <div className="testimonials-icon-wrap">
+            <img src={Danda} alt="Danda" className="testimonials-icon" />
+          </div>
+          <div className="testimonials-right">
+            <h2 className="testimonials-title">What Our Clients Think About Us</h2>
+          </div>
+        </div>
+      )}
+
+      <div className="testimonials-list">
+        {isMobile ? (
+          <div className="testimonials-mobile-carousel">
+          
+            
+            <div className="testimonial-card">
+              <div className="testimonial-container" style={{ position: 'relative' }}>
+                <div className="testimonial-quote-mark left">"</div>
+                <p className="testimonial-text">{testimonials[currentIndex].text}</p>
+                <div className="testimonial-quote-mark right">"</div>
+              </div>
+              <div className="testimonial-info">
+                <div>
+                  <span className="testimonial-name">{testimonials[currentIndex].name}</span>
+                  <span className="testimonial-role">{testimonials[currentIndex].role}</span>
+                </div>
+                <StarRating count={testimonials[currentIndex].rating} />
+              </div>
+            </div>
+  <button 
+              className="carousel-arrow left" 
+              onClick={prevTestimonial}
+            >
+              &#8592;
+            </button>
+            <button 
+              className="carousel-arrow right" 
+              onClick={nextTestimonial}
+            >
+              &#8594;
+            </button>
+          </div>
+        ) : (
+          testimonials.map((t, i) => (
+            <div className="testimonial-card" key={i}>
+              <div className="testimonial-container" style={{ position: 'relative' }}>
+                <div className="testimonial-quote-mark left">“</div>
+                <p className="testimonial-text">{t.text}</p>
+                <div className="testimonial-quote-mark right">”</div>
+              </div>
+              <div className="testimonial-info">
+                <div>
+                  <span className="testimonial-name">{t.name}</span>
+                  <span className="testimonial-role">{t.role}</span>
+                </div>
+                <StarRating count={t.rating} />
+              </div>
+            </div>
+          ))
+        )}
       </div>
     </section>
   );
 }
 
-export default Testimonials;    
+export default Testimonials;

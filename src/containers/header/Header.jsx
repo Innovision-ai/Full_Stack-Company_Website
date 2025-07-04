@@ -1,7 +1,7 @@
 import React from 'react';
 import './header.css';
 import Arrow3 from '../../assets/Arrow3.png';
-
+import Arroww from '../../assets/Arroww.png';
 
 const Header = () => {
  
@@ -15,11 +15,14 @@ const Header = () => {
         we are a team of skilled AI developers 
         building intelligent solution with cutting edge technologies.
       </p>
+      <div className='buttons'>
       <button type='button' className='arrow-button'  onClick={() => {
     document.getElementById('Whoweare')?.scrollIntoView({ behavior: 'smooth' });
   }}>
         Get Started <img src={Arrow3} alt="arrow icon" />
       </button>
+      <button>Explore Products <img src={Arroww} alt="arrow icon" /></button>
+      </div>
      </div>
 
     </div>

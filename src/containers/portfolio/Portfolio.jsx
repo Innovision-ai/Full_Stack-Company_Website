@@ -1,8 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./portfolio.css";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Danda from "../../assets/Danda.png";
+
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 550);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 550);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return isMobile;
+}
 
 const Portfolio = () => {
+  const isMobile = useIsMobile();
+
   const projects = [
     {
       id: 1,
@@ -30,22 +45,45 @@ const Portfolio = () => {
 
   return (
     <div className="portfolio" id="portfolio">
-      <div className="our">
-        <h2 className="portfolio-title">PORTFOLIO</h2>
-        <h3>Check out our latest work</h3>
+      {isMobile ? (
+        <div className="our our-mobile">
+          <div className="our-line">
+            <img src={Danda} alt="Danda" className="portfolio-icon" />
+          </div>
+          <div className="our-text-column">
+              <h2 className="portfolio-title">PORTFOLIO</h2>
+            <h3>Check out our latest work</h3>
+          
+          </div>
+        </div>
+      ) : (
+        <div className="our our-desktop">
+          <div className="our-left">
+            <h3>Check out our latest work</h3>
+          </div>
+          <div className="our-line">
+            <img src={Danda} alt="Danda" className="portfolio-icon" />
+          </div>
+          <div className="our-right">
+            <h2 className="portfolio-title">PORTFOLIO</h2>
+          </div>
+        </div>
+      )}
+
+      <div className="video-header">
+        <h3 className="video-title">{title}</h3>
       </div>
 
       <div className="portfolio-content">
         <div className="video-info">
-          <h3 className="video-title">{title}</h3>
-          <p className="video-desc">{desc}</p>
-
-          <div className="tech-tags">
-            {tech.map((t, i) => (
-              <span key={i} className="tech-tag">{t}</span>
-            ))}
+          <div className="video-box">
+            <p className="video-desc">{desc}</p>
+            <div className="tech-tags">
+              {tech.map((t, i) => (
+                <span key={i} className="tech-tag"><li>{t}</li></span>
+              ))}
+            </div>
           </div>
-
           {demo && (
             <div className="video-buttons">
               <a href={demo} target="_blank" rel="noreferrer" className="btn">

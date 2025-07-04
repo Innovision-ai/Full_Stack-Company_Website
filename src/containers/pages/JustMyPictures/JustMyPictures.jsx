@@ -8,7 +8,7 @@ import justmy2 from '../../../assets/justmy2.png';
 import justmy3 from '../../../assets/justmy3.png';
 import Arrowimg from '../../../assets/Arrowimg.png';
 import Star from '../../../assets/Star.png';
-import collage from '../../../assets/collage.png';
+import collage from '../../../assets/collagee.png';
 import Login from '../Login/Login';
 import Vector from '../../../assets/Vector.png';
 import Footer from '../../../containers/footer/Footer';
@@ -133,7 +133,7 @@ setError("");
 
   return (
     <>
-    <div className="justmypictures">
+    <div className="justmypictures" id='justmypictures'>
       <header className="header-banner">
         <h1><span>Just</span> My <b>Pictures</b></h1>
         <p className="subtitle">Sorting Pictures With <span className="ai-highlight">AI</span></p>
