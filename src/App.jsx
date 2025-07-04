@@ -28,11 +28,11 @@ import {
 
 import UserContext from './UserContext';
 import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
+import JustMyPictures from './containers/pages/JustMyPictures/JustMyPictures';
+import Login from './containers/pages/Login/Login';
+import Signup from './containers/pages/Signup/Signup';
+import Notfound from './containers/Notfound';
 
-const JustMyPictures = lazy(() => import('./containers/pages/JustMyPictures/JustMyPictures'));
-const Login = lazy(() => import('./containers/pages/Login/Login'));
-const Signup = lazy(() => import('./containers/pages/Signup/Signup'));
-const Notfound = lazy(() => import('./containers/Notfound'));
 
 function AppContent() {
   const queryClient = new QueryClient({
