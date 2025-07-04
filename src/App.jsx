@@ -47,6 +47,7 @@ function AppContent() {
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const [user, setUser] = useState(null);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
     AOS.init({
@@ -56,15 +57,23 @@ function AppContent() {
     });
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <UserContext.Provider value={{ user, setUser }}>
       <div className="App gradient__bg1">
         <ScrollProgress />
 
-        {/* ✅ Navbar always visible */}
         <div className="gradient__bg">
           <Navbar />
-          {isHomePage && <GlowingDots />}
+          {isHomePage && !isMobile && <GlowingDots />} {/* Only show on desktop */}
           {isHomePage && (
             <div className="gradient_bg">
               <Header />
