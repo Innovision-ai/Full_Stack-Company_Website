@@ -101,6 +101,8 @@
     padding-right: 2rem;
     margin-top: -9rem;
     z-index: 0;
+    border-top: 10px solid #116466;
+    border-right: 10px solid #116466;
 }
 
 .video-header {
@@ -142,13 +144,15 @@
 .tech-tag {
     display: flex;
     flex-direction: column;
-    color: #116466;
+    color: white;
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
     margin: 0 0.4rem 0.5rem 0;
     font-size: 0.9rem;
     font-weight: 500;
     font-family: "Open Sans", sans-serif;
+    background-color: #116466;
+    ;
 }
 
 .video-buttons {
