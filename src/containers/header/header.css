@@ -140,14 +140,15 @@
         margin-top: 14px;
     }
     .inv__header button img {
-        width: 18px;
-        margin-left: 6px;
+        width: 2.4rem;
+        margin-left: 10px;
+        margin-bottom: -4px;
     }
-    .inv__header button img:nth-child(2) {
+    /* .inv__header button img:nth-child(2) {
         width: 18px;
         margin-left: 6px;
         margin-top: 0.2rem;
-    }
+    } */
 }
 
 @media (max-width: 450px) {
@@ -166,10 +167,6 @@
         width: 200px;
         height: 40px;
         font-size: 14px;
-    }
-    .arrow-icon {
-        width: 20px;
-        margin-left: 8px;
     }
 }
 
