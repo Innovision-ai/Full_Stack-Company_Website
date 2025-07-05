@@ -250,13 +250,13 @@ const Navbar = () => {
       <div className="inv__navbar" id="home">
         {/* LEFT */}
         <div className="inv__navbar-left">
-          <img src={logo1} alt="logo" />
+          <img src={logo1} alt="logo"  onClick={() => window.location.href = '#home'} />
         </div>
 
         {/* CENTER */}
         <div className="inv__navbar-center">
           <p><a href="#home" onClick={(e) => handleNavigation(e, 'home')}>Home</a></p>
-          <p><a href="#Whoweare" onClick={(e) => handleNavigation(e, 'Whoweare')}>About</a></p>
+          <p><a href="#whoweare" onClick={(e) => handleNavigation(e, 'whoweare')}>About</a></p>
           <p><a href="#service" onClick={(e) => handleNavigation(e, 'service')}>Services</a></p>
                <p><a href="#blog" onClick={(e) => handleNavigation(e, 'blogs')}>Blogs</a></p>
           <p><Link to="/justmypictures">Products</Link></p>
@@ -277,7 +277,7 @@ const Navbar = () => {
           {toggleMenu && (
             <div className="inv__navbar-menu_container scale-up-center">
               <p><a href="#home" onClick={(e) => handleNavigation(e, 'home')}>Home</a></p>
-              <p><a href="#Whoweare" onClick={(e) => handleNavigation(e, 'Whoweare')}>About</a></p>
+              <p><a href="#whoweare" onClick={(e) => handleNavigation(e, 'whoweare')}>About</a></p>
               <p><a href="#service" onClick={(e) => handleNavigation(e, 'service')}>Services</a></p>
               <p><a href="#blog" onClick={(e) => handleNavigation(e, 'blogs')}>Blogs</a></p>
               <p><Link to="/justmypictures">Products</Link></p>

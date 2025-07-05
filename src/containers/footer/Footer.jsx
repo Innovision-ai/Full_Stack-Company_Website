@@ -196,7 +196,7 @@ function Footer() {
             <li onClick={() => window.location.href = '#home'}>› Home</li>
             <li onClick={() => window.location.href = '#whoweare'}>› About</li>
             <li onClick={() => window.location.href = '#service'}>› Services</li>
-            <li onClick={() => window.location.href = '/justmypictures'}>›Products</li>
+            <li onClick={() => window.location.href = '/justmypictures'}>› Products</li>
             <li onClick={() => window.location.href = '#portfolio'}>› Portfolio</li>
           </ul>
         </div>

@@ -142,7 +142,7 @@ const Whoweare = () => {
   const previewCard = values[previewIndex];
 
   return (
-    <div className="about-container">
+    <div className="about-container" id="whoweare">
       <div className="about-left">
         <div className="danda">
         <img src={Danda} alt="Danda" />
