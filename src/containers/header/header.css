@@ -167,10 +167,9 @@
         height: 40px;
         font-size: 14px;
     }
-    .inv__header button img {
+    .arrow-icon {
         width: 20px;
         margin-left: 8px;
-        margin-top: 0.2rem;
     }
 }
 

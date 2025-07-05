@@ -19,9 +19,9 @@ const Header = () => {
       <button type='button' className='arrow-button'  onClick={() => {
     document.getElementById('Whoweare')?.scrollIntoView({ behavior: 'smooth' });
   }}>
-        Get Started <img src={Arrow3} alt="arrow icon" />
+        Get Started <img src={Arrow3} alt="arrow icon"  className="arrow-icon" />
       </button>
-      <button onClick={()=> window.location.href='/justmypictures'}>Explore Products <img src={Arroww} alt="arrow icon" /></button>
+      <button onClick={()=> window.location.href='/justmypictures'}>Explore Products <img src={Arroww} alt="arrow icon" className="arrow-icon" /></button>
       </div>
      </div>
 

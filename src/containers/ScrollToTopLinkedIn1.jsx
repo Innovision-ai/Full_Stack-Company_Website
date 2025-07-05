@@ -92,7 +92,7 @@ const ScrollToTopLinkedIn1 = () => {
             &#8679;
           </button>
           <a
-            href="https://linkedin.com/in/YOUR_LINKEDIN_USERNAME"
+            href="https://www.linkedin.com/company/innovisiontech/posts/?feedView=all"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn Profile"
