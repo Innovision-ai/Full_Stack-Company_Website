@@ -115,7 +115,7 @@ function Testimonials() {
               <div className="testimonial-container" style={{ position: 'relative' }}>
                 <div className="testimonial-quote-mark left">“</div>
                 <p className="testimonial-text">{t.text}</p>
-                <div className="testimonial-quote-mark right">”</div>
+                <div className="testimonial-quote-mark right">"</div>
               </div>
               <div className="testimonial-info">
                 <div>

@@ -4,11 +4,11 @@ import Danda from '../../assets/Danda.png';
 const Impact = () => {
     const impactData = [
         {
-            title: "495+",
+            title: "5+",
             description: "Happy clients",
         },
         {
-            title: "95",
+            title: "10",
             description: "Projects",
         },
         {
@@ -16,7 +16,7 @@ const Impact = () => {
             description: "Hours of support",
         },
         {
-            title: "30",
+            title: "7",
             description: "Smart workers",
         },
     ];

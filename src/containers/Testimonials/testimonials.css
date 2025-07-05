@@ -225,3 +225,24 @@ body {
         margin-bottom: 0;
     }
 }
+
+@media (max-width: 480px) {
+    .testimonials-header-mobile {
+        display: flex;
+    }
+    .testimonial-card {
+        width: calc(100% - 2rem);
+        /* Adjusted width for mobile */
+        min-width: 300px;
+        margin: 0;
+        /* Removed margin */
+        flex: 0 1 auto;
+    }
+    .testimonial-text {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    .testimonial-name {
+        font-size: 0.9rem;
+    }
+}

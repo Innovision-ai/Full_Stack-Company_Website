@@ -189,7 +189,7 @@ const Navbar = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    axios.get("http://localhost:3333/api/auth/me", {
+    axios.get("https://innovisionai-backend-1.onrender.com/api/auth/me", {
       headers: token ? { Authorization: `Bearer ${token}` } : {},
       withCredentials: true,
     })
@@ -200,7 +200,7 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem("token");
 
-    axios.get("http://localhost:3333/api/auth/logout", { withCredentials: true })
+    axios.get("https://innovisionai-backend-1.onrender.com/api/auth/logout", { withCredentials: true })
       .then(() => {
         setUser(null);
         navigate("/justmypictures");
@@ -210,7 +210,9 @@ const Navbar = () => {
 
   const renderActionButton = () => {
     if (!isOnPicturePage) {
-      return <button onClick={() => document.getElementById('footer')?.scrollIntoView({ behavior: 'smooth' })}>CONTACT US</button>;
+      return <div className="signup-login-buttons">
+        <button onClick={() => document.getElementById('footer')?.scrollIntoView({ behavior: 'smooth' })}>CONTACT US</button>
+      </div>;
     }
 
     if (user) {
@@ -257,7 +259,7 @@ const Navbar = () => {
           <p><a href="#Whoweare" onClick={(e) => handleNavigation(e, 'Whoweare')}>About</a></p>
           <p><a href="#service" onClick={(e) => handleNavigation(e, 'service')}>Services</a></p>
                <p><a href="#blogs" onClick={(e) => handleNavigation(e, 'blogs')}>Blogs</a></p>
-          <p><Link to="/justmypictures">JustMyPictures</Link></p>
+          <p><Link to="/justmypictures">Products</Link></p>
                <p><a href="#portfolio" onClick={(e) => handleNavigation(e, 'portfolio')}>Portfolio</a></p>
         </div>
 
@@ -278,7 +280,7 @@ const Navbar = () => {
               <p><a href="#Whoweare" onClick={(e) => handleNavigation(e, 'Whoweare')}>About</a></p>
               <p><a href="#service" onClick={(e) => handleNavigation(e, 'service')}>Services</a></p>
               <p><a href="#blogs" onClick={(e) => handleNavigation(e, 'blogs')}>Blogs</a></p>
-              <p><Link to="/justmypictures">JustMyPictures</Link></p>
+              <p><Link to="/justmypictures">Products</Link></p>
               {renderActionButton()}
             </div>
           )}

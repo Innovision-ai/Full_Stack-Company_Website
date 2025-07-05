@@ -21,7 +21,7 @@ const Header = () => {
   }}>
         Get Started <img src={Arrow3} alt="arrow icon" />
       </button>
-      <button>Explore Products <img src={Arroww} alt="arrow icon" /></button>
+      <button onClick={()=> window.location.href='/justmypictures'}>Explore Products <img src={Arroww} alt="arrow icon" /></button>
       </div>
      </div>
 

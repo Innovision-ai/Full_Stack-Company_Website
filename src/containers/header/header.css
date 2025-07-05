@@ -151,6 +151,10 @@
 }
 
 @media (max-width: 450px) {
+    .inv__header {
+        max-width: 100vw;
+        height: 65vh;
+    }
     .buttons {
         flex-direction: column;
         gap: 2px;

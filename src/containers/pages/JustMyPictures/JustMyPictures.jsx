@@ -150,6 +150,7 @@ export default function JustMyPictures() {
       <div className="justmypictures" id='justmypictures'>
         <header className="header-banner">
           <h1><span>Just</span> My <b>Pictures</b></h1>
+          <p className="comming-soon">Coming Soon</p>
           <p className="subtitle">Sorting Pictures With <span className="ai-highlight">AI</span></p>
         </header>
 
@@ -168,14 +169,14 @@ export default function JustMyPictures() {
             <input
               id="zipUpload"
               type="file"
-              accept=".zip"
-              onChange={e => setZipFile(e.target.files[0])}
+              // accept=".zip"
+              // onChange={e => setZipFile(e.target.files[0])}
             />
             <br />
             <p>or drag and drop</p>
             <br />
             <button
-              onClick={handleZipSubmit}
+              // onClick={handleZipSubmit}
               disabled={loading}
             >
               {loading ? "Uploading..." : "Upload ZIP"}

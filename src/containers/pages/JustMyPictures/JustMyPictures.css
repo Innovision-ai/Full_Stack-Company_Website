@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 .justmypictures {
     background-color: #f4f4f4;
     min-height: 100vh;
@@ -8,6 +9,14 @@
 .header-banner {
     text-align: center;
     margin-bottom: 2rem;
+}
+
+.comming-soon {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 2rem;
+    color: #294148;
+    text-align: center;
+    margin-top: 1rem;
 }
 
 .header-banner h1 {
