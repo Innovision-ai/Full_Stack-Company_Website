@@ -250,7 +250,7 @@ const Navbar = () => {
       <div className="inv__navbar" id="home">
         {/* LEFT */}
         <div className="inv__navbar-left">
-          <img src={logo1} alt="logo"  onClick={() => window.location.href = '#home'} />
+          <img src={logo1} alt="logo"  onClick={(e) => handleNavigation(e, 'home')} />
         </div>
 
         {/* CENTER */}
