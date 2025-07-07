@@ -448,11 +448,11 @@ export default function JustMyPictures() {
   };
 
   const resetAll = () => {
-    // setZipFile(null);
+    setZipFile(null);
     setRefImage(null);
-    // setFolderName('');
+    setFolderName('');
     setSortedImages([]);
-    setStep(2);
+    setStep(1);
     setError('');
   };
 
