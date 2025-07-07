@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+.inv__impact {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    padding: 50px;
+}
+
+.inv__impact-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.inv__impact-header img {
+    height: 100px;
+    margin-right: 40px;
+}
+
+.inv__impact-header h1 {
+    font-family: "Raleway", sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    padding-top: 2rem;
+    color: #000000;
+}
+
+.inv__impact-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.inv__impact-box {
+    background: #116466B2;
+    border-radius: 20px;
+    padding: 1rem 3rem;
+    width: 100%;
+    /* max-width: 80rem; */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.inv__impact-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.inv__impact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    flex: 1;
+    min-width: 200px;
+    padding: 25px
+}
+
+.inv__impact-item h2 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    color: #D1E8E2;
+}
+
+.inv__impact-item p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.5rem;
+    color: #D1E8E2;
+}
+
+.margin {
+    background: linear-gradient(90deg, #B20A8F 0%, #0F525A 100%);
+    width: 100%;
+    height: 22px;
+}
+
+
+/* Mobile-specific overrides for .inv__impact section */
+
+@media (max-width: 768px) {
+    .inv__impact {
+        padding: 30px 1rem;
+    }
+    .inv__impact-header h1 {
+        font-size: 24px;
+        margin-bottom: 0.75rem;
+    }
+    .inv__impact-box {
+        padding: 1rem 1.5rem;
+        border-radius: 16px;
+        max-width: 100%;
+    }
+    .inv__impact-content {
+        flex-direction: row;
+        gap: 2rem;
+        align-items: stretch;
+    }
+    .inv__impact-item {
+        flex: none;
+        width: 100%;
+        padding: 16px;
+    }
+    .inv__impact-item h2 {
+        font-size: 1.75rem;
+        margin-bottom: 0.25rem;
+    }
+    .inv__impact-item p {
+        font-size: 1rem;
+    }
+    .margin {
+        height: 16px;
+    }
+}
+
+
+/* Small Mobile Devices (max-width: 480px) */
+
+@media (max-width: 480px) {
+    .inv__impact {
+        padding: 20px 0.8rem;
+    }
+    .inv__impact-header {
+        /* flex-direction: column; */
+        align-items: center;
+        /* text-align: center; */
+    }
+    .inv__impact-header img {
+        height: 60px;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+    }
+    .inv__impact-header h1 {
+        font-size: 20px;
+        padding-top: 0;
+    }
+    .inv__impact-box {
+        padding: 0.8rem;
+        border-radius: 12px;
+    }
+    .inv__impact-content {
+        gap: 1rem;
+    }
+    .inv__impact-item {
+        min-width: 100%;
+        padding: 12px;
+    }
+    .inv__impact-item h2 {
+        font-size: 1.5rem;
+    }
+    .inv__impact-item p {
+        font-size: 0.875rem;
+    }
+    .margin {
+        height: 12px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .inv__impact-item p {
+        font-family: "Open Sans", sans-serif;
+        font-size: 1rem;
+        color: #D1E8E2;
+    }
+}

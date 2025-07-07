@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/logo1.png" />
+
+    <!-- Responsive Design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Prevent Android/Samsung Browser Color Inversion -->
+    <meta name="color-scheme" content="light only" />
+    <meta name="theme-color" content="#0B0B1A" />
+
+    <!-- Performance Optimizations -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <!-- SEO -->
+    <meta name="description" content="InnoVision.AI - Building Intelligent Solutions for a Smarter Future" />
+    <meta name="author" content="InnoVision.AI Team" />
+
+    <title>InnoVision.AI</title>
+
+    <!-- Font Optimization -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- Transparent overlay to reduce AMOLED over-darkening on Samsung -->
+    <div style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.01);
+    z-index: 9999;
+  "></div>
+
+    <!-- Your actual React entry point -->
+    <script type="module" src="/src/index.jsx"></script>
+
+    <!-- Samsung-specific fix using JS -->
+    <script>
+        if (/SamsungBrowser|SM-|GT-|SCH-|SGH-/.test(navigator.userAgent)) {
+            const style = document.createElement('style');
+            style.innerHTML = `
+        html, body {
+          filter: brightness(1.05) contrast(1.02);
+          -webkit-filter: brightness(1.05) contrast(1.02);
+        }
+      `;
+            document.head.appendChild(style);
+        }
+    </script>
+</body>
+
+</html>

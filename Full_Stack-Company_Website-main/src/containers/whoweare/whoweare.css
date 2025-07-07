@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+.about-container {
+    display: flex;
+    background: radial-gradient(97.75% 97.75% at 50% 2.25%, #116466 0%, #D1E8E2 38.99%, rgba(17, 100, 102, 0.08) 100%);
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    color: #1d2e33;
+    overflow: hidden;
+}
+
+.danda {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.danda img {
+    width: 4px
+}
+
+.about-left {
+    flex-shrink: 0;
+    padding: 20px;
+    background: #FFFFFF30;
+    width: 501px;
+    height: 700px;
+    margin-left: 2rem;
+    margin-top: 20px;
+}
+
+.about-left h2 {
+    font-family: "Raleway", sans-serif;
+    font-size: 40px;
+    color: #2C3531;
+    padding-top: 20px;
+}
+
+.about-left p {
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #116466;
+    font-family: "Open Sans", sans-serif;
+    font-size: 24px;
+    margin-top: 40px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding-right: 20px;
+}
+
+.contact-btn {
+    padding: 10px 20px;
+    border: none;
+    background: #D1E8E2;
+    color: #005c66;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background 0.3s;
+    width: 300px;
+    height: 50px;
+    font-family: "Open Sans", sans-serif;
+}
+
+.contact-btn:hover {
+    transform: translateY(-2px);
+}
+
+.about-right {
+    flex: 1;
+    padding: 20px;
+    margin-left: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-right h3 {
+    font-size: 35px;
+    margin-bottom: 50px;
+    color: #116466;
+    margin-left: 250px;
+    font-family: "Raleway", sans-serif;
+}
+
+
+/* .about-right .highlight {
+    color: #4aa6a7;
+} */
+
+.card-area {
+    display: flex;
+    align-items: flex-end;
+    gap: 40px;
+    /* min-height: 650px; */
+}
+
+.card {
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.card.expanded {
+    width: 450px;
+    height: 500px;
+    z-index: 2;
+}
+
+.card.preview {
+    display: flex;
+    width: 400px;
+    height: 391px;
+    z-index: 1;
+    cursor: pointer;
+    filter: brightness(0.8);
+    text-align: start;
+}
+
+.card-overlay {
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px
+}
+
+.card-overlay h4 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-family: "Raleway", sans-serif;
+}
+
+.card-overlay p {
+    font-size: 20px;
+    line-height: 1.6;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-family: "Open Sans", sans-serif;
+}
+
+.carousel-controls {
+    margin-top: 20px;
+    font-size: 30px;
+    color: #333;
+    user-select: none;
+}
+
+.carousel-controls .arrow {
+    margin: 0 10px;
+    cursor: pointer;
+    width: 30px;
+    height: 100px;
+}
+
+@media (max-width: 1200px) {
+    .about-container {
+        /* flex-direction: column; */
+        align-items: center;
+        padding: 30px 20px;
+    }
+    .about-left,
+    .about-right {
+        width: 100%;
+        margin-left: 0;
+        height: auto;
+    }
+    .about-left {
+        max-width: 500px;
+    }
+    .about-right {
+        margin-top: 40px;
+    }
+    .about-right h3 {
+        margin-left: 1rem;
+        /* text-align: center; */
+    }
+    .card-area {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .card.preview,
+    .card.expanded {
+        width: 90%;
+        max-width: 400px;
+        height: auto;
+    }
+    .card.preview {
+        height: 100px;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 950px) {
+    .about-container {
+        /* flex-direction: column; */
+        align-items: center;
+        padding: 20px 15px;
+    }
+    .about-left,
+    .about-right {
+        width: 100%;
+        margin-left: 0;
+        height: auto;
+    }
+    .about-left {
+        max-width: 400px;
+        padding: 15px;
+    }
+    .about-left h2 {
+        font-size: 30px;
+        padding-top: 10px;
+    }
+    .about-left p {
+        font-size: 18px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .about-right {
+        margin-top: 30px;
+        padding: 10px;
+    }
+    .about-right h3 {
+        font-size: 26px;
+        margin-left: 1rem;
+    }
+    .card-area {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .card.preview,
+    .card.expanded {
+        width: 85%;
+        max-width: 360px;
+        height: auto;
+    }
+    .card.preview {
+        height: 90px;
+    }
+    .card-overlay h4 {
+        font-size: 20px;
+    }
+    .card-overlay p {
+        font-size: 14px;
+        padding: 0 1rem;
+    }
+    .contact-btn {
+        width: 80%;
+        max-width: 260px;
+        height: 44px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 550px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+        background: white;
+    }
+    .about-left {
+        width: 100%;
+        margin: 0;
+        padding: 10px;
+        height: auto;
+        background-color: white;
+    }
+    .about-left h2 {
+        font-size: 26px;
+        text-align: center;
+        padding-top: 10px;
+    }
+    .about-left p {
+        font-size: 16px;
+        padding: 0 1rem;
+        text-align: justify;
+        margin-top: 20px;
+        padding-left: 0px;
+    }
+    .about-left img {
+        height: 4rem;
+    }
+    .contact {
+        display: none;
+    }
+    .about-right {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    .about-right h3 {
+        font-size: 22px;
+        text-align: center;
+        margin: 30px 0 20px;
+    }
+    .card-area {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding: 10px 0;
+        justify-content: center;
+    }
+    .card {
+        flex-shrink: 0;
+        scroll-snap-align: start;
+    }
+    .card.expanded {
+        flex: 1;
+        min-width: 200px;
+        height: 300px;
+    }
+    .card.preview {
+        display: none;
+    }
+    .card-overlay {
+        padding: 10px;
+        gap: 20px;
+    }
+    .card-overlay h4 {
+        font-size: 18px;
+        text-align: center;
+    }
+    .card-overlay p {
+        font-size: 14px;
+        padding: 0 0.5rem;
+        text-align: justify;
+    }
+    .carousel-controls {
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+    }
+    .carousel-controls .arrow {
+        width: 40px;
+        height: 60px;
+    }
+    .danda {
+        gap: 0.8rem;
+    }
+}

@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+ :root {
+    --primary: #056470;
+    --accent: #3CAFC7;
+    --bg: #f7fafd;
+    --card-bg: #fff;
+    --shadow: 0 8px 32px rgba(44, 62, 80, 0.08);
+    --radius: 22px;
+}
+
+body {
+    font-family: 'Raleway', Arial, sans-serif;
+    background: var(--bg);
+}
+
+.testimonials-section {
+    background: #D1E8E2;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.testimonials-header-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+    margin-right: 7rem;
+}
+
+.testimonials-left h1 {
+    font-size: 38px;
+    font-family: 'Raleway', sans-serif;
+    color: #116466;
+    margin: 0;
+}
+
+.testimonials-icon-wrap img {
+    width: 4px;
+    height: 60px;
+}
+
+.testimonials-right h2 {
+    font-size: 38px;
+    font-family: 'Raleway', sans-serif;
+    color: #2C3531;
+    margin: 0;
+}
+
+.testimonials-list {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: stretch;
+    /* ✅ This ensures all cards match height */
+}
+
+.testimonial-card {
+    /* flex: 1 1 570px; */
+    /* 👈 Adjusts width flexibility */
+    max-width: 579px;
+    /* ✅ allows cards to grow equally */
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #FFFFFF8F;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 10px 32px 10px 32px;
+    margin: 0 8px 32px 8px;
+    transition: box-shadow 0.2s;
+    height: auto;
+}
+
+.testimonial-card:hover {
+    box-shadow: 0 12px 32px rgba(44, 62, 80, 0.16);
+}
+
+.testimonial-quote-mark {
+    font-size: 4rem;
+    color: #116466;
+    /* position: absolute; */
+    left: 28px;
+    top: 12px;
+    font-family: 'Montserrat', sans-serif;
+    pointer-events: none;
+    user-select: none;
+}
+
+
+/* .testimonial-quote-mark.left {
+    left: 28px;
+    top: -20px;
+} */
+
+.testimonial-quote-mark.right {
+    right: 28px;
+    bottom: 12px;
+    left: auto;
+    top: auto;
+    transform: rotate(180deg);
+    /* optional */
+}
+
+.testimonial-text {
+    font-size: 1.13rem;
+    color: #222;
+    font-family: 'Roboto', sans-serif;
+    margin: 24px 0 32px 0;
+    line-height: 1.7;
+    position: relative;
+    z-index: 2;
+}
+
+.testimonial-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.testimonial-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 1.1rem;
+    display: block;
+}
+
+.testimonial-role {
+    font-size: 0.98rem;
+    color: #888;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 2px;
+    display: block;
+}
+
+.testimonial-stars {
+    color: #f4b400;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    margin-left: 6px;
+}
+
+@media (max-width: 960px) {
+    .testimonials-header-mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+    .testimonials-icon-wrap img {
+        width: 4px;
+        height: 100%;
+    }
+    .testimonials-text-column {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .testimonials-text-column .testimonials-badge {
+        font-size: 22px;
+        font-family: 'Raleway', sans-serif;
+        color: #116466;
+        margin: 0;
+    }
+    .testimonials-text-column .testimonials-title {
+        font-size: 22px;
+        font-family: 'Raleway', sans-serif;
+        color: #2C3531;
+        margin: 0;
+    }
+    .testimonial-card {
+        width: calc(100% - 2rem);
+        /* Adjusted width for mobile */
+        min-width: 300px;
+        margin: 0;
+        /* Removed margin */
+        flex: 0 1 auto;
+    }
+    .testimonial-quote-mark {
+        font-size: 3rem;
+    }
+    .testimonial-text {
+        font-size: 1rem;
+    }
+    .testimonials-mobile-carousel button {
+        padding: 0.3rem;
+        font-size: 1rem;
+        border-radius: 20px;
+        margin-top: 10px;
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .testimonials-list {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+        padding: 0 2rem;
+        margin: 0;
+    }
+    .testimonial-card {
+        width: calc(50% - 2rem);
+        min-width: 300px;
+        margin: 0;
+        /* Removed margin */
+        flex: 0 1 auto;
+    }
+    .testimonials-header {
+        margin-right: 0;
+        /* Removed margin-right */
+        padding: 0 2rem;
+        /* Added padding instead */
+    }
+    .testimonials-section {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials-header-mobile {
+        display: flex;
+    }
+    .testimonial-card {
+        width: calc(100% - 2rem);
+        /* Adjusted width for mobile */
+        min-width: 300px;
+        margin: 0;
+        /* Removed margin */
+        flex: 0 1 auto;
+    }
+    .testimonial-text {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    .testimonial-name {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,69 @@
+.horizontal-container {
+    width: 100vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    background-color: #0d1117;
+    color: white;
+}
+
+.horizontal-wrapper {
+    display: flex;
+    width: 200vw;
+    height: 100vh;
+}
+
+.horizontal-slide {
+    width: 100vw;
+    padding: 40px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #f3f4f6;
+}
+
+.card-group {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background-color: #ffffff;
+    color: #111827;
+    width: 280px;
+    height: 320px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 16px;
+}
+
+.card-body h3 {
+    font-size: 20px;
+    font-weight: 600;
+}

@@ -1,0 +1,61 @@
+:root {
+    --primary-color: #1a73e8;
+    --secondary-color: #34a853;
+    --text-color: #202124;
+    --background-color: #ffffff;
+    --container-width: min(100% - 2rem, 1200px);
+    --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+    --space-xs: clamp(0.75rem, 0.69rem + 0.29vw, 0.9375rem);
+    --space-sm: clamp(1rem, 0.92rem + 0.39vw, 1.25rem);
+    --space-md: clamp(1.5rem, 1.38rem + 0.58vw, 1.875rem);
+    --space-lg: clamp(2rem, 1.84rem + 0.78vw, 2.5rem);
+}
+
+
+/* Performance optimizations */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    content-visibility: auto;
+    contain: layout paint;
+}
+
+
+/* Remove unused styles */
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Optimize animations */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+@media (max-width: 768px) {
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    .scale-up-center {
+        animation-duration: 0.2s;
+    }
+    * {
+        transition-duration: 0.2s !important;
+    }
+}
