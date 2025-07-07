@@ -288,6 +288,7 @@ import Footer from '../../../containers/footer/Footer';
 const BACKEND_BASE_URL = "https://innovisionai-backend-1.onrender.com";
 
 export default function JustMyPictures() {
+   const { user, setUser } = useContext(UserContext);
   const [zipFile, setZipFile] = useState(null);
   const [refImage, setRefImage] = useState(null);
   const [step, setStep] = useState(1);
