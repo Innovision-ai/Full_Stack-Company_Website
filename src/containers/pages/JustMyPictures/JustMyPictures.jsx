@@ -288,7 +288,6 @@ import Footer from '../../../containers/footer/Footer';
 const BACKEND_BASE_URL = "https://innovisionai-backend-1.onrender.com";
 
 export default function JustMyPictures() {
-  const { user, setUser } = useContext(UserContext);
   const [zipFile, setZipFile] = useState(null);
   const [refImage, setRefImage] = useState(null);
   const [step, setStep] = useState(1);
@@ -297,7 +296,6 @@ export default function JustMyPictures() {
   const [sortedImages, setSortedImages] = useState([]);
   const [showLogin, setShowLogin] = useState(false);
   const [error, setError] = useState('');
-  const navigate = useNavigate();
 
   useEffect(() => {
     const checkAuth = async () => {
@@ -345,7 +343,13 @@ export default function JustMyPictures() {
         maxContentLength: Infinity
       });
 
-      const folder = res.data.mlResponse.folder_name;
+     const folder = res.data.mlResponse?.folder_name || res.data.mlResponse?.output;
+       if (!folder) {
+        setError("No folder name/id returned from upload.");
+        setLoading(false);
+        return;
+      }
+
       setFolderName(folder);
       setStep(2);
     } catch (err) {
@@ -375,20 +379,35 @@ export default function JustMyPictures() {
       { withCredentials: true }
     );
 
-    const folderId = res.data.folder_id;
+     const folderId = res.data.folder_id || res.data.output || folderName;
     console.log("🎯 Reference image upload result:", res.data);
 
     if (!folderId) {
-      setError("No folder ID returned.");
-      return;
-    }
+        setError("No folder ID returned.");
+        setLoading(false);
+        return;
+      }
 
     // ✅ After ML processing, fetch sorted image list from backend
-    const sortedRes = await axios.get(`${BACKEND_BASE_URL}/api/drive/get-images/${folderId}`);
-    console.log("🖼️ Sorted images fetched:", sortedRes.data);
+     const sortedRes = await axios.get(`${BACKEND_BASE_URL}/api/drive/get-images/${folderId}`);
 
-   setSortedImages(sortedRes.data.images || []);
-    setStep(3);
+      const images = sortedRes.data.images || [];
+
+      // Filter duplicates by name (case insensitive)
+      const uniqueImagesMap = new Map();
+      for (const img of images) {
+        const lowerName = img.name.toLowerCase();
+        if (!uniqueImagesMap.has(lowerName)) {
+          uniqueImagesMap.set(lowerName, img);
+        }
+      }
+      const uniqueImages = Array.from(uniqueImagesMap.values());
+
+      // Sort images by name (case insensitive)
+      uniqueImages.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
+
+      setSortedImages(uniqueImages);
+      setStep(3);
 
   } catch (err) {
     console.error("❌ Ref image error:", err?.response?.data || err.message);
@@ -398,14 +417,44 @@ export default function JustMyPictures() {
   }
 };
 
+  const downloadSortedZip = async () => {
+    if (!sortedImages || sortedImages.length === 0) {
+      setError("No images to download");
+      return;
+    }
+    try {
+      // Use file IDs for backend to zip only sorted images
+      const fileIds = sortedImages.map(img => img.id);
+
+      const response = await axios.post(
+        `${BACKEND_BASE_URL}/api/drive/download-zip`,
+        { fileIds },
+        { responseType: 'blob', withCredentials: true }
+      );
+
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'sorted-images.zip');
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+    } catch (error) {
+      console.error("Error downloading ZIP:", error);
+      setError("Failed to download ZIP file.");
+    }
+  };
+
   const resetAll = () => {
-    setZipFile(null);
+    // setZipFile(null);
     setRefImage(null);
-    setFolderName('');
+    // setFolderName('');
     setSortedImages([]);
-    setStep(1);
+    setStep(2);
     setError('');
   };
+
 
   if (showLogin) return <Login onClose={() => setShowLogin(false)} />;
 
@@ -450,6 +499,12 @@ export default function JustMyPictures() {
                   <img src={img.webContentLink} alt={img.name} />
                 </a>
               ))}
+               <button
+                onClick={downloadSortedZip}
+                style={{ marginTop: '1rem', background: '#28a745', color: 'white' }}
+              >
+                📥 Download All as ZIP
+              </button>
             </div>
             <button onClick={resetAll} style={{ marginTop: '2rem', background: '#333' }}>
               Start Over
