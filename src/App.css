@@ -5,10 +5,30 @@
     scroll-behavior: smooth;
 }
 
-body {
-    /* background-color: black; */
-    overflow-x: hidden;
+html {
+    /* Force light mode and prevent forced color changes */
+    color-scheme: light;
+    forced-color-adjust: none;
+    -webkit-appearance: none;
 }
+
+body {
+    overflow-x: hidden;
+    /* Explicitly set your intended background and text colors */
+    background-color: #ffffff;
+    /* or your actual light background color */
+    color: #000000;
+    /* your primary text color */
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    /* Optional: prevent Samsung's forced dark mode */
+    /* This may help override some browser styles */
+    background-image: none !important;
+}
+
+
+/* Gradients: no change needed, but just make sure they're used properly */
 
 .gradient__bg {
     background: radial-gradient(83.94% 83.94% at 50% 100%, rgba(17, 100, 102, 0.76) 47.12%, #000000 100%);
@@ -19,23 +39,16 @@ body {
 }
 
 
-/* Disable forced dark mode styles on Samsung/Android browsers */
-
-html {
-    color-scheme: light only;
-    forced-color-adjust: none;
-    -webkit-appearance: none;
-}
+/* Disable any dark mode styles if you have them */
 
 
-/* Ensure consistent background and text behavior */
+/* Example: if you had prefers-color-scheme media queries, override here */
 
-body {
-    /* background-color: #000; */
-    /* or your preferred color */
-    /* color: #fff; */
-    /* match your design */
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%;
-    text-rendering: optimizeLegibility;
+@media (prefers-color-scheme: dark) {
+    /* Force light colors regardless of system theme */
+    html,
+    body {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+    }
 }

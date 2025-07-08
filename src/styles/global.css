@@ -59,3 +59,34 @@ video {
         transition-duration: 0.2s !important;
     }
 }
+
+
+/* Adjust dark backgrounds to be slightly lighter */
+
+.gradient__bg,
+.gradient__bg1,
+.gradient__bg2 {
+    background-color: #121212;
+    /* Instead of pure black */
+}
+
+
+/* Brighten dark elements on Samsung displays */
+
+@supports (-webkit-overflow-scrolling: touch) {
+    /* Target mobile devices */
+    .dark-bg-element {
+        filter: brightness(1.15);
+    }
+    /* Adjust text contrast */
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        text-shadow: none;
+        /* Remove any text shadows */
+    }
+}

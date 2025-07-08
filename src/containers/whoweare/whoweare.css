@@ -3,17 +3,21 @@
 .about-container {
     display: flex;
     background: radial-gradient(97.75% 97.75% at 50% 2.25%, #116466 0%, #D1E8E2 38.99%, rgba(17, 100, 102, 0.08) 100%);
-    padding: 40px;
+    padding: 20px;
     font-family: Arial, sans-serif;
     color: #1d2e33;
     overflow: hidden;
+    min-width: 100vw;
+    margin: 0 auto;
+    justify-content: center;
 }
 
 .danda {
     display: flex;
     flex-direction: row;
-    gap: 2.5rem;
+    gap: clamp(1rem, 2.5vw, 2.5rem);
     margin-top: 2rem;
+    justify-content: center;
 }
 
 .danda img {
@@ -24,9 +28,11 @@
     flex-shrink: 0;
     padding: 20px;
     background: #FFFFFF30;
-    width: 501px;
-    height: 700px;
-    margin-left: 2rem;
+    width: min(501px, 40%);
+    height: auto;
+    min-height: 600px;
+    max-height: 700px;
+    margin-left: clamp(1rem, 2vw, 2rem);
     margin-top: 20px;
 }
 
@@ -99,7 +105,10 @@
 .card-area {
     display: flex;
     align-items: flex-end;
-    gap: 40px;
+    gap: clamp(20px, 4vw, 40px);
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
     /* min-height: 650px; */
 }
 
@@ -116,14 +125,16 @@
 }
 
 .card.expanded {
-    width: 450px;
+    width: min(450px, 90%);
+    max-width: 450px;
     height: 500px;
     z-index: 2;
 }
 
 .card.preview {
     display: flex;
-    width: 400px;
+    width: min(400px, 80%);
+    max-width: 400px;
     height: 391px;
     z-index: 1;
     cursor: pointer;
@@ -278,6 +289,7 @@
         background: white;
     }
     .about-left {
+        flex: 1;
         width: 100%;
         margin: 0;
         padding: 10px;
@@ -285,6 +297,8 @@
         background-color: white;
     }
     .about-left h2 {
+        display: flex;
+        flex: 1;
         font-size: 26px;
         text-align: center;
         padding-top: 10px;
@@ -357,5 +371,43 @@
     }
     .danda {
         gap: 0.8rem;
+    }
+}
+
+
+/* For extra large screens */
+
+@media (min-width: 1921px) {
+    .about-container {
+        max-width: 1800px;
+        padding: clamp(40px, 5vw, 80px);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    .about-right {
+        max-width: 1200px;
+    }
+    .about-right h3 {
+        text-align: center;
+        margin-left: 0;
+    }
+    .card.expanded {
+        width: min(450px, 25vw);
+    }
+    .card.preview {
+        width: min(400px, 22vw);
+    }
+}
+
+
+/* Content centering on ultra-wide screens */
+
+@media (min-width: 2560px) {
+    body {
+        background-color: #f0f5f5;
+    }
+    .about-container {
+        max-width: 2000px;
+        border-radius: 30px;
     }
 }
