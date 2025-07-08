@@ -318,6 +318,16 @@
     transition: color 0.2s;
 }
 
+.footer-column a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.footer-column a:hover {
+    opacity: 0.8;
+}
+
 
 /* Mobile Devices (320px to 480px) */
 
@@ -339,10 +349,9 @@
         text-align: left;
         /* Ensure headers are left-aligned */
     }
-    .footer-column p,
-    .footer-column li {
+    .footer-column p {
         justify-content: flex-start;
-        /* Changed from center to flex-start */
+        color: white;
         font-size: 0.9rem;
     }
     .center-form form {
