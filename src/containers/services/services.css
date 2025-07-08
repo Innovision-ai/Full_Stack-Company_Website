@@ -57,6 +57,8 @@
     will-change: transform;
     contain: layout;
     transition: 0.5s ease;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .card-content {
@@ -130,6 +132,9 @@
     height: 29rem;
     width: 550px;
     display: block;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .section-number {

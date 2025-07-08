@@ -1,7 +1,7 @@
-
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { InView } from 'react-intersection-observer';
+import { debounce } from 'lodash'; // You'll need to install lodash
 
 import './services.css';
 
@@ -12,6 +12,7 @@ import prompt from '../../assets/prompt.webp';
 import dashboard1 from '../../assets/dashboard1.webp';
 import generative from '../../assets/generative.webp';
 import Danda from '../../assets/Danda.png';
+
 const services = [
   {
     title: "AI-Powered Data Solutions",
@@ -52,24 +53,68 @@ const Services = () => {
     typeof window !== 'undefined' ? window.innerWidth : 0
   );
 
+  // Debounced resize handler for better performance
   useEffect(() => {
-    const handleResize = () => {
+    const handleResize = debounce(() => {
       setIsMobile(window.innerWidth <= 768);
       setCardWidth(window.innerWidth);
-    };
+    }, 100);
+    
     handleResize();
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      handleResize.cancel();
+    };
   }, []);
 
-  // for desktop scroll:
+  // Optimized scroll handling
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ['start start', 'end end'],
   });
+  
   const totalCards = services.length;
   const totalWidth = cardWidth * totalCards;
-  const x = useTransform(scrollYProgress, [0, 1], [0, -(totalWidth - cardWidth)]);
+  
+  // Memoize transform calculation
+  const x = useTransform(
+    scrollYProgress, 
+    [0, 1], 
+    [0, -(totalWidth - cardWidth)],
+    { clamp: false }
+  );
+
+  // Pre-render cards for performance
+  const desktopCards = useMemo(() => 
+    services.map(({ title, desc, iconSrc }, i) => (
+      <div className="hcard" key={i} id={`service-card-${i}`}>
+        <div className="card-image">
+          <picture className="icon-images">
+            <source srcSet={iconSrc} type="image/webp" />
+            <img
+              src={iconSrc}
+              alt={title}
+              className="Dashboard"
+              loading="lazy"
+              width="550"
+              height="435"
+              style={{
+                objectFit: "contain",
+                willChange: "transform",
+                backfaceVisibility: "hidden"
+              }}
+            />
+          </picture>
+        </div>
+        <div className="card-content">
+          <div className="section-number">{String(i + 1).padStart(2, '0')}</div>
+          <h2>{title}</h2>
+          <p>{desc}</p>
+        </div>
+      </div>
+    )), 
+  [services, cardWidth]);
 
   return (
     <section
@@ -80,6 +125,7 @@ const Services = () => {
         position: 'relative',
         height: isMobile ? 'auto' : `${totalCards * 100}vh`,
         paddingBottom: isMobile ? '2rem' : 0,
+        willChange: isMobile ? 'auto' : 'transform',
       }}
     >
       <div
@@ -88,35 +134,32 @@ const Services = () => {
           position: isMobile ? 'relative' : 'sticky',
           top: 0,
           left: 0,
-          width: '100vw',
+          width: '100%',
           height: isMobile ? 'auto' : '100vh',
           overflow: isMobile ? 'visible' : 'hidden',
         }}
       >
-      {isMobile ? (
-  <div className="offer-static mobile-offer">
-    <img src={Danda} alt="Danda" className="danda-image" />
-    <div className="text-block">
-      <h1>Our Services</h1>
-      <p>Empowering Innovation with Advanced AI Services</p>
-      
-    </div>
-  </div>
-) : (
-  <div className="offer-static desktop-offer">
-    <div className="offer-left">
-      <p>Empowering Innovation with Advanced AI Services</p>
-    </div>
-    <div className="offer-line">
-      <img src={Danda} alt="Danda" />
-    </div>
-    <div className="offer-right">
-      <h1>Our Services</h1>
-    </div>
-  </div>
-)}
-
-
+        {isMobile ? (
+          <div className="offer-static mobile-offer">
+            <img src={Danda} alt="Danda" className="danda-image" />
+            <div className="text-block">
+              <h1>Our Services</h1>
+              <p>Empowering Innovation with Advanced AI Services</p>
+            </div>
+          </div>
+        ) : (
+          <div className="offer-static desktop-offer">
+            <div className="offer-left">
+              <p>Empowering Innovation with Advanced AI Services</p>
+            </div>
+            <div className="offer-line">
+              <img src={Danda} alt="Danda" />
+            </div>
+            <div className="offer-right">
+              <h1>Our Services</h1>
+            </div>
+          </div>
+        )}
 
         {isMobile ? (
           <div className="mobile-services">
@@ -131,32 +174,13 @@ const Services = () => {
         ) : (
           <motion.div
             className="horizontal-wrapper"
-            style={{ x, width: totalWidth, height: '100vh' }}
+            style={{ 
+              x, 
+              width: totalWidth, 
+              height: '100vh'
+            }}
           >
-            {services.map(({ title, desc, iconSrc }, i) => (
-              <InView key={i} threshold={0.5} triggerOnce={false}>
-                {({ inView, ref }) => (
-                  <div className="hcard" ref={ref}>
-                    <div className="card-image">
-                      <picture className="icon-images">
-                        <source srcSet={iconSrc} type="image/webp" />
-                        <img
-                          src={iconSrc}
-                          alt={title}
-                          className="Dashboard"
-                          
-                        />
-                      </picture>
-                    </div>
-                    <div className="card-content">
-                      <div className="section-number">{String(i + 1).padStart(2, '0')}</div>
-                      <h2>{title}</h2>
-                      <p>{desc}</p>
-                    </div>
-                  </div>
-                )}
-              </InView>
-            ))}
+            {desktopCards}
           </motion.div>
         )}
       </div>
