@@ -362,16 +362,6 @@
     margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
-    .how-it-works-images {
-        flex-direction: column;
-    }
-    .arrow-container {
-        transform: rotate(90deg);
-        margin: 1rem 0;
-    }
-}
-
 @media (max-width: 600px) {
     .upload-area {
         width: 90%;
@@ -517,5 +507,62 @@
 @media (min-width: 1920px) {
     .how-it-works {
         max-width: 1800px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+    .upload-area {
+        width: 85%;
+        height: auto;
+    }
+    .arrow-container:last-of-type {
+        margin-left: 180px;
+        transform: rotate(-200deg);
+        margin-top: -15px;
+    }
+    .how-it-works h1 {
+        margin-bottom: 10px;
+        font-size: 1.5rem;
+    }
+    .how-it-works-images {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+    }
+    .how-it-works-images img {
+        margin-top: 20px;
+        height: 160px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+    .arrow-container img {
+        height: 16px;
+        width: 100px;
+        padding-right: 30px;
+    }
+    .collage {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 4rem;
+    }
+    .collage img {
+        width: 250px;
+        height: 200px;
+    }
+    .collage h1 {
+        font-size: 30px;
+        margin-left: -30px;
+    }
+    .collage-text h1 {
+        margin-top: 30px;
+    }
+    .vector img {
+        width: 60%;
+        margin-left: 40px;
+        margin-top: -40px;
     }
 }
