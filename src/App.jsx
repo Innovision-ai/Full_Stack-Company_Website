@@ -2,7 +2,7 @@ import React, { useEffect, useState, lazy, Suspense } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-
+import CookieConsent from './components/CookieConsent/CookieConsent.jsx';
 
 import {
   Footer,
@@ -18,7 +18,7 @@ import {
 
 import { Navbar, GlowingDots } from './components';
 import ScrollToTopLinkedIn1 from "./containers/ScrollToTopLinkedIn1";
-
+import ProductPage from './ProductPage.jsx';
 import {
   BrowserRouter as Router,
   Routes,
@@ -29,10 +29,11 @@ import {
 import UserContext from './UserContext';
 import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
 import JustMyPictures from './containers/pages/JustMyPictures/JustMyPictures';
+import PhotoEnhancer from './containers/pages/PicturePerfect/PhotoEnhancer';
 import Login from './containers/pages/Login/Login';
 import Signup from './containers/pages/Signup/Signup';
 import Notfound from './containers/Notfound';
-
+import PhotoEnhancer2 from './containers/pages/PicturePerfect2/PhotoEnhancer2';
 
 function AppContent() {
   const queryClient = new QueryClient({
@@ -83,6 +84,7 @@ function AppContent() {
         <Routes>
           <Route path="/" element={
             <>
+             <CookieConsent />
               <div className="gradient__bg2">
                 <section id="Whoweare" data-aos="fade-up">
                   <Whoweare />
@@ -113,6 +115,9 @@ function AppContent() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path ="*" element ={<Notfound/>}  />
+          <Route path="/product" element={<ProductPage />} />
+          <Route path="/pictureperfect" element={<PhotoEnhancer />} />
+            <Route path="/pictureperfect2" element={<PhotoEnhancer2 />} />
         </Routes>
       </div>
     </UserContext.Provider>

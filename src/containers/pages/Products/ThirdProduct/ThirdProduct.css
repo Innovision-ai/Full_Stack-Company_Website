@@ -1,0 +1,220 @@
+.container1 {
+    background: linear-gradient(115.81deg, rgba(0, 0, 0, 0.7) -8.55%, rgba(207, 206, 225, 0.57) 101.62%);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    position: relative;
+    text-align: center;
+}
+
+.header-box {
+    background-color: #1a4d4e;
+    padding: 15px 40px;
+    border-radius: 15px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.title {
+    margin: 0;
+    font-size: 32px;
+    color: white;
+}
+
+.subtitle-box {
+    background: linear-gradient(90deg, rgba(255, 193, 7, 0.62) 0%, #FFFFFF 100%);
+    padding: 8px 20px;
+    display: inline-block;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.subtitle .accent {
+    color: black;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.left-panel {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    gap: 15px;
+}
+
+.feature-button {
+    background-color: #f3c55c;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 10px 27px;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 18px;
+}
+
+.feature-button:hover {
+    background-color: #d9a52e;
+}
+
+.right-panel img {
+    width: 30rem;
+    /* height: auto; */
+    /* border-radius: 8px; */
+}
+
+.cta-container {
+    margin-top: 40px;
+}
+
+.cta-button {
+    background-color: #1a4d4e;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 12px 40px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-button:hover {
+    background-color: #103636;
+}
+
+.background-decor {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #f3c55c;
+    border-radius: 50%;
+}
+
+.decor-left {
+    top: 0;
+    left: 0;
+    transform: translate(-30%, -30%);
+}
+
+.decor-right {
+    top: 0;
+    right: 0;
+    transform: translate(30%, -30%);
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    gap: 100px;
+}
+
+.feature-button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+
+/* For screens smaller than 1024px (tablet landscape and below) */
+
+@media screen and (max-width: 1024px) {
+    .main {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+    }
+    .right-panel img {
+        width: 100%;
+        max-width: 400px;
+    }
+    .feature-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+    .cta-button {
+        padding: 10px 30px;
+        font-size: 15px;
+    }
+}
+
+
+/* For screens smaller than 768px (tablet portrait and below) */
+
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 26px;
+    }
+    .subtitle-box {
+        font-size: 16px;
+        padding: 6px 16px;
+    }
+    .feature-button {
+        width: 100%;
+        font-size: 15px;
+        text-align: center;
+        padding: 10px;
+    }
+    .cta-button {
+        width: 100%;
+        font-size: 15px;
+        padding: 10px;
+    }
+    .header-box {
+        padding: 12px 30px;
+    }
+    .right-panel img {
+        max-width: 90%;
+    }
+    .main {
+        gap: 30px;
+    }
+    .left-panel {
+        align-items: center;
+        width: 100%;
+    }
+}
+
+
+/* For screens smaller than 480px (mobile phones) */
+
+@media screen and (max-width: 480px) {
+    .container1 {
+        padding: 20px;
+    }
+    .title {
+        font-size: 22px;
+    }
+    .subtitle-box {
+        font-size: 14px;
+        padding: 5px 12px;
+    }
+    .feature-button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+    .cta-button {
+        font-size: 14px;
+        padding: 8px 20px;
+    }
+    .right-panel img {
+        max-width: 100%;
+    }
+    .background-decor {
+        display: none;
+        /* Hide decorative circles on mobile */
+    }
+}

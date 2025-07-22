@@ -1,0 +1,137 @@
+/* .ai-banner {
+    background: radial-gradient(83.94% 83.94% at 50% 100%, rgba(9, 50, 51, 0.88) 0%, rgba(17, 100, 102, 0.76) 36.54%, #000000 80.77%);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    margin: auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.ai-banner h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #ae67fa 0%, #f49867 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+
+.ai-banner p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+} */
+
+.ai-solutions-banner {
+    display: flex;
+    background-color: #edf5fb;
+}
+
+.ai-banner {
+    background: radial-gradient(83.94% 83.94% at 50% 100%, rgba(9, 50, 51, 0.88) 0%, rgba(17, 100, 102, 0.76) 36.54%, #000000 80.77%);
+    border-radius: 20px;
+    padding: 2rem 9rem;
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
+    margin: 4rem auto 0rem auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.ai-banner h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #ae67fa 0%, #f49867 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+
+.ai-banner p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+}
+
+
+/* -------------------- Responsive Styles -------------------- */
+
+
+/* Mobile (≤ 480px) */
+
+@media (max-width: 480px) {
+    .ai-banner {
+        padding: 1.5rem 1rem;
+        border-radius: 16px;
+        margin-top: 2rem;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+    .ai-banner h2 {
+        font-size: 1.3rem;
+    }
+    .ai-banner p {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* Tablets (481px – 768px) */
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .ai-banner {
+        padding: 1.8rem;
+        max-width: 90%;
+    }
+    .ai-banner h2 {
+        font-size: 1.5rem;
+    }
+    .ai-banner p {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Small Laptops (769px – 1024px) */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .ai-banner {
+        padding: 2rem;
+        max-width: 95%;
+    }
+    .ai-banner h2 {
+        font-size: 1.7rem;
+    }
+    .ai-banner p {
+        font-size: 0.92rem;
+    }
+}
+
+
+/* Large Screens (≥ 1440px) */
+
+@media (min-width: 1440px) {
+    .ai-banner {
+        max-width: 1000px;
+    }
+    .ai-banner h2 {
+        font-size: 2rem;
+    }
+    .ai-banner p {
+        font-size: 1rem;
+    }
+}

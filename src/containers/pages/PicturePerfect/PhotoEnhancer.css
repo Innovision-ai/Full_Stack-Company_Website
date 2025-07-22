@@ -1,0 +1,213 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.header-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #111;
+}
+
+.header-title span {
+    color: #facc15;
+    font-style: italic;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2d2d2d;
+    margin: 0.5rem 0 1rem;
+    text-align: center;
+}
+
+.description {
+    max-width: 600px;
+    font-size: 0.875rem;
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 2rem;
+}
+
+.main-content {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-right: 2rem;
+}
+
+.upload-box-perfect {
+    background-color: #0d3b66;
+    color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-area-perfect {
+    border: 2px dashed white;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    width: 100%;
+    background-color: #0d3b66;
+    height: 250px;
+}
+
+.upload-button {
+    font-weight: 600;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+}
+
+.upload-subtext {
+    font-size: 0.875rem;
+    color: #d1d5db;
+}
+
+.uploaded-preview {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 0.75rem;
+    object-fit: contain;
+}
+
+.upload-button {
+    background-color: #0d3b66;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+    background-color: #1a4f7a;
+}
+
+.image-preview-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.uploaded-preview {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.close-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: white;
+    font-size: 20px;
+    padding: 4px 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s ease-in-out;
+}
+
+.close-button:hover {
+    background: rgba(255, 0, 0, 0.8);
+}
+
+
+/* -------------------------
+   LARGE DESKTOPS (1200px+)
+-------------------------- */
+
+@media (min-width: 1200px) {
+    .main-content {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    .upload-box-perfect {
+        width: 600px;
+        padding: 2.5rem;
+    }
+    .upload-area-perfect {
+        height: 300px;
+    }
+}
+
+
+/* -------------------------
+   TABLETS & SMALL DESKTOPS (768px - 1199px)
+-------------------------- */
+
+@media (max-width: 1199px) and (min-width: 768px) {
+    .main-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.25rem;
+    }
+    .upload-box-perfect {
+        width: 90%;
+        padding: 1.75rem;
+    }
+    .upload-area-perfect {
+        height: 250px;
+    }
+}
+
+
+/* -------------------------
+   MOBILE DEVICES (≤ 767px)
+-------------------------- */
+
+@media (max-width: 767px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+    .header-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .subtitle {
+        font-size: 1rem;
+    }
+    .description {
+        font-size: 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+    .main-content {
+        flex-direction: column;
+        margin-right: 0;
+        gap: 1rem;
+    }
+    .upload-box-perfect {
+        width: 100%;
+        padding: 1.25rem;
+    }
+    .upload-area-perfect {
+        height: 200px;
+        padding: 1rem;
+    }
+    .upload-button {
+        width: 100%;
+        font-size: 0.95rem;
+    }
+    .close-button {
+        font-size: 16px;
+        padding: 3px 8px;
+    }
+}
