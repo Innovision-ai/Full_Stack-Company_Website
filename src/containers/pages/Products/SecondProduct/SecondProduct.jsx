@@ -1,6 +1,6 @@
 import React from 'react'
 import './SecondProduct.css'
-import lady from "../../../../assets/lady.png"
+import lady from "../../../../assets/Lady.png"
 import Line from "../../../../assets/Line.png"
 import RedLocation from "../../../../assets/RedLocation.png"
 import "./SecondProduct.css"
