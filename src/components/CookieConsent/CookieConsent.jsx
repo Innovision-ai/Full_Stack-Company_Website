@@ -27,7 +27,7 @@ const CookieConsent = () => {
         <p>
           We use cookies to enhance your experience, analyze site traffic, and serve tailored content. You can manage your preferences anytime.
         </p>
-        <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">
+        <a href="/PrivacyPolicy" target="_blank" rel="noopener noreferrer">
           Learn More
         </a>
       </div>
