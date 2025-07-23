@@ -19,7 +19,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const isOnPicturePage = location.pathname === "/justmypictures";
   const isOnPicturePerfect = location.pathname === "/pictureperfect/PhotoEnhancer" || location.pathname === "/pictureperfect/BackgroundRemover";
-  const isOnProductPage = location.pathname === "/product";
+  const isOnProductPage = location.pathname === "/AIPlayground";
   const isOnLegalPage = location.pathname === "/TermsAndConditions" || location.pathname === "/PrivacyPolicy";
   useEffect(() => {
     const token = localStorage.getItem("token");
