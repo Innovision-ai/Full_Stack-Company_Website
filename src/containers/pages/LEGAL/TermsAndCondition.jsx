@@ -48,7 +48,7 @@ const TermsAndConditions = () => {
 
       <h2>8. Contact Us</h2>
       <p>
-        For any questions regarding these terms, you can contact us at <a href="mailto:innovisiontech@gmail.com">innovisiontech@gmail.com</a>.
+        For any questions regarding these terms, you can contact us at <a href="mailto:innovisiontech.ai@gmail.com">innovisiontech.ai@gmail.com</a>.
       </p>
     </div>
     <div className='margin'><span> .</span></div>

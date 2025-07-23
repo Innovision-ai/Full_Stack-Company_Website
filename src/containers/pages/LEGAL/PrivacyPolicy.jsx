@@ -49,7 +49,7 @@ const PrivacyPolicy = () => {
       <p>We may update this Privacy Policy from time to time. You will be notified through this page.</p>
 
       <h2>8. Contact</h2>
-      <p>If you have any questions, please contact us at: <a href="mailto:innovisiontech@gmail.com">innovisiontech@gmail.com</a></p>
+      <p>If you have any questions, please contact us at: <a href="mailto:innovisiontech.ai@gmail.com">innovisiontech.ai@gmail.com</a></p>
 
     </div>
      <div className='margin'><span> .</span></div>
