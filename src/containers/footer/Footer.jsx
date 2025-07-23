@@ -86,8 +86,13 @@ function Footer() {
           <p><a href="#whoweare" onClick={(e) => handleNavigation(e, 'whoweare')}>About</a></p>
           <p><a href="#service" onClick={(e) => handleNavigation(e, 'service')}>Services</a></p>
           <p><a href="#blog" onClick={(e) => handleNavigation(e, 'blog')}>Blogs</a></p>
-          <p><Link to="/AIPlayground">AI Playground</Link></p>
+          <p><Link to="/AIPlayground" onClick={() => window.scrollTo(0, 0)}>AI Playground</Link></p>
           <p><a href="#portfolio" onClick={(e) => handleNavigation(e, 'portfolio')}>Portfolio</a></p>
+        </div>
+        <div className="footer-column">
+          <h3>Legal</h3>
+        <p><Link to="/TermsAndConditions" onClick={() => window.scrollTo(0, 0)}>Terms & Conditions</Link></p>
+          <p><Link to="/PrivacyPolicy" onClick={() => window.scrollTo(0 , 0)}>Privacy Policy</Link></p>
         </div>
       </div>
 

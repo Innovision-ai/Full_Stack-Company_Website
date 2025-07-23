@@ -1,4 +1,5 @@
 
+
 import React, { useState, useEffect, useContext, useCallback } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
@@ -19,7 +20,7 @@ const Navbar = () => {
   const isOnPicturePage = location.pathname === "/justmypictures";
   const isOnPicturePerfect = location.pathname === "/pictureperfect/PhotoEnhancer" || location.pathname === "/pictureperfect/BackgroundRemover";
   const isOnProductPage = location.pathname === "/product";
-
+  const isOnLegalPage = location.pathname === "/TermsAndConditions" || location.pathname === "/PrivacyPolicy";
   useEffect(() => {
     const token = localStorage.getItem("token");
 
@@ -43,7 +44,7 @@ const Navbar = () => {
   };
 
   const renderActionButton = () => {
-    if (isOnPicturePerfect) {
+    if (isOnPicturePerfect || isOnLegalPage) {
       return <div className="signup-login-buttons">
         <button onClick={() => navigate("/")}>BACK TO HOME</button>
       </div>;
@@ -74,7 +75,7 @@ const Navbar = () => {
     e.preventDefault();
     setToggleMenu(false);
     setTimeout(() => {
-      if (isOnPicturePage || isOnPicturePerfect || isOnProductPage) {
+      if (isOnPicturePage || isOnPicturePerfect || isOnProductPage || isOnLegalPage) {
         window.location.href = `/#${section}`;
       } else {
         const element = document.querySelector(`#${section}`);
@@ -83,7 +84,7 @@ const Navbar = () => {
         }
       }
     }, 100);
-  }, [isOnPicturePage, isOnPicturePerfect, isOnProductPage]);
+  }, [isOnPicturePage, isOnPicturePerfect, isOnProductPage, isOnLegalPage]);
 
   return (
     <>

@@ -34,6 +34,8 @@ import Login from './containers/pages/Login/Login';
 import Signup from './containers/pages/Signup/Signup';
 import Notfound from './containers/Notfound';
 import PhotoEnhancer2 from './containers/pages/PicturePerfect2/PhotoEnhancer2';
+import TermsAndCondition from './containers/pages/LEGAL/TermsAndCondition.jsx';
+import PrivacyPolicy from './containers/pages/LEGAL/PrivacyPolicy.jsx';
 
 function AppContent() {
   const queryClient = new QueryClient({
@@ -118,6 +120,8 @@ function AppContent() {
           <Route path="/AIPlayground" element={<ProductPage />} />
           <Route path="/pictureperfect/PhotoEnhancer" element={<PhotoEnhancer />} />
             <Route path="/pictureperfect/BackgroundRemover" element={<PhotoEnhancer2 />} />
+            <Route path="/TermsAndConditions" element={<TermsAndCondition />} />
+          <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
         </Routes>
       </div>
     </UserContext.Provider>
