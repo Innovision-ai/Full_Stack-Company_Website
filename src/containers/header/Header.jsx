@@ -22,7 +22,7 @@ const Header = () => {
         Get Started 
          <img src={Arrow3} alt="arrow icon"  />
       </button>
-      <button onClick={()=> window.location.href='/product'}>Explore Products <img src={Arroww} alt="arrow icon" className="arrow-icon" /></button>
+      <button onClick={()=> window.location.href='/AIPlayground'}>AI Playground <img src={Arroww} alt="arrow icon" className="arrow-icon" /></button>
       </div>
      </div>
 
