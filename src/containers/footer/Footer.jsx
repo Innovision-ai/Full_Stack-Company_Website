@@ -86,7 +86,7 @@ function Footer() {
           <p><a href="#whoweare" onClick={(e) => handleNavigation(e, 'whoweare')}>About</a></p>
           <p><a href="#service" onClick={(e) => handleNavigation(e, 'service')}>Services</a></p>
           <p><a href="#blog" onClick={(e) => handleNavigation(e, 'blog')}>Blogs</a></p>
-          <p><Link to="/justmypictures">Products</Link></p>
+          <p><Link to="/product">AIPlayground</Link></p>
           <p><a href="#portfolio" onClick={(e) => handleNavigation(e, 'portfolio')}>Portfolio</a></p>
         </div>
       </div>
@@ -94,7 +94,7 @@ function Footer() {
       {/* Bottom bar */}
       <div className="footer-bottom">
         <div className="footer-bar" />
-        <p>© 2025 All rights reserved by InnoVision.AI</p>
+        <p>© 2025 All rights reserved by InnovisionAI</p>
       </div>
     </footer>
   );

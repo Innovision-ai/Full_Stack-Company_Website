@@ -115,9 +115,9 @@ function AppContent() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path ="*" element ={<Notfound/>}  />
-          <Route path="/product" element={<ProductPage />} />
-          <Route path="/pictureperfect" element={<PhotoEnhancer />} />
-            <Route path="/pictureperfect2" element={<PhotoEnhancer2 />} />
+          <Route path="/AIPlayground" element={<ProductPage />} />
+          <Route path="/pictureperfect/PhotoEnhancer" element={<PhotoEnhancer />} />
+            <Route path="/pictureperfect/BackgroundRemover" element={<PhotoEnhancer2 />} />
         </Routes>
       </div>
     </UserContext.Provider>

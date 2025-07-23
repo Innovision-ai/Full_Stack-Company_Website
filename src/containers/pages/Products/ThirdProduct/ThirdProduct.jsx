@@ -9,7 +9,7 @@ const ThirdProduct = () => {
     
     // Add this function to handle navigation with scroll reset
     const handleNavigate = () => {
-        navigate("/pictureperfect2");
+        navigate("/pictureperfect/PhotoEnhancer");
         window.scrollTo(0, 0); // Scroll to top after navigation
     };
     
