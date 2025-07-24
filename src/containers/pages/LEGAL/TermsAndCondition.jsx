@@ -23,12 +23,12 @@ const TermsAndConditions = () => {
 
       <h2>3. Intellectual Property</h2>
       <p>
-        All content and tools on InnoVision.AI, including text, graphics, code, and AI models, are the property of InnovisonTech and are protected by copyright and other laws.
+        All content and tools on InnoVision.AI, including text, graphics, code, and AI models, are the property of InnoVision.AI and are protected by copyright and other laws.
       </p>
 
       <h2>4. Limitations of Liability</h2>
       <p>
-        InnovisonTech will not be held liable for any damages arising from the use or inability to use our tools, including loss of data, income, or productivity.
+        InnoVision.AI will not be held liable for any damages arising from the use or inability to use our tools, including loss of data, income, or productivity.
       </p>
 
       <h2>5. Service Changes and Termination</h2>
