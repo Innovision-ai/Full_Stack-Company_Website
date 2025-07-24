@@ -9,7 +9,7 @@ const PrivacyPolicy = () => {
       <h1>Privacy Policy</h1>
       <p><strong>Effective Date:</strong> July 23, 2025</p>
 
-      <p>Welcome to InnovisonTech. This Privacy Policy outlines how we collect, use, and protect your data when you interact with our website and use our AI-based tools and services.</p>
+      <p>Welcome to InnoVision.AI. This Privacy Policy outlines how we collect, use, and protect your data when you interact with our website and use our AI-based tools and services.</p>
 
       <h2>1. Information We Collect</h2>
       <ul>

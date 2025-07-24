@@ -99,7 +99,7 @@ function Footer() {
       {/* Bottom bar */}
       <div className="footer-bottom">
         <div className="footer-bar" />
-        <p>© 2025 All rights reserved by InnovisionAI</p>
+        <p>© 2025 All rights reserved by Innovision.AI</p>
       </div>
     </footer>
   );

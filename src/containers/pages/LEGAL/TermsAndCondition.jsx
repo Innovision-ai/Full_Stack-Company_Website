@@ -9,7 +9,7 @@ const TermsAndConditions = () => {
 
       <p>Last updated: July 23, 2025</p>
 
-      <p>Welcome to InnovisonTech! These terms and conditions outline the rules and regulations for the use of our website and AI tools.</p>
+      <p>Welcome to InnoVision.AI! These terms and conditions outline the rules and regulations for the use of our website and AI tools.</p>
 
       <h2>1. Acceptance of Terms</h2>
       <p>
@@ -23,7 +23,7 @@ const TermsAndConditions = () => {
 
       <h2>3. Intellectual Property</h2>
       <p>
-        All content and tools on InnovisonTech, including text, graphics, code, and AI models, are the property of InnovisonTech and are protected by copyright and other laws.
+        All content and tools on InnoVision.AI, including text, graphics, code, and AI models, are the property of InnovisonTech and are protected by copyright and other laws.
       </p>
 
       <h2>4. Limitations of Liability</h2>
