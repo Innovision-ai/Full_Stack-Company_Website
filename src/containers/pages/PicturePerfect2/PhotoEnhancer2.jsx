@@ -239,6 +239,7 @@ setUpdate(1); // Set update to 1 to disable the button
     setImage(null);
     setImageFile(null);
     setResultImage(null);
+    setUpdate(0);
   };
 
   return (
