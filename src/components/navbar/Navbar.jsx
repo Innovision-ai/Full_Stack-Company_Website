@@ -100,7 +100,7 @@ const Navbar = () => {
             <p><a href="#home" onClick={(e) => handleNavigation(e, 'home')}>Home</a></p>
             <p><a href="#whoweare" onClick={(e) => handleNavigation(e, 'whoweare')}>About</a></p>
             <p><a href="#service" onClick={(e) => handleNavigation(e, 'service')}>Services</a></p>
-            <p><a href="#blog" onClick={(e) => handleNavigation(e, 'blogs')}>Blogs</a></p>
+            <p><a href="#blog" onClick={(e) => handleNavigation(e, 'blog')}>Blogs</a></p>
             <p><Link to="/AIPlayground">AI PLAYGROUND</Link></p>
             <p><a href="#portfolio" onClick={(e) => handleNavigation(e, 'portfolio')}>Portfolio</a></p>
           </div>
