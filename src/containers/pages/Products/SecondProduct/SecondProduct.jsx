@@ -36,7 +36,7 @@ const SecondProduct = () => {
         <div className="travel-btn-wrap">
         <button
   className="travel-button"
-  onClick={() => window.location.href = 'https://innovisontech.com/travel-agent-ai'}
+onClick={() => window.open('https://innovisionai-travelagent.hf.space', '_blank')}
 >
   Explore AI
 </button>
