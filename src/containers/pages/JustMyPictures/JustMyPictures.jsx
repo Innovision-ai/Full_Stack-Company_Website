@@ -512,8 +512,6 @@ export default function JustMyPictures() {
             </button>
           </div>
         )}
-
-       
         <div className="how-it-works">
           <p className="quote">“Let AI Do The Sorting For You!”</p>
           <div className="how-it-works-images">
