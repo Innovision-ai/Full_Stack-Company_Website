@@ -1,4 +1,4 @@
-import React, { useEffect, useState, lazy, Suspense } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
@@ -36,22 +36,30 @@ import Notfound from './containers/Notfound';
 import PhotoEnhancer2 from './containers/pages/PicturePerfect2/PhotoEnhancer2';
 import TermsAndCondition from './containers/pages/LEGAL/TermsAndCondition.jsx';
 import PrivacyPolicy from './containers/pages/LEGAL/PrivacyPolicy.jsx';
+import { trackPageView } from './analytics';
 
 function AppContent() {
   const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 5 * 60 * 1000,
-      cacheTime: 10 * 60 * 1000,
-      retry: 1
+    defaultOptions: {
+      queries: {
+        staleTime: 5 * 60 * 1000,
+        cacheTime: 10 * 60 * 1000,
+        retry: 1
+      }
     }
-  }
-});
+  });
+
   const location = useLocation();
   const isHomePage = location.pathname === "/";
   const [user, setUser] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
+  // GA4: Track page views on route change
+  useEffect(() => {
+    trackPageView(location.pathname + location.search);
+  }, [location]);
+
+  // AOS animation initialization
   useEffect(() => {
     AOS.init({
       duration: 800,
@@ -60,70 +68,58 @@ function AppContent() {
     });
   }, []);
 
+  // Detect mobile screen size
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
     <UserContext.Provider value={{ user, setUser }}>
-      <div className="App gradient__bg1">
-        <ScrollProgress />
+      <QueryClientProvider client={queryClient}>
+        <div className="App gradient__bg1">
+          <ScrollProgress />
 
-        <div className="gradient__bg">
-          <Navbar />
-          {isHomePage && !isMobile && <GlowingDots />} {/* Only show on desktop */}
-          {isHomePage && (
-            <div className="gradient_bg">
-              <Header />
-            </div>
-          )}
-        </div>
-        <Routes>
-          <Route path="/" element={
-            <>
-             <CookieConsent />
-              <div className="gradient__bg2">
-                <section id="Whoweare" data-aos="fade-up">
-                  <Whoweare />
-                </section>
-                <section id="service" data-aos="zoom-in">
-                  <Services />
-                </section>
-                <section>
-                  <Impact />
-                </section>
-                <section id="portfolio" data-aos="fade-up">
-                  <Portfolio />
-                </section>
-                <section data-aos="fade-up">
-                  <Testimonials />
-                </section>
-                <section id="blog" data-aos="fade-up">
-                  <Blog />
-                </section>
-                <ScrollToTopLinkedIn1 />
-                <Footer />
-                
+          <div className="gradient__bg">
+            <Navbar />
+            {isHomePage && !isMobile && <GlowingDots />}
+            {isHomePage && (
+              <div className="gradient_bg">
+                <Header />
               </div>
-            </>
-          } />
+            )}
+          </div>
 
-          <Route path="/justmypictures" element={<JustMyPictures />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
-          <Route path ="*" element ={<Notfound/>}  />
-          <Route path="/AIPlayground" element={<ProductPage />} />
-          <Route path="/pictureperfect/PhotoEnhancer" element={<PhotoEnhancer />} />
+          <Routes>
+            <Route path="/" element={
+              <>
+                <CookieConsent />
+                <div className="gradient__bg2">
+                  <section id="Whoweare" data-aos="fade-up"><Whoweare /></section>
+                  <section id="service" data-aos="zoom-in"><Services /></section>
+                  <section><Impact /></section>
+                  <section id="portfolio" data-aos="fade-up"><Portfolio /></section>
+                  <section data-aos="fade-up"><Testimonials /></section>
+                  <section id="blog" data-aos="fade-up"><Blog /></section>
+                  <ScrollToTopLinkedIn1 />
+                  <Footer />
+                </div>
+              </>
+            } />
+
+            <Route path="/justmypictures" element={<JustMyPictures />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="*" element={<Notfound />} />
+            <Route path="/AIPlayground" element={<ProductPage />} />
+            <Route path="/pictureperfect/PhotoEnhancer" element={<PhotoEnhancer />} />
             <Route path="/pictureperfect/BackgroundRemover" element={<PhotoEnhancer2 />} />
             <Route path="/TermsAndConditions" element={<TermsAndCondition />} />
-          <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
-        </Routes>
-      </div>
+            <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+          </Routes>
+        </div>
+      </QueryClientProvider>
     </UserContext.Provider>
   );
 }
